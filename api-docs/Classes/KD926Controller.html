@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>AudioBasicCommunication Class Reference</title>
+	<title>KD926Controller Class Reference</title>
 
 	<link rel="stylesheet" href="../css/style.css">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
@@ -14,11 +14,11 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">ynote </a>
+				<a href="../index.html">objcdoc </a>
 			</h1>
 
 			<p id="developer-home">
-				<a href="../index.html">youdao</a>
+				<a href="../index.html">zyl910</a>
 			</p>
 			
 		</div>
@@ -54,11 +54,17 @@
 	
 
 	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/shareKD926Controller">+ shareKD926Controller</option>
+		
+	</optgroup>
+	
 
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/commandBG1Connented">- commandBG1Connented</option>
+		<option value="//api/name/getAllCurrentKD926Instace">- getAllCurrentKD926Instace</option>
 		
 	</optgroup>
 	
@@ -75,19 +81,16 @@
 		<div id="overview_contents" class="container">
 			<div id="content">
 				<main role="main">
-					<h1 class="title">AudioBasicCommunication Class Reference</h1>
+					<h1 class="title">KD926Controller Class Reference</h1>
 
 					
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td>BaseBG1 : NSObject</td>
-</tr><tr>
-	<th>Conforms to</th>
-	<td>AVAudioPlayerDelegate<br />AVAudioSessionDelegate</td>
+	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>AudioBasicCommunication.h<br />AudioBasicCommunication.m</td>
+	<td>KD926Controller.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -105,8 +108,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/commandBG1Connented" title="commandBG1Connented"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandBG1Connented">&ndash;&nbsp;commandBG1Connented</a></code>
+	<a name="//api/name/shareKD926Controller" title="shareKD926Controller"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shareKD926Controller">+&nbsp;shareKD926Controller</a></code>
 </h3>
 
 	<div class="method-info">
@@ -116,12 +119,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>/                    [self commandBG1Connented];</p>
+				<p>Initialize <a href="../Classes/KD926.html">KD926</a> controller class</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandBG1Connented</code></div>
+			<div class="method-subsection method-declaration"><code>+ (KD926Controller *)shareKD926Controller</code></div>
 
 		    
 			
@@ -133,7 +136,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>/                    [self commandBG1Connented];</p>
+				<p>Initialize <a href="../Classes/KD926.html">KD926</a> controller class</p>
 			</div>
 			
 
@@ -144,7 +147,53 @@
 			
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AudioBasicCommunication.m</code></p>
+				<p><code class="declared-in-ref">KD926Controller.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/getAllCurrentKD926Instace" title="getAllCurrentKD926Instace"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getAllCurrentKD926Instace">&ndash;&nbsp;getAllCurrentKD926Instace</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get all <a href="../Classes/KD926.html">KD926</a> instance,Access control class instance after receiving KD926ConnectNoti, then use instance to call <a href="../Classes/KD926.html">KD926</a> related communication methods.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)getAllCurrentKD926Instace</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Get all <a href="../Classes/KD926.html">KD926</a> instance,Access control class instance after receiving KD926ConnectNoti, then use instance to call <a href="../Classes/KD926.html">KD926</a> related communication methods.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">KD926Controller.h</code></p>
 			</div>
 			
 			
@@ -165,7 +214,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2015 youdao. All rights reserved. Updated: 2015-12-28</p>
+						<p class="copyright">Copyright &copy; 2016 zyl910. All rights reserved. Updated: 2016-05-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
