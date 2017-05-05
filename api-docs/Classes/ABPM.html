@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">iHealth </a>
+				<a href="../index.html">iHealthSDKStatic </a>
 			</h1>
 
 			<p id="developer-home">
@@ -64,7 +64,7 @@
 		
 		<option value="//api/name/commandEnergy:errorBlock:">- commandEnergy:errorBlock:</option>
 		
-		<option value="//api/name/commandFounction:errorBlock:">- commandFounction:errorBlock:</option>
+		<option value="//api/name/commandFunction:errorBlock:">- commandFunction:errorBlock:</option>
 		
 		<option value="//api/name/commandSetAutoMeasureTimeWithSleepTimeSection:napTimeSection:totalTime:result:errorBlock:">- commandSetAutoMeasureTimeWithSleepTimeSection:napTimeSection:totalTime:result:errorBlock:</option>
 		
@@ -93,10 +93,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td>NSObject</td>
+	<td><a href="../Classes/BPDevice.html">BPDevice</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>ABPM.h</td>
+	<td>ABPM.h<br />ABPM.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -114,8 +114,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/commandFounction:errorBlock:" title="commandFounction:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandFounction:errorBlock:">&ndash;&nbsp;commandFounction:errorBlock:</a></code>
+	<a name="//api/name/commandFunction:errorBlock:" title="commandFunction:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandFunction:errorBlock:">&ndash;&nbsp;commandFunction:errorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -130,7 +130,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandFounction:(BlockDeviceFounction)<em>founction</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandFunction:(BlockDeviceFunction)<em>function</em> errorBlock:(BlockError)<em>error</em></code></div>
 
 		    
 			
@@ -139,13 +139,13 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to refer ‘error’ in ‘Establish measurement connection’ in <a href="../Classes/KD926.html">KD926</a>.</p></td>
+						<th scope="row" class="argument-name"><code>function</code></th>
+						<td><p>A block to return the function and states that the device supports.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>Function</code></th>
-						<td><p>A block to return the function and states that the device supports.</p></td>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>A block to refer ‘error’ in ‘Establish measurement connection’ in KD926.</p></td>
 					</tr>
 				
 				</table>
@@ -156,11 +156,6 @@
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Synchronize time and judge if the device supports the function of up Air Measurement, arm Measurement, Angle Sensor, Angle Setting, HSD, Offline Memory, mutable Groups Upload, Self Upgrade. ‘True’ means yes or on, ‘False’ means no or off.</p>
-			</div>
 			
 
 			
@@ -220,11 +215,6 @@
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Query battery remaining energy.</p>
-			</div>
-			
 
 			
 
@@ -265,13 +255,13 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to return the error.</p></td>
+						<th scope="row" class="argument-name"><code>totalCount</code></th>
+						<td><p>item quantity of total data</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>TotalCount:</code></th>
-						<td><p>item quantity of total data</p></td>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>A block to return the error.</p></td>
 					</tr>
 				
 				</table>
@@ -282,11 +272,6 @@
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Upload offline data total Count.</p>
-			</div>
 			
 
 			
@@ -338,6 +323,11 @@
 					</tr>
 				
 					<tr>
+						<th scope="row" class="argument-name"><code>clientSecret</code></th>
+						<td><p>‘clientID’ and ‘clientsecret’ are the only identification for user of SDK, are required registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.</p></td>
+					</tr>
+				
+					<tr>
 						<th scope="row" class="argument-name"><code>disposeAuthenticationBlock</code></th>
 						<td><p>A block to return parameter of ‘userid’, ’clientID’, ’clientSecret’ after the verification.
 The interpretation for the verification:
@@ -352,6 +342,26 @@ The interpretation for the verification:
 &ndash;PS:
 The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.
 @Notice   By the first time of new user register via SDK, ‘iHealth disclaimer’ will pop up automatically, and require the user agrees to continue. SDK application requires Internet connection; there is 10-day tryout if SDK cannot connect Internet, SDK is fully functional during tryout period, but will be terminated without verification through Internet after 10 days.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>totalCount</code></th>
+						<td><p>item quantity of total data</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>progress</code></th>
+						<td><p>upload completion ratio , from 0.0 to 1.0 or 0%~100％, 100% means upload completed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uploadDataArray</code></th>
+						<td><p>offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment. corresponding KEY as time, sys, dia, heartRate, irregular.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>batchFinished</code></th>
+						<td><p>the block return when the offline data upload completed.</p></td>
 					</tr>
 				
 					<tr>
@@ -385,31 +395,6 @@ Specification:
 25.  BPInputParameterError=400:  Parameter input error.</p></td>
 					</tr>
 				
-					<tr>
-						<th scope="row" class="argument-name"><code>TotalCount:</code></th>
-						<td><p>item quantity of total data</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>batchFinished:</code></th>
-						<td><p>the block return when the offline data upload completed.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>clientsecret</code></th>
-						<td><p>‘clientID’ and ‘clientsecret’ are the only identification for user of SDK, are required registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>UploadDataArray:</code></th>
-						<td><p>offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment. corresponding KEY as time, sys, dia, heartRate, irregular.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>Progress:</code></th>
-						<td><p>upload completion ratio , from 0.0 to 1.0 or 0%~100％, 100% means upload completed.</p></td>
-					</tr>
-				
 				</table>
 			</div>
 			
@@ -418,11 +403,6 @@ Specification:
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Upload offline data.</p>
-			</div>
 			
 
 			
@@ -464,13 +444,13 @@ Specification:
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to return the error</p></td>
+						<th scope="row" class="argument-name"><code>measureTimeDic</code></th>
+						<td><p>the dictionary contains the automatic cycle measurement setup of the current ABPM device. the object of the key @&ldquo;sleeparray&rdquo; is an array contains the measuring time interval after sleep and sleep,the members order is：the hour of after sleep time,the minute of after sleep time,the measure time interval of after sleep time,the hour of start sleep time,the minute of start sleep time,the measure time interval in sleep.the object of the key @&ldquo;naparray&rdquo; is an array contains the measuring time interval after nap and nap,the members order is similar to the sleep array.the object of the key @&ldquo;measuretotaltime&rdquo; is the total measure time of this measurement process that the user set.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>measureTimeDic:</code></th>
-						<td><p>the dictionary contains the automatic cycle measurement setup of the current ABPM device. the object of the key @&ldquo;sleeparray&rdquo; is an array contains the measuring time interval after sleep and sleep,the members order is：the hour of after sleep time,the minute of after sleep time,the measure time interval of after sleep time,the hour of start sleep time,the minute of start sleep time,the measure time interval in sleep.the object of the key @&ldquo;naparray&rdquo; is an array contains the measuring time interval after nap and nap,the members order is similar to the sleep array.the object of the key @&ldquo;measuretotaltime&rdquo; is the total measure time of this measurement process that the user set.</p></td>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>A block to return the error</p></td>
 					</tr>
 				
 				</table>
@@ -481,11 +461,6 @@ Specification:
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Query the automatic cycle measurement setup of the device</p>
-			</div>
 			
 
 			
@@ -560,11 +535,6 @@ Specification:
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set the automatic cycle measurement interval and returns the information of the energy level of the blood pressure meter</p>
-			</div>
-			
 
 			
 
@@ -606,11 +576,6 @@ Specification:
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Disconnect current device</p>
-			</div>
-			
 
 			
 
@@ -640,7 +605,7 @@ Specification:
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 iHealth. All rights reserved. Updated: 2016-10-23</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

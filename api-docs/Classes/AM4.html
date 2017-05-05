@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">iHealth </a>
+				<a href="../index.html">iHealthSDKStatic </a>
 			</h1>
 
 			<p id="developer-home">
@@ -58,15 +58,13 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/commandAM4CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:">- commandAM4CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:</option>
-		
 		<option value="//api/name/commandAM4DeleteAlarmID:withFinishResult:withErrorBlock:">- commandAM4DeleteAlarmID:withFinishResult:withErrorBlock:</option>
 		
 		<option value="//api/name/commandAM4Disconnect:withErrorBlock:">- commandAM4Disconnect:withErrorBlock:</option>
 		
 		<option value="//api/name/commandAM4GetDeviceStateInfo:withBattery:withErrorBlock:">- commandAM4GetDeviceStateInfo:withBattery:withErrorBlock:</option>
 		
-		<option value="//api/name/commandAM4GetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:">- commandAM4GetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:</option>
+		<option value="//api/name/commandAM4GetDeviceUserID:withErrorBlock:">- commandAM4GetDeviceUserID:withErrorBlock:</option>
 		
 		<option value="//api/name/commandAM4GetReminderInfo:withErrorBlock:">- commandAM4GetReminderInfo:withErrorBlock:</option>
 		
@@ -90,7 +88,7 @@
 		
 		<option value="//api/name/commandAM4SetSwimmingState:withSwimmingPoolLength:withNOSwimmingTime:withUnit:withFinishResult:withErrorBlock:">- commandAM4SetSwimmingState:withSwimmingPoolLength:withNOSwimmingTime:withUnit:withFinishResult:withErrorBlock:</option>
 		
-		<option value="//api/name/commandAM4SetTimeFormatAndNation:withErrorBlock:">- commandAM4SetTimeFormatAndNation:withErrorBlock:</option>
+		<option value="//api/name/commandAM4SetTimeFormatAndNation:withFinishResult:withErrorBlock:">- commandAM4SetTimeFormatAndNation:withFinishResult:withErrorBlock:</option>
 		
 		<option value="//api/name/commandAM4SetUserID:withFinishResult:withErrorBlock:">- commandAM4SetUserID:withFinishResult:withErrorBlock:</option>
 		
@@ -105,6 +103,8 @@
 		<option value="//api/name/commandAM4StartSyncStageData:withStageDataFinishTransmission:withErrorBlock:">- commandAM4StartSyncStageData:withStageDataFinishTransmission:withErrorBlock:</option>
 		
 		<option value="//api/name/commandAM4SyncTime:withErrorBlock:">- commandAM4SyncTime:withErrorBlock:</option>
+		
+		<option value="//api/name/receiveAM4DataTimerIsRespond:withIndex:">- receiveAM4DataTimerIsRespond:withIndex:</option>
 		
 	</optgroup>
 	
@@ -130,7 +130,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>AM4.h</td>
+	<td>AM4.h<br />AM4.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -144,97 +144,12 @@
 						
 
 						
-						
+						<h2 class="task-title">Other Methods</h2>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/commandAM4CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:" title="commandAM4CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandAM4CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:">&ndash;&nbsp;commandAM4CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Establish memory and measurement connection,Only after verification through this interface can we move onto using other API&rsquo;s.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandAM4CreateUserManageConnectWithUser:(HealthUser *)<em>tempUser</em> withAuthenticationResult:(BlockUserAuthentication)<em>authenticationResultBlock</em> withCurrentUserID:(CurrentSerialNub)<em>currentUserIDBlock</em> withErrorBlock:(DisposeAM4ErrorBlock)<em>errorBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>tempUser</code></th>
-						<td><p>includes properties：clientID，clientSecret，userID.userID，either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email:heguangming@ihealthlabs.com.cn for more information</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>currentUserIDBlock</code></th>
-						<td><p>Uniquely identifies the user, the SDK requires this to be stored. This ID will be sent to the AM4 and will allow the AM4 to pair with only this user.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see AM4 error descriptions.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeAuthenticationBlock</code></th>
-						<td><p>The return parameters of ’‘userid’, ’clientID’,and ‘clientSecret’ after verification.
-The interpretation for the verification:
-1. UserAuthen_RegisterSuccess, New-user registration succeeded.
-2. UserAuthen_LoginSuccess， User login succeeded.
-3. UserAuthen_CombinedSuccess, The user is iHealth user as well, measurement via SDK has been activated, and the data from the measurement belongs to the user.
-4. UserAuthen_TrySuccess, testing without Internet connection succeeded.
-5. UserAuthen_InvalidateUserInfo, Userid/clientID/clientSecret verification failed.
-6. UserAuthen_SDKInvalidateRight, SDK has not been authorized.
-7. UserAuthen_UserInvalidateRight,User has not been authorized.
-8. UserAuthen_InternetError, Internet error, verification failed.
-&ndash;PS:
-The measurement via SDK will be operated in the case of 1-3, and will be terminated if any of 4-8 occurs. The interface needs to be re-called after analyzing the return parameters.
-@Notice  Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Establish memory and measurement connection,Only after verification through this interface can we move onto using other API&rsquo;s.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AM4.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandAM4GetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:" title="commandAM4GetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandAM4GetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:">&ndash;&nbsp;commandAM4GetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:</a></code>
+	<a name="//api/name/commandAM4GetDeviceUserID:withErrorBlock:" title="commandAM4GetDeviceUserID:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM4GetDeviceUserID:withErrorBlock:">&ndash;&nbsp;commandAM4GetDeviceUserID:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -249,7 +164,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandAM4GetDeviceUserID:(DisposeAM4GetDeviceUserIDBlock)<em>getDeviceUserIDBlock</em> withFromCloudGetUserBinedDeviceMAC:(DisposeAM4GetUserBinedDeviceMACBlock)<em>userBinedDeviceMACBlock</em> withErrorBlock:(DisposeAM4ErrorBlock)<em>errorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM4GetDeviceUserID:(DisposeAM4GetDeviceUserIDBlock)<em>getDeviceUserIDBlock</em> withErrorBlock:(DisposeAM4ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -263,11 +178,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>userBinedDeviceMACBlock</code></th>
-						<td><p>The user&rsquo;s AM4 MAC Address</p></td>
-					</tr>
-				
-					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
 						<td><p>Communication error codes, see AM4 error descriptions.</p></td>
 					</tr>
@@ -280,11 +190,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get device userID and user bined sevice MAC Address</p>
-			</div>
 			
 
 			
@@ -344,11 +249,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Sending a random number,This API sends a random number to the AM4. Only when the random number matches the number displayed on the AM4 screen can the device be bound to the device.</p>
-			</div>
-			
 
 			
 
@@ -407,11 +307,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Sync time</p>
-			</div>
-			
 
 			
 
@@ -427,8 +322,8 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandAM4SetTimeFormatAndNation:withErrorBlock:" title="commandAM4SetTimeFormatAndNation:withErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandAM4SetTimeFormatAndNation:withErrorBlock:">&ndash;&nbsp;commandAM4SetTimeFormatAndNation:withErrorBlock:</a></code>
+	<a name="//api/name/commandAM4SetTimeFormatAndNation:withFinishResult:withErrorBlock:" title="commandAM4SetTimeFormatAndNation:withFinishResult:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM4SetTimeFormatAndNation:withFinishResult:withErrorBlock:">&ndash;&nbsp;commandAM4SetTimeFormatAndNation:withFinishResult:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -443,13 +338,18 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandAM4SetTimeFormatAndNation:(DisposeAM4TimeFormatAndNationSettingBlock)<em>setTimeFormatBlock</em> withErrorBlock:(DisposeAM4ErrorBlock)<em>errorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM4SetTimeFormatAndNation:(AM4TimeFormatAndNation)<em>timeFormatAndNation</em> withFinishResult:(DisposeAM4TimeFormatAndNationSettingBlock)<em>setTimeFormatBlock</em> withErrorBlock:(DisposeAM4ErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>timeFormatAndNation</code></th>
+						<td><p>AM4TimeFormat_hh,AM4TimeFormat_HH,AM4TimeFormat_NoEuropeAndhh,AM4TimeFormat_EuropeAndhh,AM4TimeFormat_NoEuropeAndHH,AM4TimeFormat_EuropeAndHH</p></td>
+					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>setTimeFormatBlock</code></th>
@@ -469,11 +369,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set time format and nation</p>
-			</div>
 			
 
 			
@@ -537,11 +432,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Binding AM4 to user,Account binding requires an active internet connection.</p>
-			</div>
 			
 
 			
@@ -626,11 +516,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>AM4 initialization,Must be called the first time to ensure that the AM4 has correct user information, goals, time, battery checks, etc.</p>
-			</div>
-			
 
 			
 
@@ -677,7 +562,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>swimmingPoolLength</code></th>
-						<td><p>swimming Pool Length,ranging from 1 – 255.</p></td>
+						<td><p>swimming Pool Length,ranging from 0 – 255.</p></td>
 					</tr>
 				
 					<tr>
@@ -708,11 +593,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set swimming</p>
-			</div>
 			
 
 			
@@ -782,11 +662,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Upload AM4 data,Data type: 5 minutes of active data, total number of steps for the day, and total calories.Also includes the number of steps for the 5 minutes of motion data, total calories for the current time, calories of the steps, and total calories.</p>
-			</div>
-			
 
 			
 
@@ -855,11 +730,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Upload AM4 data,Data type: 5 minutes of sleep data</p>
-			</div>
-			
 
 			
 
@@ -917,11 +787,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Upload AM4 data,Data type: Sync current active data</p>
-			</div>
 			
 
 			
@@ -986,11 +851,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Upload AM4 report data.</p>
-			</div>
-			
 
 			
 
@@ -1048,11 +908,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get totoal alarm infomation</p>
-			</div>
 			
 
 			
@@ -1117,11 +972,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set alarm.</p>
-			</div>
-			
 
 			
 
@@ -1185,11 +1035,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Delete alarm.</p>
-			</div>
-			
 
 			
 
@@ -1247,11 +1092,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get reminder.</p>
-			</div>
 			
 
 			
@@ -1316,11 +1156,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set reminders.</p>
-			</div>
-			
 
 			
 
@@ -1384,11 +1219,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get device state infomation</p>
-			</div>
-			
 
 			
 
@@ -1446,11 +1276,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Restore factory settings.</p>
-			</div>
 			
 
 			
@@ -1510,11 +1335,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Disconnect AM4 connection.</p>
-			</div>
-			
 
 			
 
@@ -1572,11 +1392,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get time format and nation</p>
-			</div>
 			
 
 			
@@ -1636,11 +1451,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get user infomation</p>
-			</div>
-			
 
 			
 
@@ -1699,11 +1509,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get swimming infomation</p>
-			</div>
-			
 
 			
 
@@ -1730,8 +1535,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set BMR
-@param bmr</p>
+				<p>Set BMR</p>
 			</div>
 			
 		    
@@ -1743,6 +1547,11 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bmr</code></th>
+						<td><p>ranging from 0 – 5000.</p></td>
+					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>finishResultBlock</code></th>
@@ -1763,12 +1572,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set BMR
-@param bmr</p>
-			</div>
-			
 
 			
 
@@ -1778,6 +1581,55 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
 				<p><code class="declared-in-ref">AM4.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/receiveAM4DataTimerIsRespond:withIndex:" title="receiveAM4DataTimerIsRespond:withIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/receiveAM4DataTimerIsRespond:withIndex:">&ndash;&nbsp;receiveAM4DataTimerIsRespond:withIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>/开始同步</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)receiveAM4DataTimerIsRespond:(BOOL)<em>status</em> withIndex:(NSInteger)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM4.m</code></p>
 			</div>
 			
 			
@@ -1798,7 +1650,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 iHealth. All rights reserved. Updated: 2016-10-23</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

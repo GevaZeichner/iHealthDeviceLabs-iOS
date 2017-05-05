@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>HS4 Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">iHealthSDKStatic </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">iHealth</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/commandDisconnectDevice">- commandDisconnectDevice</option>
+		
+		<option value="//api/name/commandEndCurrentConnection:DisposeErrorBlock:">- commandEndCurrentConnection:DisposeErrorBlock:</option>
+		
+		<option value="//api/name/commandMeasureWithUint:Weight:StableWeight:DisposeErrorBlock:">- commandMeasureWithUint:Weight:StableWeight:DisposeErrorBlock:</option>
+		
+		<option value="//api/name/commandTransferMemorryData:DisposeProgress:MemorryData:FinishTransmission:DisposeErrorBlock:">- commandTransferMemorryData:DisposeProgress:MemorryData:FinishTransmission:DisposeErrorBlock:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">HS4 Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>HS4.h<br />HS4.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/commandMeasureWithUint:Weight:StableWeight:DisposeErrorBlock:" title="commandMeasureWithUint:Weight:StableWeight:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandMeasureWithUint:Weight:StableWeight:DisposeErrorBlock:">&ndash;&nbsp;commandMeasureWithUint:Weight:StableWeight:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>Establish memory and measurement connection</li>
+<li>When using the SDK for the first time, measuring method needs to be called to finish user verification.</li>
+<li><p>Import parameter:
+  tempUnit: Unit displayed on HS4: HSUnit_Kg、HSUnit_LB、HSUnit_ST。</p></li>
+<li><p>Return parameters:
+  The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.
+  Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection; there is 10-day trial period if the SDK cannot connect to the internet, the SDK is fully functional during tryout period, but will be terminated without a working internet connection after 10 days.</p></li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandMeasureWithUint:(HSUnit)<em>tempUnit</em> Weight:(UnStableWeight)<em>unStableWeight</em> StableWeight:(StableWeight)<em>stableWeight</em> DisposeErrorBlock:(DisposeHS4ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<pre><code>* @param unStableWeight: Current weight, (Kg) [Value Range:0~180]
+* @param stableWeight: Stable weight, (Kg) [Value Range:0~180]
+* @param disposeErrorBlock: error code
+* @param Error code definition：
+*  refer to “error” : HS4 error instruction.
+</code></pre>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS4.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandTransferMemorryData:DisposeProgress:MemorryData:FinishTransmission:DisposeErrorBlock:" title="commandTransferMemorryData:DisposeProgress:MemorryData:FinishTransmission:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemorryData:DisposeProgress:MemorryData:FinishTransmission:DisposeErrorBlock:">&ndash;&nbsp;commandTransferMemorryData:DisposeProgress:MemorryData:FinishTransmission:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>Upload memory data</li>
+<li>If user doesn’t pass the verification, HS4UserInvalidate will be returned for calling this method, user information invalid.</li>
+<li>Import parameters：
+tempUser, included properties: userID, refer to the instructions for <a href="../Classes/HS3.html">HS3</a></li>
+<li>Return parameters:</li>
+<li>@param  startTransmission：Start Memory transmission.</li>
+<li>@param   progress: Memory transmission progress，[Range:0.0～1.0].</li>
+<li>@param   memorryData:Record data including weight (kg), measurement time，coordinated key：weight，date.[Range of weight 0.0~180.0(kg)]</li>
+<li> @param  finishTransmission：Finish memory transmission.</li>
+<li> @param  disposeErrorBlock: Record the error code in uploading process.
+Error code definition: refer to ”error” : HS4 error instruction.</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemorryData:(StartHS4Transmission)<em>startTransmission</em> DisposeProgress:(DisposeProgress)<em>progress</em> MemorryData:(MemorryData)<em>memorryData</em> FinishTransmission:(FinishHS4Transmission)<em>finishTransmission</em> DisposeErrorBlock:(DisposeHS4ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS4.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandEndCurrentConnection:DisposeErrorBlock:" title="commandEndCurrentConnection:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandEndCurrentConnection:DisposeErrorBlock:">&ndash;&nbsp;commandEndCurrentConnection:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>End Current Measure Connection</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandEndCurrentConnection:(DisposeResult)<em>result</em> DisposeErrorBlock:(DisposeHS4ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS4.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandDisconnectDevice" title="commandDisconnectDevice"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandDisconnectDevice">&ndash;&nbsp;commandDisconnectDevice</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Disconnect current device</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandDisconnectDevice</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS4.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

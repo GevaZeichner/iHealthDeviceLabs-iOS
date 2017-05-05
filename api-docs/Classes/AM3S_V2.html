@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">iHealth </a>
+				<a href="../index.html">iHealthSDKStatic </a>
 			</h1>
 
 			<p id="developer-home">
@@ -58,15 +58,13 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/commandAM3SCreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:">- commandAM3SCreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:</option>
-		
 		<option value="//api/name/commandAM3SDeleteAlarmID:withFinishResult:withErrorBlock:">- commandAM3SDeleteAlarmID:withFinishResult:withErrorBlock:</option>
 		
 		<option value="//api/name/commandAM3SDisconnect:withErrorBlock:">- commandAM3SDisconnect:withErrorBlock:</option>
 		
 		<option value="//api/name/commandAM3SGetDeviceStateInfo:withBattery:withErrorBlock:">- commandAM3SGetDeviceStateInfo:withBattery:withErrorBlock:</option>
 		
-		<option value="//api/name/commandAM3SGetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:">- commandAM3SGetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:</option>
+		<option value="//api/name/commandAM3SGetDeviceUserID:withErrorBlock:">- commandAM3SGetDeviceUserID:withErrorBlock:</option>
 		
 		<option value="//api/name/commandAM3SGetPicture:withErrorBlock:">- commandAM3SGetPicture:withErrorBlock:</option>
 		
@@ -90,7 +88,7 @@
 		
 		<option value="//api/name/commandAM3SSetReminderDictionary:withFinishResult:withErrorBlock:">- commandAM3SSetReminderDictionary:withFinishResult:withErrorBlock:</option>
 		
-		<option value="//api/name/commandAM3SSetTimeFormatAndNation:withErrorBlock:">- commandAM3SSetTimeFormatAndNation:withErrorBlock:</option>
+		<option value="//api/name/commandAM3SSetTimeFormatAndNation:withFinishResult:withErrorBlock:">- commandAM3SSetTimeFormatAndNation:withFinishResult:withErrorBlock:</option>
 		
 		<option value="//api/name/commandAM3SSetUserID:withFinishResult:withErrorBlock:">- commandAM3SSetUserID:withFinishResult:withErrorBlock:</option>
 		
@@ -105,6 +103,8 @@
 		<option value="//api/name/commandAM3SStartSyncStageData:withStageDataFinishTransmission:withErrorBlock:">- commandAM3SStartSyncStageData:withStageDataFinishTransmission:withErrorBlock:</option>
 		
 		<option value="//api/name/commandAM3SSyncTime:withErrorBlock:">- commandAM3SSyncTime:withErrorBlock:</option>
+		
+		<option value="//api/name/receiveAM3SDataTimerIsRespond:withIndex:">- receiveAM3SDataTimerIsRespond:withIndex:</option>
 		
 	</optgroup>
 	
@@ -130,7 +130,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>AM3S_V2.h</td>
+	<td>AM3S_V2.h<br />AM3S_V2.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -144,97 +144,12 @@
 						
 
 						
-						
+						<h2 class="task-title">Other Methods</h2>
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/commandAM3SCreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:" title="commandAM3SCreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandAM3SCreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:">&ndash;&nbsp;commandAM3SCreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Establish memory and measurement connection,Only after verification through this interface can we move onto using other API&rsquo;s.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandAM3SCreateUserManageConnectWithUser:(HealthUser *)<em>tempUser</em> withAuthenticationResult:(BlockUserAuthentication)<em>authenticationResultBlock</em> withCurrentUserID:(CurrentSerialNub)<em>currentUserIDBlock</em> withErrorBlock:(DisposeAM3SErrorBlock)<em>errorBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>tempUser</code></th>
-						<td><p>includes properties：clientID，clientSecret，userID.userID，either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email:heguangming@ihealthlabs.com.cn for more information</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>currentUserIDBlock</code></th>
-						<td><p>Uniquely identifies the user, the SDK requires this to be stored. This ID will be sent to the <a href="../Classes/AM3S.html">AM3S</a> and will allow the <a href="../Classes/AM3S.html">AM3S</a> to pair with only this user.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeAuthenticationBlock</code></th>
-						<td><p>The return parameters of ’‘userid’, ’clientID’,and ‘clientSecret’ after verification.
-The interpretation for the verification:
-1. UserAuthen_RegisterSuccess, New-user registration succeeded.
-2. UserAuthen_LoginSuccess， User login succeeded.
-3. UserAuthen_CombinedSuccess, The user is iHealth user as well, measurement via SDK has been activated, and the data from the measurement belongs to the user.
-4. UserAuthen_TrySuccess, testing without Internet connection succeeded.
-5. UserAuthen_InvalidateUserInfo, Userid/clientID/clientSecret verification failed.
-6. UserAuthen_SDKInvalidateRight, SDK has not been authorized.
-7. UserAuthen_UserInvalidateRight,User has not been authorized.
-8. UserAuthen_InternetError, Internet error, verification failed.
-&ndash;PS:
-The measurement via SDK will be operated in the case of 1-3, and will be terminated if any of 4-8 occurs. The interface needs to be re-called after analyzing the return parameters.
-@Notice  Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Establish memory and measurement connection,Only after verification through this interface can we move onto using other API&rsquo;s.</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">AM3S_V2.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandAM3SGetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:" title="commandAM3SGetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandAM3SGetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:">&ndash;&nbsp;commandAM3SGetDeviceUserID:withFromCloudGetUserBinedDeviceMAC:withErrorBlock:</a></code>
+	<a name="//api/name/commandAM3SGetDeviceUserID:withErrorBlock:" title="commandAM3SGetDeviceUserID:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3SGetDeviceUserID:withErrorBlock:">&ndash;&nbsp;commandAM3SGetDeviceUserID:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -249,7 +164,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandAM3SGetDeviceUserID:(DisposeAM3SGetDeviceUserIDBlock)<em>getDeviceUserIDBlock</em> withFromCloudGetUserBinedDeviceMAC:(DisposeAM3SGetUserBinedDeviceMACBlock)<em>userBinedDeviceMACBlock</em> withErrorBlock:(DisposeAM3SErrorBlock)<em>errorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3SGetDeviceUserID:(DisposeAM3SGetDeviceUserIDBlock)<em>getDeviceUserIDBlock</em> withErrorBlock:(DisposeAM3SErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -263,13 +178,8 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>userBinedDeviceMACBlock</code></th>
-						<td><p>The user&rsquo;s <a href="../Classes/AM3S.html">AM3S</a> MAC Address</p></td>
-					</tr>
-				
-					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -280,11 +190,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get device userID and user bined sevice MAC Address</p>
-			</div>
 			
 
 			
@@ -312,7 +217,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Sending a random number,This API sends a random number to the <a href="../Classes/AM3S.html">AM3S</a>. Only when the random number matches the number displayed on the <a href="../Classes/AM3S.html">AM3S</a> screen can the device be bound to the device.</p>
+				<p>Sending a random number,This API sends a random number to the AM3S. Only when the random number matches the number displayed on the AM3S screen can the device be bound to the device.</p>
 			</div>
 			
 		    
@@ -327,12 +232,12 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>setRandomNumberBlock</code></th>
-						<td><p>True: Sent successfully，False: Failed。Random number is six digits, ranging from 0 – 999999. <a href="../Classes/AM3S.html">AM3S</a> will receive the random number and display on screen. The user will have to enter it into the app.</p></td>
+						<td><p>True: Sent successfully，False: Failed。Random number is six digits, ranging from 0 – 999999. AM3S will receive the random number and display on screen. The user will have to enter it into the app.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -343,11 +248,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Sending a random number,This API sends a random number to the <a href="../Classes/AM3S.html">AM3S</a>. Only when the random number matches the number displayed on the <a href="../Classes/AM3S.html">AM3S</a> screen can the device be bound to the device.</p>
-			</div>
 			
 
 			
@@ -395,7 +295,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -406,11 +306,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Sync time</p>
-			</div>
 			
 
 			
@@ -427,8 +322,8 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandAM3SSetTimeFormatAndNation:withErrorBlock:" title="commandAM3SSetTimeFormatAndNation:withErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandAM3SSetTimeFormatAndNation:withErrorBlock:">&ndash;&nbsp;commandAM3SSetTimeFormatAndNation:withErrorBlock:</a></code>
+	<a name="//api/name/commandAM3SSetTimeFormatAndNation:withFinishResult:withErrorBlock:" title="commandAM3SSetTimeFormatAndNation:withFinishResult:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandAM3SSetTimeFormatAndNation:withFinishResult:withErrorBlock:">&ndash;&nbsp;commandAM3SSetTimeFormatAndNation:withFinishResult:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -443,7 +338,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandAM3SSetTimeFormatAndNation:(DisposeAM3STimeFormatAndNationSettingBlock)<em>setTimeFormatBlock</em> withErrorBlock:(DisposeAM3SErrorBlock)<em>errorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandAM3SSetTimeFormatAndNation:(AM3STimeFormatAndNation)<em>timeFormatAndNation</em> withFinishResult:(DisposeAM3STimeFormatAndNationSettingBlock)<em>setTimeFormatBlock</em> withErrorBlock:(DisposeAM3SErrorBlock)<em>errorBlock</em></code></div>
 
 		    
 			
@@ -452,13 +347,19 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<table class="argument-def parameter-def">
 				
 					<tr>
+						<th scope="row" class="argument-name"><code>timeFormatAndNation</code></th>
+						<td><p>AM3STimeFormat_hh,AM3STimeFormat_HH,AM3STimeFormat_NoEuropeAndhh,AM3STimeFormat_EuropeAndhh,AM3STimeFormat_NoEuropeAndHH,AM3STimeFormat_EuropeAndHH,</p></td>
+					</tr>
+				
+					<tr>
 						<th scope="row" class="argument-name"><code>setTimeFormatBlock</code></th>
 						<td><p>True: Success， False: Failed.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.
+@Notice  Notice: Firmware version 1.0.0 and above supports AM3STimeFormat_NoEuropeAndhh,AM3STimeFormat_EuropeAndhh,AM3STimeFormat_NoEuropeAndHH,AM3STimeFormat_EuropeAndHH,</p></td>
 					</tr>
 				
 				</table>
@@ -469,11 +370,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set time format and nation</p>
-			</div>
 			
 
 			
@@ -501,7 +397,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Binding <a href="../Classes/AM3S.html">AM3S</a> to user,Account binding requires an active internet connection.</p>
+				<p>Binding AM3S to user,Account binding requires an active internet connection.</p>
 			</div>
 			
 		    
@@ -526,7 +422,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -537,11 +433,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Binding <a href="../Classes/AM3S.html">AM3S</a> to user,Account binding requires an active internet connection.</p>
-			</div>
 			
 
 			
@@ -569,7 +460,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p><a href="../Classes/AM3S.html">AM3S</a> initialization,Must be called the first time to ensure that the <a href="../Classes/AM3S.html">AM3S</a> has correct user information, goals, time, battery checks, etc.</p>
+				<p>AM3S initialization,Must be called the first time to ensure that the AM3S has correct user information, goals, time, battery checks, etc.</p>
 			</div>
 			
 		    
@@ -609,7 +500,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -620,11 +511,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p><a href="../Classes/AM3S.html">AM3S</a> initialization,Must be called the first time to ensure that the <a href="../Classes/AM3S.html">AM3S</a> has correct user information, goals, time, battery checks, etc.</p>
-			</div>
 			
 
 			
@@ -652,7 +538,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Upload <a href="../Classes/AM3S.html">AM3S</a> data,Data type: 5 minutes of active data, total number of steps for the day, and total calories.Also includes the number of steps for the 5 minutes of motion data, total calories for the current time, calories of the steps, and total calories.</p>
+				<p>Upload AM3S data,Data type: 5 minutes of active data, total number of steps for the day, and total calories.Also includes the number of steps for the 5 minutes of motion data, total calories for the current time, calories of the steps, and total calories.</p>
 			</div>
 			
 		    
@@ -682,7 +568,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -693,11 +579,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Upload <a href="../Classes/AM3S.html">AM3S</a> data,Data type: 5 minutes of active data, total number of steps for the day, and total calories.Also includes the number of steps for the 5 minutes of motion data, total calories for the current time, calories of the steps, and total calories.</p>
-			</div>
 			
 
 			
@@ -725,7 +606,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Upload <a href="../Classes/AM3S.html">AM3S</a> data,Data type: 5 minutes of sleep data</p>
+				<p>Upload AM3S data,Data type: 5 minutes of sleep data</p>
 			</div>
 			
 		    
@@ -755,7 +636,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -766,11 +647,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Upload <a href="../Classes/AM3S.html">AM3S</a> data,Data type: 5 minutes of sleep data</p>
-			</div>
 			
 
 			
@@ -798,7 +674,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Upload <a href="../Classes/AM3S.html">AM3S</a> data,Data type: Sync current active data</p>
+				<p>Upload AM3S data,Data type: Sync current active data</p>
 			</div>
 			
 		    
@@ -818,7 +694,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -829,11 +705,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Upload <a href="../Classes/AM3S.html">AM3S</a> data,Data type: Sync current active data</p>
-			</div>
 			
 
 			
@@ -861,7 +732,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Upload <a href="../Classes/AM3S.html">AM3S</a> report data.</p>
+				<p>Upload AM3S report data.</p>
 			</div>
 			
 		    
@@ -886,7 +757,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -897,11 +768,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Upload <a href="../Classes/AM3S.html">AM3S</a> report data.</p>
-			</div>
 			
 
 			
@@ -949,7 +815,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -960,11 +826,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get totoal alarm infomation</p>
-			</div>
 			
 
 			
@@ -1017,7 +878,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -1028,11 +889,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set alarm.</p>
-			</div>
 			
 
 			
@@ -1085,7 +941,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -1096,11 +952,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Delete alarm.</p>
-			</div>
 			
 
 			
@@ -1148,7 +999,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -1159,11 +1010,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get reminder.</p>
-			</div>
 			
 
 			
@@ -1216,7 +1062,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -1227,11 +1073,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set reminders.</p>
-			</div>
 			
 
 			
@@ -1274,7 +1115,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>deviceStateInfoBlock</code></th>
-						<td><p>AM status，State_wrist  (<a href="../Classes/AM3S.html">AM3S</a> being worn on the wrist)，State_waist (<a href="../Classes/AM3S.html">AM3S</a> worn with belt clip).</p></td>
+						<td><p>AM status，State_wrist  (AM3S being worn on the wrist)，State_waist (AM3S worn with belt clip).</p></td>
 					</tr>
 				
 					<tr>
@@ -1284,7 +1125,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -1295,11 +1136,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get device state infomation</p>
-			</div>
 			
 
 			
@@ -1347,7 +1183,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -1358,11 +1194,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Restore factory settings.</p>
-			</div>
 			
 
 			
@@ -1390,7 +1221,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Disconnect <a href="../Classes/AM3S.html">AM3S</a> connection.</p>
+				<p>Disconnect AM3S connection.</p>
 			</div>
 			
 		    
@@ -1410,7 +1241,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -1421,11 +1252,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Disconnect <a href="../Classes/AM3S.html">AM3S</a> connection.</p>
-			</div>
 			
 
 			
@@ -1473,7 +1299,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -1484,11 +1310,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get time format and nation</p>
-			</div>
 			
 
 			
@@ -1536,7 +1357,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -1547,11 +1368,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get user infomation</p>
-			</div>
 			
 
 			
@@ -1579,8 +1395,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set BMR
-@param bmr</p>
+				<p>Set BMR</p>
 			</div>
 			
 		    
@@ -1594,13 +1409,18 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<table class="argument-def parameter-def">
 				
 					<tr>
+						<th scope="row" class="argument-name"><code>bmr</code></th>
+						<td><p>ranging from 0 – 5000.</p></td>
+					</tr>
+				
+					<tr>
 						<th scope="row" class="argument-name"><code>finishResultBlock</code></th>
 						<td><p>True: Delete successful，False: Failed</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -1611,12 +1431,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set BMR
-@param bmr</p>
-			</div>
 			
 
 			
@@ -1664,7 +1478,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -1675,11 +1489,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Get Picture.</p>
-			</div>
 			
 
 			
@@ -1732,7 +1541,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>errorBlock</code></th>
-						<td><p>Communication error codes, see <a href="../Classes/AM3S.html">AM3S</a> error descriptions.</p></td>
+						<td><p>Communication error codes, see AM3S error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -1744,11 +1553,6 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Set Picture.</p>
-			</div>
-			
 
 			
 
@@ -1758,6 +1562,55 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
 				<p><code class="declared-in-ref">AM3S_V2.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/receiveAM3SDataTimerIsRespond:withIndex:" title="receiveAM3SDataTimerIsRespond:withIndex:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/receiveAM3SDataTimerIsRespond:withIndex:">&ndash;&nbsp;receiveAM3SDataTimerIsRespond:withIndex:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>/开始同步</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)receiveAM3SDataTimerIsRespond:(BOOL)<em>status</em> withIndex:(NSInteger)<em>index</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">AM3S_V2.m</code></p>
 			</div>
 			
 			
@@ -1778,7 +1631,7 @@ The measurement via SDK will be operated in the case of 1-3, and will be termina
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 iHealth. All rights reserved. Updated: 2016-10-23</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

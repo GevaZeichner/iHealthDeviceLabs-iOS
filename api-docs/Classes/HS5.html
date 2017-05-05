@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>HS5 Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">iHealthSDKStatic </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">iHealth</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/commandCreateMeasureWithUser:unStableWeight:MeasureWeight:ImpedanceType:BodyCompositionMeasurements:Disposehs5ErrorBlock:">- commandCreateMeasureWithUser:unStableWeight:MeasureWeight:ImpedanceType:BodyCompositionMeasurements:Disposehs5ErrorBlock:</option>
+		
+		<option value="//api/name/commandCreateMemoryWithUser:uploadConnect:TransferMemorryData:DisposeProgress:MemorryData:FinishTransmission:Disposehs5ErrorBlock:">- commandCreateMemoryWithUser:uploadConnect:TransferMemorryData:DisposeProgress:MemorryData:FinishTransmission:Disposehs5ErrorBlock:</option>
+		
+		<option value="//api/name/commandCreateUser:position:DisposeHS5Result:Disposehs5ErrorBlock:">- commandCreateUser:position:DisposeHS5Result:Disposehs5ErrorBlock:</option>
+		
+		<option value="//api/name/commandCreateUserManageConnectWithUser:currentUserSerialNub:deviceUserList:Disposehs5ErrorBlock:">- commandCreateUserManageConnectWithUser:currentUserSerialNub:deviceUserList:Disposehs5ErrorBlock:</option>
+		
+		<option value="//api/name/commandDelteUser:DisposeHS5Result:Disposehs5ErrorBlock:">- commandDelteUser:DisposeHS5Result:Disposehs5ErrorBlock:</option>
+		
+		<option value="//api/name/commandEndCurrentConnect:Disposehs5ErrorBlock:">- commandEndCurrentConnect:Disposehs5ErrorBlock:</option>
+		
+		<option value="//api/name/commandModifyUser:DisposeHS5Result:Disposehs5ErrorBlock:">- commandModifyUser:DisposeHS5Result:Disposehs5ErrorBlock:</option>
+		
+		<option value="//api/name/commandRebuildUdpLinker">- commandRebuildUdpLinker</option>
+		
+		<option value="//api/name/commandcleanDeviceDisposeHS5Result:Disposehs5ErrorBlock:">- commandcleanDeviceDisposeHS5Result:Disposehs5ErrorBlock:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">HS5 Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>HS5.h<br />HS5.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/commandCreateUserManageConnectWithUser:currentUserSerialNub:deviceUserList:Disposehs5ErrorBlock:" title="commandCreateUserManageConnectWithUser:currentUserSerialNub:deviceUserList:Disposehs5ErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandCreateUserManageConnectWithUser:currentUserSerialNub:deviceUserList:Disposehs5ErrorBlock:">&ndash;&nbsp;commandCreateUserManageConnectWithUser:currentUserSerialNub:deviceUserList:Disposehs5ErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>Establish memory and measurement connection</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandCreateUserManageConnectWithUser:(HealthUser *)<em>tempUser</em> currentUserSerialNub:(CurrentSerialNub)<em>serialNub</em> deviceUserList:(MemorryUserListHS5Data)<em>MemorryUserListHS5Data</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Import Parameters:
+    tempUser, included properties: userID、clientID、clientSecret。
+    userID: either email or mobile phone number (mobile phone number is not currently supported yet)
+    height: the height of a user (cm);
+    clientID &amp; clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: heguangming@ihealthlabs.com.cn for more information.
+Return Parameters:
+    The measurement via SDK will be operated in the case of 1-3, and will be terminated if any of 4-8 occurs. The interface needs to be re-called after analyzing the return parameters.
+    Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection; UserAuthen_TrySuccess is invalidate for HS5.
+    SerialNub: The only identification of a user，should be reserved in third party apps，provide to other Apps [Range:0~0xFFFFFFF]
+    MemorryUserListHS5Data：Existing user info in HS5，including serialNub、Position of users. Related key: serialNumber、position
+    disposeErrorBlock：error codes in transmission process: Errors in HS5</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandCreateUser:position:DisposeHS5Result:Disposehs5ErrorBlock:" title="commandCreateUser:position:DisposeHS5Result:Disposehs5ErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandCreateUser:position:DisposeHS5Result:Disposehs5ErrorBlock:">&ndash;&nbsp;commandCreateUser:position:DisposeHS5Result:Disposehs5ErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>Create new user</li>
+<li>Use the function if the SerialNub of current user is not included in user list of HS5 and the user number is less than 20</li>
+<li>Import parameters:
+tempUser,  included properties: serialNub、age、birthday、height、isAthlete、sex。
+serialNub: The only identification for user [Range:0~0x7FFFFFFF]
+age:user&rsquo;s age  Range:7~99
+birthday: User’s birthday, NSDate
+height: User’s height, (cm) Range:81~219
+isAthlete: If user is an athelete, UserIsAthelete_No: no, UserIsAthelete_Yes: Yes
+sex: User’s sex, UserSex_Female: female, UserSex_Male: male
+tempPosition: Position of user, range: 0～19, pick from empty position that has never been occupied
+Return Parameters：
+disposeHS5Result：Success:Yes，Fail:No.
+disposeErrorBlock: error codes in transmission process: Errors in HS5</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandCreateUser:(HealthUser *)<em>tempUser</em> position:(uint8_t)<em>tempPosition</em> DisposeHS5Result:(DisposeHS5Result)<em>disposeHS5Result</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandModifyUser:DisposeHS5Result:Disposehs5ErrorBlock:" title="commandModifyUser:DisposeHS5Result:Disposehs5ErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandModifyUser:DisposeHS5Result:Disposehs5ErrorBlock:">&ndash;&nbsp;commandModifyUser:DisposeHS5Result:Disposehs5ErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>Edit User Info</li>
+<li>If the SerialNub of current user already exists in the user list of HS5, this will be used when user info is changed.
+Import Parameters：
+  tempUser, included properties： serialNub、birthday、height、isAthlete、sex，instructions refer to “new user Api”.
+Return Parameters：
+  disposeHS5Result：Success:Yes，Fail:No.
+  disposeErrorBlock: error codes in transmission process: Errors in HS5</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandModifyUser:(HealthUser *)<em>tempUser</em> DisposeHS5Result:(DisposeHS5Result)<em>disposeHS5Result</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandDelteUser:DisposeHS5Result:Disposehs5ErrorBlock:" title="commandDelteUser:DisposeHS5Result:Disposehs5ErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandDelteUser:DisposeHS5Result:Disposehs5ErrorBlock:">&ndash;&nbsp;commandDelteUser:DisposeHS5Result:Disposehs5ErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>Delete Specified User</li>
+<li>This will be used deleting account in HS5.
+Import Parameters:
+  tempUser, included properties: serialNub，instructions refer to “new user Api”.
+Return Parameters:
+  disposeHS5Result：Success:Yes，Fail:No.
+  disposeErrorBlock：error codes in transmission proces: Errors in HS5</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandDelteUser:(HealthUser *)<em>tempUser</em> DisposeHS5Result:(DisposeHS5Result)<em>disposeHS5Result</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandCreateMemoryWithUser:uploadConnect:TransferMemorryData:DisposeProgress:MemorryData:FinishTransmission:Disposehs5ErrorBlock:" title="commandCreateMemoryWithUser:uploadConnect:TransferMemorryData:DisposeProgress:MemorryData:FinishTransmission:Disposehs5ErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandCreateMemoryWithUser:uploadConnect:TransferMemorryData:DisposeProgress:MemorryData:FinishTransmission:Disposehs5ErrorBlock:">&ndash;&nbsp;commandCreateMemoryWithUser:uploadConnect:TransferMemorryData:DisposeProgress:MemorryData:FinishTransmission:Disposehs5ErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>create memory upload connection</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandCreateMemoryWithUser:(HealthUser *)<em>tempUser</em> uploadConnect:(DisposeHS5Result)<em>disposeHS5Result</em> TransferMemorryData:(StartHS5Transmission)<em>startTransmission</em> DisposeProgress:(DisposeHS5Progress)<em>progress</em> MemorryData:(MemorryHS5Data)<em>memorryData</em> FinishTransmission:(FinishHS5Transmission)<em>finishTransmission</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Import Parameters
+    tempUser, included properties： serialNub [Range:0~0x7FFFFFFF]，instructions refer to “new user Api”.
+Return Parameters:
+    disposeHS5Result: Success:Yes，Fail:No.
+    startTransmission: Finish memory transmission.
+    progress: Memory transmission progress，0.0～1.0.
+    memorryData: Record data，More details and key refer Measure API. Additionally add time-measure property, related key: date.dataID
+    finishTransmission：Finish Memory Transmission
+    disposeErrorBlock: error codes in transmission process: Errors in HS5</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandCreateMeasureWithUser:unStableWeight:MeasureWeight:ImpedanceType:BodyCompositionMeasurements:Disposehs5ErrorBlock:" title="commandCreateMeasureWithUser:unStableWeight:MeasureWeight:ImpedanceType:BodyCompositionMeasurements:Disposehs5ErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandCreateMeasureWithUser:unStableWeight:MeasureWeight:ImpedanceType:BodyCompositionMeasurements:Disposehs5ErrorBlock:">&ndash;&nbsp;commandCreateMeasureWithUser:unStableWeight:MeasureWeight:ImpedanceType:BodyCompositionMeasurements:Disposehs5ErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>Establish Measurement Connection
+Import Parameters:
+  tempUser, included properties: serialNub [Range:0~0x7FFFFFFF]、height，instructions refer to “new user Api”.
+Return Parameters:
+  unStableHS5Weight: Current weight, (kg) [Value Range:0.0~150.0]
+  stableHS5Weight: Stable weight, (kg) [Value Range:0.0~150.0]
+  impedanceWeight: Weight by impedence, (kg)[Value Range:0.0~150.0]
+  bodyCompositionMeasurements: body info, includes weight(kg) Range:0.0~150.0,  fat content(%) Rnage:0.0~100.0, water content(%) Range:0.0~100.0, muscle content(%) Rnage:0.0~100.0, bone mass Range:0.0~25.5, visceral fat level Range:0~255, DCI(Kcal) Range:0~65535. keys: weight, weightFatValue, waterValue, muscleValue, skeletonValue, VFatLevelValue, DCIValue, dataID
+  disposeHS5Result: Success:Yes，Fail:No.
+  disposeErrorBlock: error codes in transmission process: Errors in HS5</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandCreateMeasureWithUser:(HealthUser *)<em>tempUser</em> unStableWeight:(UnStableHS5Weight)<em>unStableHS5Weight</em> MeasureWeight:(StableHS5Weight)<em>stableHS5Weight</em> ImpedanceType:(ImpedanceWeight)<em>impedanceWeight</em> BodyCompositionMeasurements:(BodyCompositionMeasurements)<em>bodyCompositionMeasurements</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandEndCurrentConnect:Disposehs5ErrorBlock:" title="commandEndCurrentConnect:Disposehs5ErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandEndCurrentConnect:Disposehs5ErrorBlock:">&ndash;&nbsp;commandEndCurrentConnect:Disposehs5ErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stop Current Action</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandEndCurrentConnect:(DisposeHS5Result)<em>disposeHS5Result</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandcleanDeviceDisposeHS5Result:Disposehs5ErrorBlock:" title="commandcleanDeviceDisposeHS5Result:Disposehs5ErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandcleanDeviceDisposeHS5Result:Disposehs5ErrorBlock:">&ndash;&nbsp;commandcleanDeviceDisposeHS5Result:Disposehs5ErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>Clean HS5
+Explanation:Delete current Auten Device and then rebuild connection.
+Return Parameters:
+disposeHS5Result: Success:Yes，Fail:No.
+disposeErrorBlock: error codes in transmission process: Errors in HS5</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandcleanDeviceDisposeHS5Result:(DisposeHS5Result)<em>disposeHS5Result</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandRebuildUdpLinker" title="commandRebuildUdpLinker"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandRebuildUdpLinker">&ndash;&nbsp;commandRebuildUdpLinker</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Rebuild UDP connection</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandRebuildUdpLinker</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -57,3 +57,19 @@ Description: Add Flow Chart, BG errorID.
 Release Date: 2016-5-12
 ```
 
+### 7. V2.1
+```
+Description:
+
+1，Modify the authentication way, If you want to use the iHealth Device, you must first call authentication method, can call after certification by iHealth relevant methods of the device.
+2，Method call any product authentication cancelled.
+3,Add support Device:iHealth BP5S 、Continua BP
+4,Support BG5 GDH code
+5,upgrade SDKUpdateDevice Method  support file download progess
+6,To optimize the demo program
+7,To reconstruct the BP method is called
+8,To optimize the interface calls, support the instruction cache
+
+Release Date: 2017-5-5
+```
+

@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">iHealth </a>
+				<a href="../index.html">iHealthSDKStatic </a>
 			</h1>
 
 			<p id="developer-home">
@@ -62,11 +62,13 @@
 		
 		<option value="//api/name/commandEnergy:errorBlock:">- commandEnergy:errorBlock:</option>
 		
-		<option value="//api/name/commandFounction:errorBlock:">- commandFounction:errorBlock:</option>
+		<option value="//api/name/commandFunction:errorBlock:">- commandFunction:errorBlock:</option>
 		
-		<option value="//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:">- commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:</option>
+		<option value="//api/name/commandSetUnit:disposeSetReslut:errorBlock:">- commandSetUnit:disposeSetReslut:errorBlock:</option>
 		
-		<option value="//api/name/commandTransferMemorytotalCount:errorBlock:">- commandTransferMemorytotalCount:errorBlock:</option>
+		<option value="//api/name/commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:">- commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:</option>
+		
+		<option value="//api/name/commandTransferMemoryTotalCount:errorBlock:">- commandTransferMemoryTotalCount:errorBlock:</option>
 		
 	</optgroup>
 	
@@ -89,10 +91,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td>NSObject</td>
+	<td><a href="../Classes/BPDevice.html">BPDevice</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>KN550BT.h</td>
+	<td>KN550BT.h<br />KN550BT.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -110,8 +112,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/commandFounction:errorBlock:" title="commandFounction:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandFounction:errorBlock:">&ndash;&nbsp;commandFounction:errorBlock:</a></code>
+	<a name="//api/name/commandFunction:errorBlock:" title="commandFunction:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandFunction:errorBlock:">&ndash;&nbsp;commandFunction:errorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -126,7 +128,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandFounction:(BlockDeviceFounction)<em>founction</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandFunction:(BlockDeviceFunction)<em>function</em> errorBlock:(BlockError)<em>error</em></code></div>
 
 		    
 			
@@ -135,13 +137,13 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to refer ‘error’ in ‘Establish measurement connection’ in KN550BT.</p></td>
+						<th scope="row" class="argument-name"><code>function</code></th>
+						<td><p>A block to return the function and states that the device supports.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>Function</code></th>
-						<td><p>A block to return the function and states that the device supports.</p></td>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>A block to refer ‘error’ in ‘Establish measurement connection’ in KN550BT.</p></td>
 					</tr>
 				
 				</table>
@@ -152,11 +154,6 @@
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Synchronize time and judge if the device supports the function of up Air Measurement, arm Measurement, Angle Sensor, Angle Setting, HSD, Offline Memory, mutable Groups Upload, Self Upgrade. ‘True’ means yes or on, ‘False’ means no or off.</p>
-			</div>
 			
 
 			
@@ -216,11 +213,6 @@
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Query battery remaining energy.</p>
-			</div>
-			
 
 			
 
@@ -236,8 +228,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandTransferMemorytotalCount:errorBlock:" title="commandTransferMemorytotalCount:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemorytotalCount:errorBlock:">&ndash;&nbsp;commandTransferMemorytotalCount:errorBlock:</a></code>
+	<a name="//api/name/commandTransferMemoryTotalCount:errorBlock:" title="commandTransferMemoryTotalCount:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemoryTotalCount:errorBlock:">&ndash;&nbsp;commandTransferMemoryTotalCount:errorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -252,7 +244,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemorytotalCount:(BlockBachCount)<em>totalCount</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemoryTotalCount:(BlockBachCount)<em>totalCount</em> errorBlock:(BlockError)<em>error</em></code></div>
 
 		    
 			
@@ -261,13 +253,13 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to return the error</p></td>
+						<th scope="row" class="argument-name"><code>totalCount</code></th>
+						<td><p>item quantity of total data.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>TotalCount:</code></th>
-						<td><p>item quantity of total data</p></td>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>A block to return the error.</p></td>
 					</tr>
 				
 				</table>
@@ -278,11 +270,6 @@
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Upload offline data total Count.</p>
-			</div>
 			
 
 			
@@ -299,8 +286,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:" title="commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:">&ndash;&nbsp;commandTransferMemoryDataWithUser:clientID:clientSecret:Authentication:totalCount:pregress:dataArray:errorBlock:</a></code>
+	<a name="//api/name/commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:" title="commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:">&ndash;&nbsp;commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -315,7 +302,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemoryDataWithUser:(NSString *)<em>userID</em> clientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> Authentication:(BlockUserAuthentication)<em>disposeAuthenticationBlock</em> totalCount:(BlockBachCount)<em>totalCount</em> pregress:(BlockBachProgress)<em>progress</em> dataArray:(BlockBachArray)<em>uploadDataArray</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemoryDataWithTotalCount:(BlockBachCount)<em>totalCount</em> progress:(BlockBachProgress)<em>progress</em> dataArray:(BlockBachArray)<em>uploadDataArray</em> errorBlock:(BlockError)<em>error</em></code></div>
 
 		    
 			
@@ -324,30 +311,18 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>userID</code></th>
-						<td><p>the only identification for the user，by the form of email or cell phone #(cell-phone-# form is not supported temperately).</p></td>
+						<th scope="row" class="argument-name"><code>totalCount</code></th>
+						<td><p>item quantity of total data</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>clientID</code></th>
-						<td><p>see bellow.</p></td>
+						<th scope="row" class="argument-name"><code>progress</code></th>
+						<td><p>upload completion ratio , from 0.0 to 1.0 or 0%~100％, 100% means upload completed.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeAuthenticationBlock</code></th>
-						<td><p>A block to return parameter of ‘userid’, ’clientID’, ’clientSecret’ after the verification.
-The interpretation for the verification:
-1. UserAuthen_RegisterSuccess, New-user registration succeeded.
-2. UserAuthen_LoginSuccess， User login succeeded.
-3. UserAuthen_CombinedSuccess, The user is iHealth user as well, measurement via SDK has been activated, and the data from the measurement belongs to the user.
-4. UserAuthen_TrySuccess, testing without Internet connection succeeded.
-5. UserAuthen_InvalidateUserInfo, Userid/clientID/clientSecret verification failed.
-6. UserAuthen_SDKInvalidateRight, SDK has not been authorized.
-7. UserAuthen_UserInvalidateRight,User has not been authorized.
-8. UserAuthen_InternetError, Internet error, verification failed.
-&ndash;PS:
-The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.
-@Notice   By the first time of new user register via SDK, ‘iHealth disclaimer’ will pop up automatically, and require the user agrees to continue. SDK application requires Internet connection; there is 10-day tryout if SDK cannot connect Internet, SDK is fully functional during tryout period, but will be terminated without verification through Internet after 10 days.</p></td>
+						<th scope="row" class="argument-name"><code>uploadDataArray</code></th>
+						<td><p>offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment. corresponding KEY as time, sys, dia, heartRate, irregular.</p></td>
 					</tr>
 				
 					<tr>
@@ -381,24 +356,67 @@ Specification:
 25.  BPInputParameterError=400:  Parameter input error.</p></td>
 					</tr>
 				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">KN550BT.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandSetUnit:disposeSetReslut:errorBlock:" title="commandSetUnit:disposeSetReslut:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandSetUnit:disposeSetReslut:errorBlock:">&ndash;&nbsp;commandSetUnit:disposeSetReslut:errorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set units for the Device</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandSetUnit:(NSString *)<em>UnitName</em> disposeSetReslut:(BlockSuccess)<em>setResult</em> errorBlock:(BlockError)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
 					<tr>
-						<th scope="row" class="argument-name"><code>TotalCount:</code></th>
-						<td><p>item quantity of total data</p></td>
+						<th scope="row" class="argument-name"><code>UnitName</code></th>
+						<td><p>The unit name string that KN550BT show result should use, must be @&ldquo;mmHg&rdquo; or @&ldquo;kPa&rdquo;.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>clientsecret</code></th>
-						<td><p>‘clientID’ and ‘clientsecret’ are the only identification for user of SDK, are required registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.</p></td>
+						<th scope="row" class="argument-name"><code>setResult</code></th>
+						<td><p>This block return means set success.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>UploadDataArray:</code></th>
-						<td><p>offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment. corresponding KEY is time, sys, dia, heartRate, irregular</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>Progress:</code></th>
-						<td><p>upload completion ratio , from 0.0 to 1.0 or 0%~100％, 100% means upload completed.</p></td>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>A block to return the error in set Unit communication.</p></td>
 					</tr>
 				
 				</table>
@@ -409,11 +427,6 @@ Specification:
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Upload offline data.</p>
-			</div>
 			
 
 			
@@ -456,11 +469,6 @@ Specification:
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Disconnect current device</p>
-			</div>
-			
 
 			
 
@@ -490,7 +498,7 @@ Specification:
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 iHealth. All rights reserved. Updated: 2016-10-23</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

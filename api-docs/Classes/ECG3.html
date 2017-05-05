@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>ECG3 Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">iHealthSDKStatic </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">iHealth</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/commandECG3CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:">- commandECG3CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:</option>
+		
+		<option value="//api/name/commandECG3FinishMeasure:withErrorBlock:">- commandECG3FinishMeasure:withErrorBlock:</option>
+		
+		<option value="//api/name/commandECG3GetBatteryInfo:withErrorBlock:">- commandECG3GetBatteryInfo:withErrorBlock:</option>
+		
+		<option value="//api/name/commandECG3StartMeasure:withMeasureData:withErrorBlock:">- commandECG3StartMeasure:withMeasureData:withErrorBlock:</option>
+		
+		<option value="//api/name/commandECG3SyncTime:withErrorBlock:">- commandECG3SyncTime:withErrorBlock:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">ECG3 Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>ECG3.h<br />ECG3.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/commandECG3CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:" title="commandECG3CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandECG3CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:">&ndash;&nbsp;commandECG3CreateUserManageConnectWithUser:withAuthenticationResult:withCurrentUserID:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Establish memory and measurement connection,Only after verification through this interface can we move onto using other API&rsquo;s.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandECG3CreateUserManageConnectWithUser:(HealthUser *)<em>tempUser</em> withAuthenticationResult:(BlockUserAuthentication)<em>authenticationResultBlock</em> withCurrentUserID:(CurrentSerialNub)<em>currentUserIDBlock</em> withErrorBlock:(DisposeECG3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempUser</code></th>
+						<td><p>includes properties：clientID，clientSecret，userID.userID，either email or mobile phone number (mobile phone number not yet supported).ClientID and clientSecret, the only identification for users of the SDK, requires registration from iHealth administrator, please email:heguangming@ihealthlabs.com.cn for more information</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>authenticationResultBlock</code></th>
+						<td><p>The return parameters of ’‘userid’, ’clientID’,and ‘clientSecret’ after verification.
+The interpretation for the verification:
+1. UserAuthen_RegisterSuccess, New-user registration succeeded.
+2. UserAuthen_LoginSuccess， User login succeeded.
+3. UserAuthen_CombinedSuccess, The user is iHealth user as well, measurement via SDK has been activated, and the data from the measurement belongs to the user.
+4. UserAuthen_TrySuccess, testing without Internet connection succeeded.
+5. UserAuthen_InvalidateUserInfo, Userid/clientID/clientSecret verification failed.
+6. UserAuthen_SDKInvalidateRight, SDK has not been authorized.
+7. UserAuthen_UserInvalidateRight,User has not been authorized.
+8. UserAuthen_InternetError, Internet error, verification failed.
+&ndash;PS:
+The measurement via SDK will be operated in the case of 1-3, and will be terminated if any of 4-8 occurs. The interface needs to be re-called after analyzing the return parameters.
+@Notice  Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>currentUserIDBlock</code></th>
+						<td><p>Uniquely identifies the user, the SDK requires this to be stored. This ID will be sent to the ECG3 and will allow the ECG3 to pair with only this user.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see ECG3 error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ECG3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandECG3SyncTime:withErrorBlock:" title="commandECG3SyncTime:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandECG3SyncTime:withErrorBlock:">&ndash;&nbsp;commandECG3SyncTime:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Sync time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandECG3SyncTime:(DisposeECG3SyncTimeBlock)<em>syncTimeBlock</em> withErrorBlock:(DisposeECG3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>syncTimeBlock</code></th>
+						<td><p>True: Success， False: Failed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see ECG3 error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ECG3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandECG3StartMeasure:withMeasureData:withErrorBlock:" title="commandECG3StartMeasure:withMeasureData:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandECG3StartMeasure:withMeasureData:withErrorBlock:">&ndash;&nbsp;commandECG3StartMeasure:withMeasureData:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start Measure</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandECG3StartMeasure:(DisposeECG3StartMeasureBlock)<em>startMeasureBlock</em> withMeasureData:(DisposeECG3MeasureDataBlock)<em>measureDataBlock</em> withErrorBlock:(DisposeECG3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startMeasureBlock</code></th>
+						<td><p>True: Success， False: Failed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>measureDataBlock</code></th>
+						<td><p>measureData：ECGData</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see ECG3 error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ECG3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandECG3FinishMeasure:withErrorBlock:" title="commandECG3FinishMeasure:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandECG3FinishMeasure:withErrorBlock:">&ndash;&nbsp;commandECG3FinishMeasure:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Finish Measure</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandECG3FinishMeasure:(DisposeECG3FinishMeasureBlock)<em>finishMeasureBlock</em> withErrorBlock:(DisposeECG3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>finishMeasureBlock</code></th>
+						<td><p>True: Success， False: Failed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see ECG3 error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ECG3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandECG3GetBatteryInfo:withErrorBlock:" title="commandECG3GetBatteryInfo:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandECG3GetBatteryInfo:withErrorBlock:">&ndash;&nbsp;commandECG3GetBatteryInfo:withErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get Battery</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandECG3GetBatteryInfo:(DisposeECG3BatteryBlock)<em>batteryBlock</em> withErrorBlock:(DisposeECG3ErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>batteryBlock</code></th>
+						<td><p>from 0～100.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>Communication error codes, see ECG3 error descriptions.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">ECG3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">iHealth </a>
+				<a href="../index.html">iHealthSDKStatic </a>
 			</h1>
 
 			<p id="developer-home">
@@ -62,13 +62,13 @@
 		
 		<option value="//api/name/commandQueryEnergy:leg:errorBlock:">- commandQueryEnergy:leg:errorBlock:</option>
 		
-		<option value="//api/name/commandStartMeasureWithUser:clientID:clientSecret:Authentication:armPressure:armXiaoboWithHeart:armXiaoboNoHeart:armResult:errorBlock:">- commandStartMeasureWithUser:clientID:clientSecret:Authentication:armPressure:armXiaoboWithHeart:armXiaoboNoHeart:armResult:errorBlock:</option>
+		<option value="//api/name/commandStartArmMeasureWithZeroingState:armPressure:armWaveletWithHeartbeat:armWaveletWithoutHeartbeat:armResult:errorBlock:">- commandStartArmMeasureWithZeroingState:armPressure:armWaveletWithHeartbeat:armWaveletWithoutHeartbeat:armResult:errorBlock:</option>
 		
-		<option value="//api/name/commandStartMeasureWithUser:clientID:clientSecret:Authentication:armPressure:legPressure:armXiaoboWithHeart:legXiaoboWithHeart:armXiaoboNoHeart:legXiaoboNoHeart:armResult:legResult:errorBlock:">- commandStartMeasureWithUser:clientID:clientSecret:Authentication:armPressure:legPressure:armXiaoboWithHeart:legXiaoboWithHeart:armXiaoboNoHeart:legXiaoboNoHeart:armResult:legResult:errorBlock:</option>
+		<option value="//api/name/commandStartMeasureWithZeroingState:armPressure:legPressure:armWaveletWithHeartbeat:legWaveletWithHeartbeat:armWaveletWithoutHeartbeat:legWaveletWithoutHeartbeat:armResult:legResult:errorBlock:">- commandStartMeasureWithZeroingState:armPressure:legPressure:armWaveletWithHeartbeat:legWaveletWithHeartbeat:armWaveletWithoutHeartbeat:legWaveletWithoutHeartbeat:armResult:legResult:errorBlock:</option>
 		
-		<option value="//api/name/stopABIArmMeassureBlock:errorBlock:">- stopABIArmMeassureBlock:errorBlock:</option>
+		<option value="//api/name/stopABIArmMeassure">- stopABIArmMeassure</option>
 		
-		<option value="//api/name/stopABIMeassureErrorBlock:errorBlock:">- stopABIMeassureErrorBlock:errorBlock:</option>
+		<option value="//api/name/stopABIMeassure">- stopABIMeassure</option>
 		
 	</optgroup>
 	
@@ -94,7 +94,7 @@
 	<td>NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>ABI.h</td>
+	<td>ABI.h<br />ABI.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -148,7 +148,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to return the error in ‘Establish measurement connection’.</p></td>
+						<td><p>When error occur, this block will be callback.</p></td>
 					</tr>
 				
 				</table>
@@ -159,11 +159,6 @@
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Query battery remaining energy</p>
-			</div>
 			
 
 			
@@ -180,8 +175,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandStartMeasureWithUser:clientID:clientSecret:Authentication:armPressure:legPressure:armXiaoboWithHeart:legXiaoboWithHeart:armXiaoboNoHeart:legXiaoboNoHeart:armResult:legResult:errorBlock:" title="commandStartMeasureWithUser:clientID:clientSecret:Authentication:armPressure:legPressure:armXiaoboWithHeart:legXiaoboWithHeart:armXiaoboNoHeart:legXiaoboNoHeart:armResult:legResult:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandStartMeasureWithUser:clientID:clientSecret:Authentication:armPressure:legPressure:armXiaoboWithHeart:legXiaoboWithHeart:armXiaoboNoHeart:legXiaoboNoHeart:armResult:legResult:errorBlock:">&ndash;&nbsp;commandStartMeasureWithUser:clientID:clientSecret:Authentication:armPressure:legPressure:armXiaoboWithHeart:legXiaoboWithHeart:armXiaoboNoHeart:legXiaoboNoHeart:armResult:legResult:errorBlock:</a></code>
+	<a name="//api/name/commandStartMeasureWithZeroingState:armPressure:legPressure:armWaveletWithHeartbeat:legWaveletWithHeartbeat:armWaveletWithoutHeartbeat:legWaveletWithoutHeartbeat:armResult:legResult:errorBlock:" title="commandStartMeasureWithZeroingState:armPressure:legPressure:armWaveletWithHeartbeat:legWaveletWithHeartbeat:armWaveletWithoutHeartbeat:legWaveletWithoutHeartbeat:armResult:legResult:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandStartMeasureWithZeroingState:armPressure:legPressure:armWaveletWithHeartbeat:legWaveletWithHeartbeat:armWaveletWithoutHeartbeat:legWaveletWithoutHeartbeat:armResult:legResult:errorBlock:">&ndash;&nbsp;commandStartMeasureWithZeroingState:armPressure:legPressure:armWaveletWithHeartbeat:legWaveletWithHeartbeat:armWaveletWithoutHeartbeat:legWaveletWithoutHeartbeat:armResult:legResult:errorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -191,12 +186,13 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Establish measurement connection and start BP measurement</p>
+				<p>Establish measurement connection and start BP measurement
+@Notice   By the first time of new user register via SDK, ‘iHealth disclaimer’ will pop up automatically, and require the user agrees to continue. SDK application requires Internet connection; there is 10-day tryout if SDK cannot connect Internet, SDK is fully functional during tryout period, but will be terminated without verification through Internet after 10 days.</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandStartMeasureWithUser:(NSString *)<em>userID</em> clientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> Authentication:(BlockUserAuthentication)<em>disposeAuthenticationBlock</em> armPressure:(BlockPressure)<em>armPressure</em> legPressure:(BlockPressure)<em>legPressure</em> armXiaoboWithHeart:(BlockXioaboWithHeart)<em>armXiaobo</em> legXiaoboWithHeart:(BlockXioaboWithHeart)<em>legXiaobo</em> armXiaoboNoHeart:(BlockXioaboNoHeart)<em>armXiaoboNoHeart</em> legXiaoboNoHeart:(BlockXioaboNoHeart)<em>legXiaoboNoHeart</em> armResult:(BlockMesureResult)<em>armResult</em> legResult:(BlockMesureResult)<em>legResult</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandStartMeasureWithZeroingState:(BlockZero)<em>blockZeroState</em> armPressure:(BlockPressure)<em>armPressure</em> legPressure:(BlockPressure)<em>legPressure</em> armWaveletWithHeartbeat:(BlockWavelet)<em>blockArmWaveletWithHeartbeat</em> legWaveletWithHeartbeat:(BlockWavelet)<em>blockLegWaveletWithHeartbeat</em> armWaveletWithoutHeartbeat:(BlockWavelet)<em>blockArmWaveletWithoutHeartbeat</em> legWaveletWithoutHeartbeat:(BlockWavelet)<em>blockLegWaveletWithoutHeartbeat</em> armResult:(BlockMeasureResult)<em>armResult</em> legResult:(BlockMeasureResult)<em>legResult</em> errorBlock:(BlockError)<em>error</em></code></div>
 
 		    
 			
@@ -205,30 +201,8 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>userID</code></th>
-						<td><p>The only identification for the user，by the form of email or cell phone #(cell-phone-# form is not supported temperately).</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>clientID</code></th>
-						<td><p>See param &lsquo;clientsecret&rsquo;.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeAuthenticationBlock</code></th>
-						<td><p>A block to return parameter of ‘userid’, ’clientID’, ’clientSecret’ after the verification.
-The interpretation for the verification:
-1. UserAuthen_RegisterSuccess, New-user registration succeeded.
-2. UserAuthen_LoginSuccess， User login succeeded.
-3. UserAuthen_CombinedSuccess, The user is iHealth user as well, measurement via SDK has been activated, and the data from the measurement belongs to the user.
-4. UserAuthen_TrySuccess, testing without Internet connection succeeded.
-5. UserAuthen_InvalidateUserInfo, Userid/clientID/clientSecret verification failed.
-6. UserAuthen_SDKInvalidateRight, SDK has not been authorized.
-7. UserAuthen_UserInvalidateRight,User has not been authorized.
-8. UserAuthen_InternetError, Internet error, verification failed.
-&ndash;PS:
-The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.
-@Notice   By the first time of new user register via SDK, ‘iHealth disclaimer’ will pop up automatically, and require the user agrees to continue. SDK application requires Internet connection; there is 10-day tryout if SDK cannot connect Internet, SDK is fully functional during tryout period, but will be terminated without verification through Internet after 10 days.</p></td>
+						<th scope="row" class="argument-name"><code>blockZeroState</code></th>
+						<td><p>Zeroing state</p></td>
 					</tr>
 				
 					<tr>
@@ -242,22 +216,22 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>armXiaobo</code></th>
+						<th scope="row" class="argument-name"><code>blockArmWaveletWithHeartbeat</code></th>
 						<td><p>Return Wavelet value of upper-arm BPM, with heartbeats.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>legXiaobo</code></th>
+						<th scope="row" class="argument-name"><code>blockLegWaveletWithHeartbeat</code></th>
 						<td><p>Return Wavelet value of ankle BPM, with heartbeats.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>armXiaoboNoHeart</code></th>
+						<th scope="row" class="argument-name"><code>blockArmWaveletWithoutHeartbeat</code></th>
 						<td><p>Return Wavelet value of upper-arm BPM, without heartbeats.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>legXiaoboNoHeart</code></th>
+						<th scope="row" class="argument-name"><code>blockLegWaveletWithoutHeartbeat</code></th>
 						<td><p>Return Wavelet value of ankle BPM, without heartbeats.</p></td>
 					</tr>
 				
@@ -273,12 +247,7 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>Return error codes in <a href="../Blocks/BlockError.html">BlockError</a>.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>clientsecret</code></th>
-						<td><p>‘clientID’ and ‘clientsecret’ are the only identification for user of SDK, are required registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.</p></td>
+						<td><p>When error occur, this block will be callback.</p></td>
 					</tr>
 				
 				</table>
@@ -289,11 +258,6 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Establish measurement connection and start BP measurement</p>
-			</div>
 			
 
 			
@@ -310,8 +274,8 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/stopABIMeassureErrorBlock:errorBlock:" title="stopABIMeassureErrorBlock:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/stopABIMeassureErrorBlock:errorBlock:">&ndash;&nbsp;stopABIMeassureErrorBlock:errorBlock:</a></code>
+	<a name="//api/name/stopABIMeassure" title="stopABIMeassure"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopABIMeassure">&ndash;&nbsp;stopABIMeassure</a></code>
 </h3>
 
 	<div class="method-info">
@@ -326,37 +290,15 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)stopABIMeassureErrorBlock:(BlockStopSuccess)<em>success</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)stopABIMeassure</code></div>
 
 		    
 			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>success</code></th>
-						<td><p>The block return ‘YES’ means measurement has been terminated,  return ‘NO’ means termination failed.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to return the error in ‘Establish measurement connection’ in ABI.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
 
 			
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Measurement termination and stop ABI measurement</p>
-			</div>
 			
 
 			
@@ -404,7 +346,7 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to return the error in ‘Establish measurement connection.</p></td>
+						<td><p>When error occur, this block will be callback.</p></td>
 					</tr>
 				
 				</table>
@@ -415,11 +357,6 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Query battery remaining energy</p>
-			</div>
 			
 
 			
@@ -436,8 +373,8 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandStartMeasureWithUser:clientID:clientSecret:Authentication:armPressure:armXiaoboWithHeart:armXiaoboNoHeart:armResult:errorBlock:" title="commandStartMeasureWithUser:clientID:clientSecret:Authentication:armPressure:armXiaoboWithHeart:armXiaoboNoHeart:armResult:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandStartMeasureWithUser:clientID:clientSecret:Authentication:armPressure:armXiaoboWithHeart:armXiaoboNoHeart:armResult:errorBlock:">&ndash;&nbsp;commandStartMeasureWithUser:clientID:clientSecret:Authentication:armPressure:armXiaoboWithHeart:armXiaoboNoHeart:armResult:errorBlock:</a></code>
+	<a name="//api/name/commandStartArmMeasureWithZeroingState:armPressure:armWaveletWithHeartbeat:armWaveletWithoutHeartbeat:armResult:errorBlock:" title="commandStartArmMeasureWithZeroingState:armPressure:armWaveletWithHeartbeat:armWaveletWithoutHeartbeat:armResult:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandStartArmMeasureWithZeroingState:armPressure:armWaveletWithHeartbeat:armWaveletWithoutHeartbeat:armResult:errorBlock:">&ndash;&nbsp;commandStartArmMeasureWithZeroingState:armPressure:armWaveletWithHeartbeat:armWaveletWithoutHeartbeat:armResult:errorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -452,7 +389,7 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandStartMeasureWithUser:(NSString *)<em>userID</em> clientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> Authentication:(BlockUserAuthentication)<em>disposeAuthenticationBlock</em> armPressure:(BlockPressure)<em>armPressure</em> armXiaoboWithHeart:(BlockXioaboWithHeart)<em>armXiaobo</em> armXiaoboNoHeart:(BlockXioaboNoHeart)<em>armXiaoboNoHeart</em> armResult:(BlockMesureResult)<em>armResult</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandStartArmMeasureWithZeroingState:(BlockZero)<em>blockZeroState</em> armPressure:(BlockPressure)<em>armPressure</em> armWaveletWithHeartbeat:(BlockWavelet)<em>blockArmWaveletWithHeartbeat</em> armWaveletWithoutHeartbeat:(BlockWavelet)<em>blockArmWaveletWithoutHeartbeat</em> armResult:(BlockMeasureResult)<em>armResult</em> errorBlock:(BlockError)<em>error</em></code></div>
 
 		    
 			
@@ -461,14 +398,8 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>userID</code></th>
-						<td><p>The only identification for the user，by the form of email or cell phone #(cell-phone-# form is not supported temperately).
-@param clientID</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeAuthenticationBlock</code></th>
-						<td><p>A block to return parameter of ‘userid’, ’clientID’, ’clientSecret’ after the verification.</p></td>
+						<th scope="row" class="argument-name"><code>blockZeroState</code></th>
+						<td><p>Zeroing state</p></td>
 					</tr>
 				
 					<tr>
@@ -477,12 +408,12 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>armXiaobo</code></th>
+						<th scope="row" class="argument-name"><code>blockArmWaveletWithHeartbeat</code></th>
 						<td><p>The Wavelet value of upper-arm BPM, with heartbeats.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>armXiaoboNoHeart</code></th>
+						<th scope="row" class="argument-name"><code>blockArmWaveletWithoutHeartbeat</code></th>
 						<td><p>The Wavelet value of upper-arm BPM, without heartbeats.</p></td>
 					</tr>
 				
@@ -493,12 +424,7 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>Error codes in <a href="../Blocks/BlockError.html">BlockError</a>.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>clientsecret</code></th>
-						<td><p>‘clientID’ and ‘clientsecret’ are the only identification for user of SDK, are required registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.</p></td>
+						<td><p>When error occur, this block will be callback.</p></td>
 					</tr>
 				
 				</table>
@@ -509,11 +435,6 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Establish measurement connection and Start upper-arm BPM measurement.</p>
-			</div>
 			
 
 			
@@ -530,8 +451,8 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/stopABIArmMeassureBlock:errorBlock:" title="stopABIArmMeassureBlock:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/stopABIArmMeassureBlock:errorBlock:">&ndash;&nbsp;stopABIArmMeassureBlock:errorBlock:</a></code>
+	<a name="//api/name/stopABIArmMeassure" title="stopABIArmMeassure"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopABIArmMeassure">&ndash;&nbsp;stopABIArmMeassure</a></code>
 </h3>
 
 	<div class="method-info">
@@ -546,37 +467,15 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)stopABIArmMeassureBlock:(BlockStopResult)<em>result</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)stopABIArmMeassure</code></div>
 
 		    
 			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>result</code></th>
-						<td><p>The block return ‘YES’ means measurement has been terminated, return ‘NO’ means termination failed.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>error</code></th>
-						<td><p>A block to return the error in ‘Establish measurement connection' in ABI.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
 
 			
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Measurement termination and stop upper-arm BPM measurement</p>
-			</div>
 			
 
 			
@@ -607,7 +506,7 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 iHealth. All rights reserved. Updated: 2016-10-23</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

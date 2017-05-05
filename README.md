@@ -1,63 +1,76 @@
 # iHealth Device Developer 
 
 
-###Latest version: 2.0.7.1
+### Latest version: 2.1
 
 
-###Documnentation
-This document describes how to use the iHealth Device SDK to accomplish the major operation: Connection Device, Online Measurement, Offline Measurement and iHealth Device Management.
+### Documnentation
+  This document describes how to use the iHealth Device SDK to accomplish the major operation: Connection Device, Online Measurement, Offline Measurement and iHealth Device Management.
+
+### Authentication
+
+    If you want to use the iHealth Device, you must first call authentication method, can call after certification by iHealth relevant methods of the device.
+
+  Authentication method：
+
+   -(void)commandSDKUserValidation:(HealthUser *)tempUser UserDeviceAccess:(DisposeSDKUserDeviceAccess)userDeviceAccess UserValidationSuccess:(DisposeSDKUserValidationSuccess)userValidationSuccess UserValidationReturn:(DisposeSDKUserValidationReturn)userValidationReturn DisposeErrorBlock:(DisposeSDKUserValidationErrorBlock)disposeValidationErrorBlock
 
 ### Support iHealth Device for iOS
 
     BP: 
-    iHealth Bp3    iHealth Bp5   iHealth Bp7   iHealth Bp7S   iHealth Bp3l   iHealth KD926 iHealth KN550BT iHealth      Abi   ABPM   KD723
+    iHealth BP3    iHealth BP3L  iHealth BP5  iHealth BP5S   iHealth BP7   iHealth BP7S   iHealth Continua BP iHealth KN550BT     iHealth ABI    iHealth ABPM   
     
     HS: 
-    iHealth Hs3    iHealth Hs4   iHealth Hs4s(Same with Hs4)   iHealth Hs5  iHealth Hs6 
+    iHealth HS3    iHealth HS4   iHealth HS4S(Same with HS4)   iHealth HS5  iHealth HS6 
     
     AM: 
-    iHealth Am3    iHealth Am3s   iHealth Am4  
+    iHealth AM3    iHealth AM3S   iHealth AM4  
          
     BG: 
-    iHealth Bg1    iHealth Bg5     
+    iHealth BG1    iHealth BG3  iHealth BG5  iHealth BG5L    
     
     PO: 
-    iHealth Po3     
+    iHealth PO3     
 
 
 ### Support Update iHealth Device for iOS
 
-    AM3 AM3S AM4 HS4 HS4S
+    AM3 AM3S AM4 HS4 HS4S BP5S ABPM
 
 ### Relevant files and frameworks
 1、Import the following iHealthSDK files：   
 
 
     BP: 
-    BPHeader.h、 BPMacroFile.h、 BP3.h、 BP3Controller.h, BP5.h、BP5Controller.h、 BP7.h、 BP7Controller.h、BP3L.h、 BP3LController.h、 ABI.h, ABIController.h、BP7S.h、BP7SController.h、KD926.h、KD926Controller.h、KD723.h、KD723Controller.h、ABPM.h、ABPMController.h、KN550BT.h、KN550BTController.h  
+    BPHeader.h、 BPMacroFile.h、BPCommandCache.h、BPController.h、BPDevice.h、 BP3.h、 BP3Controller.h、BP3L.h、 BP3LController.h、 BP5.h、BP5Controller.h、BP5S.h、BP5SController.h、 BP7.h、 BP7Controller.h、BP7S.h、BP7SController.h、 ABI.h, ABIController.h、BPContinua.h、BPContinuaController.h、ABPM.h、ABPMController.h、KN550BT.h、KN550BTController.h  
     
     
 	HS: 
 	HSHeader.h、HSMacroFile.h、HS3.h、HS3Controller.h、HS4.h、HS4Controller.h、 HS5.h、HS5Controller.h、iHealthHS6.h
 	
 	AM: 
-	AMHeader.h、AMMacroFile.h、AM3.h、 AM3Controller.h、AM3S.h、AM3SController.h、AM3S_V2.h、AM3SController_V2、AM4.h、AM4Controller.h、
+	AMHeader.h、AMMacroFile.h、AM3.h、 AM3Controller.h、AM3S_V2.h、AM3SController_V2、AM4.h、AM4Controller.h、
 	
 	PO: 
-	POHeader.h、POMacroFile.h、PO3.h、PO3Controller.h、
+	POHeader.h、POMacroFile.h、PO3.h、PO3Controller.h
 	
     BG: 
-    BGHeader.h、BGMacroFile.h、BG5.h、BG5Controller.h、BG1.h、BG1Controller.h
+    BGHeader.h、BGMacroFile.h、BGCommandCache.h、BGController.h、BGDevice.h、BG5.h、BG5Controller.h、BG1.h、BG1Controller.h、BG3.h、BG3Controller.h、BG5L.h、BG5LController.h
 	
 	Common: 
 	HealthUser.h、ConnectDeviceController.h、ScanDeviceController.h、HealthHeader.h
 
     Update：
+
     SDKUpdateDevice.h
+
+    Authentication：
+     
+    IHSDKCloudUser.h
 	
-	Library: iHealthSDK2.0.7.a
+	Library: iHealthSDK2.1.a
 	
-	supports iOS 7.0 and above.
+	supports iOS 8.0 and above.
 
 2、Frameworks
 
@@ -216,6 +229,63 @@ getAllCurrentBP3LInstace]; ```
 
 
 ```
+
+### BP Device change mothod
+
+
+# Version Migration Guide For BP series API
+
+### 1.Measurment
+
+##### BP3
+
+OLD:
+```
+-(void)commandStartMeasureWithUser:(NSString *)userID clientID:(NSString *)clientID clientSecret:(NSString *)clientSecret Authentication:(BlockUserAuthentication)disposeAuthenticationBlock pressure:(BlockPressure)pressure xiaoboWithHeart:(BlockXioaboWithHeart)xiaobo xiaoboNoHeart:(BlockXioaboNoHeart)xiaoboNoHeart  result:(BlockMesureResult)result errorBlock:(BlockError)error;
+```
+NEW:
+```
+-(void)commandStartMeasureWithZeroingState:(BlockZero)blockZeroState pressure:(BlockPressure)pressure waveletWithHeartbeat:(BlockWavelet)blockWaveletWithHeartbeat waveletWithoutHeartbeat:(BlockWavelet)blockWaveletWithoutHeartbeat result:(BlockMeasureResult)result errorBlock:(BlockError)error;
+``` 
+##### BP3L
+OLD:
+```
+-(void)commandStartMeasureWithUser:(NSString *)userID clientID:(NSString *)clientID clientSecret:(NSString *)clientSecret Authentication:(BlockUserAuthentication)disposeAuthenticationBlock pressure:(BlockPressure)pressure xiaoboWithHeart:(BlockXioaboWithHeart)xiaobo xiaoboNoHeart:(BlockXioaboNoHeart)xiaoboNoHeart  result:(BlockMesureResult)result errorBlock:(BlockError)error;
+```
+NEW:
+```
+-(void)commandStartMeasureWithZeroingState:(BlockZero)blockZeroState pressure:(BlockPressure)pressure waveletWithHeartbeat:(BlockWavelet)blockWaveletWithHeartbeat waveletWithoutHeartbeat:(BlockWavelet)blockWaveletWithoutHeartbeat  result:(BlockMeasureResult)result errorBlock:(BlockError)error;
+```
+
+##### BP5/BP7
+OLD:
+```
+-(void)commandStartMeasure:(BlockPressure)pressure xiaoboWithHeart:(BlockXioaboWithHeart)xiaobo xiaoboNoHeart:(BlockXioaboNoHeart)xiaoboNoHeart  result:(BlockMesureResult)result errorBlock:(BlockError)error;
+```
+NEW:
+```
+-(void)commandStartMeasureWithZeroingState:(BlockZero)blockZeroState pressure:(BlockPressure)pressure waveletWithHeartbeat:(BlockWavelet)blockWaveletWithHeartbeat waveletWithoutHeartbeat:(BlockWavelet)blockWaveletWithoutHeartbeat result:(BlockMeasureResult)result errorBlock:(BlockError)error;
+```
+### NOTE:
+1. add ZeroingState callback, it will continuous send NO when zeroing, and when zeroing ready, it will send YES;
+2. change wavelet name from `xiaobo` to `wavelet`
+3. change `BlockXioaboWithHeart ` and `BlockXioaboNoHeart ` block type to`BlockWavelet ` 
+
+### 2.Block Type
+OLD:
+```
+typedef void(^BlockStopSuccess)();
+typedef void(^BlockSetUnitSuccess)();
+typedef void(^BlockSetAngleSuccess)();
+typedef void(^BlockSetPresureTargetSuccess)();
+```
+NEW:
+```
+typedef void(^BlockSuccess)();
+```
+### NOTE:
+Change all success type blocks into a uniform one
+
 
 
 ## API Guide

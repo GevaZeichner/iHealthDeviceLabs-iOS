@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">iHealth </a>
+				<a href="../index.html">iHealthSDKStatic </a>
 			</h1>
 
 			<p id="developer-home">
@@ -52,12 +52,6 @@
 
 	
 	
-	<optgroup label="Properties">
-		
-		<option value="//api/name/serialNumber">serialNumber</option>
-		
-	</optgroup>
-	
 
 	
 
@@ -66,21 +60,29 @@
 		
 		<option value="//api/name/codeStripStrAnalysis:">- codeStripStrAnalysis:</option>
 		
-		<option value="//api/name/commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:">- commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:</option>
+		<option value="//api/name/commandBGGetBottleID:DisposeBGErrorBlock:">- commandBGGetBottleID:DisposeBGErrorBlock:</option>
 		
-		<option value="//api/name/commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:">- commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:</option>
+		<option value="//api/name/commandBGGetTime:DisposeBGErrorBlock:">- commandBGGetTime:DisposeBGErrorBlock:</option>
+		
+		<option value="//api/name/commandBGSetTime:DisposeBGErrorBlock:">- commandBGSetTime:DisposeBGErrorBlock:</option>
+		
+		<option value="//api/name/commandBGSetUnit:DisposeSetUnitResult:DisposeBGErrorBlock:">- commandBGSetUnit:DisposeSetUnitResult:DisposeBGErrorBlock:</option>
+		
+		<option value="//api/name/commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:">- commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:</option>
 		
 		<option value="//api/name/commandDeleteMemorryData:">- commandDeleteMemorryData:</option>
 		
 		<option value="//api/name/commandDisconnectDevice">- commandDisconnectDevice</option>
 		
-		<option value="//api/name/commandInitBGSetUnit:BGUserID:clientID:clientSecret:Authentication:DisposeBGBottleID:DisposeBGErrorBlock:">- commandInitBGSetUnit:BGUserID:clientID:clientSecret:Authentication:DisposeBGBottleID:DisposeBGErrorBlock:</option>
+		<option value="//api/name/commandInitBGSetUnit:DisposeBGBottleID:DisposeBGErrorBlock:">- commandInitBGSetUnit:DisposeBGBottleID:DisposeBGErrorBlock:</option>
 		
 		<option value="//api/name/commandQueryBattery:DisposeErrorBlock:">- commandQueryBattery:DisposeErrorBlock:</option>
 		
 		<option value="//api/name/commandReadBGCodeDic:DisposeBGErrorBlock:">- commandReadBGCodeDic:DisposeBGErrorBlock:</option>
 		
-		<option value="//api/name/commandSendBGCodeString:bottleID:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:">- commandSendBGCodeString:bottleID:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:</option>
+		<option value="//api/name/commandSendBGCodeWithMeasureType:CodeType:CodeString:bottleID:validDate:remainNum:DisposeBGStripInBlock:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:">- commandSendBGCodeWithMeasureType:CodeType:CodeString:bottleID:validDate:remainNum:DisposeBGStripInBlock:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:</option>
+		
+		<option value="//api/name/commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:">- commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:</option>
 		
 		<option value="//api/name/commandTransferMemorryData:DisposeBGHistoryData:DisposeBGErrorBlock:">- commandTransferMemorryData:DisposeBGHistoryData:DisposeBGErrorBlock:</option>
 		
@@ -105,10 +107,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td>NSObject</td>
+	<td><a href="../Classes/BGDevice.html">BGDevice</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>BG5L.h</td>
+	<td>BG5L.h<br />BG5L.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -126,8 +128,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/serialNumber" title="serialNumber"></a>
-	<h3 class="method-title"><code><a href="#//api/name/serialNumber">&nbsp;&nbsp;serialNumber</a></code>
+	<a name="//api/name/commandInitBGSetUnit:DisposeBGBottleID:DisposeBGErrorBlock:" title="commandInitBGSetUnit:DisposeBGBottleID:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandInitBGSetUnit:DisposeBGBottleID:DisposeBGErrorBlock:">&ndash;&nbsp;commandInitBGSetUnit:DisposeBGBottleID:DisposeBGErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -137,25 +139,37 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>‘serialNumber’ is for separating different device when multiple device have been connected.</p>
+				<p>Establish measurement connection</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSString *serialNumber</code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandInitBGSetUnit:(BGUnit)<em>unitState</em> DisposeBGBottleID:(DisposeBGBottleID)<em>disposeBGBottleID</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
 
 		    
 			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>‘serialNumber’ is for separating different device when multiple device have been connected.</p>
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGBottleID</code></th>
+						<td><p>This block returns the ID which is stored in the BG meter, to verify if the strip has been used is from the same bottle of the registered one. if not, the app will notify the user need scan the new bottle, if yes, the app will get the number of left strips and expire date.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
 			</div>
+			
+
+			
+
+			
+
 			
 
 			
@@ -172,8 +186,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandInitBGSetUnit:BGUserID:clientID:clientSecret:Authentication:DisposeBGBottleID:DisposeBGErrorBlock:" title="commandInitBGSetUnit:BGUserID:clientID:clientSecret:Authentication:DisposeBGBottleID:DisposeBGErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandInitBGSetUnit:BGUserID:clientID:clientSecret:Authentication:DisposeBGBottleID:DisposeBGErrorBlock:">&ndash;&nbsp;commandInitBGSetUnit:BGUserID:clientID:clientSecret:Authentication:DisposeBGBottleID:DisposeBGErrorBlock:</a></code>
+	<a name="//api/name/commandBGSetTime:DisposeBGErrorBlock:" title="commandBGSetTime:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandBGSetTime:DisposeBGErrorBlock:">&ndash;&nbsp;commandBGSetTime:DisposeBGErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -183,12 +197,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Establish measurement connection</p>
+				<p>Set Device Time</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandInitBGSetUnit:(BGUnit)<em>unitState</em> BGUserID:(NSString *)<em>userID</em> clientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> Authentication:(DisposeAuthenticationBlock)<em>disposeAuthenticationBlock</em> DisposeBGBottleID:(DisposeBGBottleID)<em>disposeBGBottleID</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandBGSetTime:(DisposeBGSetTime)<em>disposeBGSetTime</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
 
 		    
 			
@@ -197,48 +211,13 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>userID</code></th>
-						<td><p>The only user label, is indicated by form of email address.
-@param clientID</p></td>
+						<th scope="row" class="argument-name"><code>disposeBGSetTime</code></th>
+						<td><p>The block return means set success.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>clientSecret</code></th>
-						<td><p>&lsquo;clientID&rsquo; and &lsquo;clientSecret&rsquo; are the only user label, will be achieved after the register of SDK application. Please contact louie@ihealthlabs.com for the registration.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeAuthenticationBlock</code></th>
-						<td><p>This block returns results after  the verification of userID,clientID,clientSecret.
-Results:
-a)  UserAuthen_RegisterSuccess, new register successes.
-b)  UserAuthen_LoginSuccess, user logs in successfully.
-c)  UserAuthen_CombinedSuccess, user has been recognised as iHealth user, the measurement via SDK could be activated, the result data belongs to the user.
-d)  UserAuthen_TrySuccess, network error, the measurement is only for testing, SDK is not fully functional.
-e)  UserAuthen_InvalidateUserInfo, the verification of userID/clientID/clientSecret failed.
-f)  UserAuthen_SDKInvalidateRight, the application has not been authorised.
-g)  UserAuthen_UserInvalidateRight, the user has not been authorised.
-h)  UserAuthen_InternetError, network error, verification    failed.
-&ndash; PS:
-1. the measurement via SDK is functional in the case from a) to d).
-2. the measurement via SDK will be determined in the case from e) to h), please contact iHealth support team, louie@ihealthlabs.com
-3. “iHealth Disclaimer” will pop up and need to be proved by the user when SDK is activated for the first time.
-4. if iHealth SDK has been using without internet, there is only 10-day try out because the SDK can not be certified.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGBottleID</code></th>
-						<td><p>This block returns the ID which is stored in the BG meter, to verify if the strip has been used is from the same bottle of the registered one. if not, the app will notify the user need scan the new bottle, if yes, the app will get the number of left strips and expire date.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock,</code></th>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
 						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>unitstate</code></th>
-						<td><p>BGUnit_mmolPL stands for mmol/L, BGUnit_mgPmL stands for mg/dL.</p></td>
 					</tr>
 				
 				</table>
@@ -250,10 +229,242 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Establish measurement connection</p>
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
 			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandBGGetTime:DisposeBGErrorBlock:" title="commandBGGetTime:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandBGGetTime:DisposeBGErrorBlock:">&ndash;&nbsp;commandBGGetTime:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get Device Time</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandBGGetTime:(DisposeBGDeviceTime)<em>disposeBGDeviceTime</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGDeviceTime</code></th>
+						<td><p>The block return the time fo the device.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandBGSetUnit:DisposeSetUnitResult:DisposeBGErrorBlock:" title="commandBGSetUnit:DisposeSetUnitResult:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandBGSetUnit:DisposeSetUnitResult:DisposeBGErrorBlock:">&ndash;&nbsp;commandBGSetUnit:DisposeSetUnitResult:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Set Unit (only for react-Native project)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandBGSetUnit:(BGUnit)<em>unitState</em> DisposeSetUnitResult:(DisposeBGSetUnit)<em>disposeBGSetUnitResult</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>unitState</code></th>
+						<td><p>The block return means set success.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:" title="commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Send BottleID to the BG meter (only for react-Native project)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandSendBottleID:(NSNumber *)<em>BottleID</em> DisposeBGSendBottleIDBlock:(DisposeBGSendBottleIDBlock)<em>disposeBGSendBottleIDBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>BottleID</code></th>
+						<td><p>bottleID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGSendBottleIDBlock</code></th>
+						<td><p>This block returns yes means send BottleID success.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandBGGetBottleID:DisposeBGErrorBlock:" title="commandBGGetBottleID:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandBGGetBottleID:DisposeBGErrorBlock:">&ndash;&nbsp;commandBGGetBottleID:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the bottleID stored in the BG meter (only for react-Native project)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandBGGetBottleID:(DisposeBGBottleID)<em>disposeBGBottleID</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGBottleID</code></th>
+						<td><p>This block returns the ID which is stored in the BG meter, to verify if the strip has been used is from the same bottle of the registered one. if not, the app will notify the user need scan the new bottle, if yes, the app will get the number of left strips and expire date.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
 			
 
 			
@@ -318,11 +529,6 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Tranfer offline history records</p>
-			</div>
-			
 
 			
 
@@ -375,11 +581,6 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Delete offline history records</p>
-			</div>
 			
 
 			
@@ -439,11 +640,6 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Read the information of the code from the BG meter</p>
-			</div>
-			
 
 			
 
@@ -459,8 +655,8 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandSendBGCodeString:bottleID:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:" title="commandSendBGCodeString:bottleID:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandSendBGCodeString:bottleID:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:">&ndash;&nbsp;commandSendBGCodeString:bottleID:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:</a></code>
+	<a name="//api/name/commandSendBGCodeWithMeasureType:CodeType:CodeString:bottleID:validDate:remainNum:DisposeBGStripInBlock:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:" title="commandSendBGCodeWithMeasureType:CodeType:CodeString:bottleID:validDate:remainNum:DisposeBGStripInBlock:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandSendBGCodeWithMeasureType:CodeType:CodeString:bottleID:validDate:remainNum:DisposeBGStripInBlock:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:">&ndash;&nbsp;commandSendBGCodeWithMeasureType:CodeType:CodeString:bottleID:validDate:remainNum:DisposeBGStripInBlock:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -470,18 +666,28 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Send code</p>
+				<p>Send code with type (New)</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandSendBGCodeString:(NSString *)<em>encodeString</em> bottleID:(NSNumber *)<em>bottleID</em> validDate:(NSDate *)<em>date</em> remainNum:(NSNumber *)<em>num</em> DisposeBGSendCodeBlock:(DisposeBGSendCodeBlock)<em>disposeBGSendCodeBlock</em> DisposeBGStartModel:(DisposeBGStartModel)<em>disposeBGStartModel</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandSendBGCodeWithMeasureType:(BGMeasureMode)<em>testType</em> CodeType:(BGCodeMode)<em>codeType</em> CodeString:(NSString *)<em>encodeString</em> bottleID:(NSNumber *)<em>bottleID</em> validDate:(NSDate *)<em>date</em> remainNum:(NSNumber *)<em>num</em> DisposeBGStripInBlock:(DisposeBGStripInBlock)<em>disposeBGStripInBlock</em> DisposeBGSendCodeBlock:(DisposeBGSendCodeBlock)<em>disposeBGSendCodeBlock</em> DisposeBGStartModel:(DisposeBGStartModel)<em>disposeBGStartModel</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
 
 		    
 			
 			<div class="method-subsection arguments-section parameters">
 				<h4 class="method-subtitle parameter-title">Parameters</h4>
 				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>testType</code></th>
+						<td><p>Set the measure test type,@1 is Blood Test,@2 is CTL Test.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>codeType</code></th>
+						<td><p>Set the code type,@1 is GOD,@2 is GDH.</p></td>
+					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>encodeString</code></th>
@@ -500,7 +706,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>num</code></th>
-						<td><p>the number of strips which is last,ranging from 0-255. num = 0 will determine the measurement.</p></td>
+						<td><p>the number of strips which is last,ranging from 1-255. num = 0 will determine the measurement.</p></td>
 					</tr>
 				
 					<tr>
@@ -514,7 +720,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock，This</code></th>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
 						<td><p>block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
 					</tr>
 				
@@ -526,89 +732,6 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Send code</p>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5L.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:" title="commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Strip-Sliding booting mode</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandCreateBGtestStripInBlock:(DisposeBGStripInBlock)<em>disposeBGStripInBlock</em> DisposeBGBloodBlock:(DisposeBGBloodBlock)<em>disposeBGBloodBlock</em> DisposeBGResultBlock:(DisposeBGResultBlock)<em>disposeBGResultBlock</em> DisposeBGTestModelBlock:(DisposeBGTestModelBlock)<em>disposeBGTestModelBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGStripInBlock</code></th>
-						<td><p>This block returns yes means strip slides in.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGBloodBlock</code></th>
-						<td><p>This block returns yes means the blood drop has beed sensed from the strip.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGResultBlock</code></th>
-						<td><p>This block returns the measurement by the unit of mg/dL, range from 20-600.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGTestModelBlock</code></th>
-						<td><p>This block returns measurement mode, BGMeasureMode_Blood means blood measurement mode, BGMeasureMode_NoBlood means control solution measurement mode.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
-						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Strip-Sliding booting mode</p>
-			</div>
 			
 
 			
@@ -688,11 +811,6 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Button-pressing booting mode</p>
-			</div>
-			
 
 			
 
@@ -745,11 +863,6 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Analyze code include bottleID，DueDate and the number of strips.</p>
-			</div>
 			
 
 			
@@ -809,11 +922,6 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Query battery remaining energy</p>
-			</div>
-			
 
 			
 
@@ -855,11 +963,6 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Disconnect current device</p>
-			</div>
-			
 
 			
 
@@ -889,7 +992,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 iHealth. All rights reserved. Updated: 2016-10-23</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

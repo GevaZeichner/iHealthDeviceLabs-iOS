@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>HS3 Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">iHealthSDKStatic </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">iHealth</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/commandInitWithUser:UploadDataNum:DisposeProgress:MemorryData:FinishTransmission:StableWeight:DisposeErrorBlock:">- commandInitWithUser:UploadDataNum:DisposeProgress:MemorryData:FinishTransmission:StableWeight:DisposeErrorBlock:</option>
+		
+		<option value="//api/name/commandTurnOffBTConnectAutoResult:DisposeErrorBlock:">- commandTurnOffBTConnectAutoResult:DisposeErrorBlock:</option>
+		
+		<option value="//api/name/commandTurnOnBTConnectAutoResult:DisposeErrorBlock:">- commandTurnOnBTConnectAutoResult:DisposeErrorBlock:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">HS3 Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>HS3.h<br />HS3.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/commandInitWithUser:UploadDataNum:DisposeProgress:MemorryData:FinishTransmission:StableWeight:DisposeErrorBlock:" title="commandInitWithUser:UploadDataNum:DisposeProgress:MemorryData:FinishTransmission:StableWeight:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandInitWithUser:UploadDataNum:DisposeProgress:MemorryData:FinishTransmission:StableWeight:DisposeErrorBlock:">&ndash;&nbsp;commandInitWithUser:UploadDataNum:DisposeProgress:MemorryData:FinishTransmission:StableWeight:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>Establish memory and measurement connection</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandInitWithUser:(StartHS3Transmission)<em>startTransmission</em> UploadDataNum:(DisposeHS3UploadDataNum)<em>hs3UploadDataNum</em> DisposeProgress:(DisposeHS3Progress)<em>progress</em> MemorryData:(HS3MemorryData)<em>memorryData</em> FinishTransmission:(FinishHS3Transmission)<em>finishTransmission</em> StableWeight:(StableHS3Weight)<em>stableWeight</em> DisposeErrorBlock:(DisposeHS3ErrorBlock)<em>disposeHS3ErrorBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<ul>
+<li>The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.</li>
+<li><p>Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection; there is 10-day trial period if the SDK cannot connect to the internet, the SDK is fully functional during tryout period, but will be terminated without a working internet connection after 10 days.</p></li>
+<li><p>@param startTransmission  - Start Memory transmission，Success: Yes，Fail: No.</p></li>
+<li>@param hs3UploadDataNum   - MemoryNumber，Range:0～200.</li>
+<li>@param progress           - Memory transmission progress，Range:0.0～1.0.</li>
+<li>@param <a href="../Blocks/MemorryData.html">MemorryData</a>        - Record data including weight(kg)[Range:0.0~150.0], measure time，coordinated key：weight、date.</li>
+<li>@param finishTransmission - Finish memory transmission.</li>
+<li>@param stableWeight       - weight (Kg) [value range:0.0~150.0]</li>
+<li>@param disposeHS3ErrorBlock  - Error code in measurement process</li>
+<li>error code definition refer to ‘error’ in Section 6: HS3 error instructions.</li>
+</ul>
+
+
+<p>*</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandTurnOffBTConnectAutoResult:DisposeErrorBlock:" title="commandTurnOffBTConnectAutoResult:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTurnOffBTConnectAutoResult:DisposeErrorBlock:">&ndash;&nbsp;commandTurnOffBTConnectAutoResult:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Turn off Bluetooth Connection
+This method can be called only for hsInstance.HS3 with FirmwareVersion>=1.0.2
+Return parameters:</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandTurnOffBTConnectAutoResult:(DisposeResult)<em>disposeResult</em> DisposeErrorBlock:(DisposeHS3ErrorBlock)<em>disposeHS3ErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeResult</code></th>
+						<td><p>‘YES’ means measurement has been terminated, ‘NO’ means termination failed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeHS3ErrorBlock</code></th>
+						<td><p>refer to “error” : HS3 error instruction.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandTurnOnBTConnectAutoResult:DisposeErrorBlock:" title="commandTurnOnBTConnectAutoResult:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTurnOnBTConnectAutoResult:DisposeErrorBlock:">&ndash;&nbsp;commandTurnOnBTConnectAutoResult:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<ul>
+<li>Turn on Bluetooth Connection</li>
+<li>This method can be called only for hsInstance.HS3 with FirmwareVersion>=1.0.2</li>
+<li>Return parameters:
+
+<ul>
+<li>@param disposeResult ‘YES’ means measurement has been terminated, ‘NO’ means termination failed.</li>
+<li>@param disposeHS3ErrorBlock  refer to “error” : HS3 error instruction.</li>
+</ul>
+</li>
+</ul>
+
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandTurnOnBTConnectAutoResult:(DisposeResult)<em>disposeResult</em> DisposeErrorBlock:(DisposeHS3ErrorBlock)<em>disposeHS3ErrorBlock</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">HS3.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">iHealth </a>
+				<a href="../index.html">iHealthSDKStatic </a>
 			</h1>
 
 			<p id="developer-home">
@@ -68,7 +68,9 @@
 		
 		<option value="//api/name/commandConnectBGwithDeviceModel:DisposeDiscoverBlock:DisposeBGIDPSBlock:DisposeConnectBGBlock:DisposeBGErrorBlock:">- commandConnectBGwithDeviceModel:DisposeDiscoverBlock:DisposeBGIDPSBlock:DisposeConnectBGBlock:DisposeBGErrorBlock:</option>
 		
-		<option value="//api/name/commandCreateBGtestWithUser:clientID:clientSecret:Authentication:WithCode:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:">- commandCreateBGtestWithUser:clientID:clientSecret:Authentication:WithCode:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:</option>
+		<option value="//api/name/commandCreateBGtestWithMeasureType:CodeType:CodeString:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:">- commandCreateBGtestWithMeasureType:CodeType:CodeString:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:</option>
+		
+		<option value="//api/name/getDueDate:">- getDueDate:</option>
 		
 	</optgroup>
 	
@@ -93,11 +95,8 @@
 	<th>Inherits from</th>
 	<td>NSObject</td>
 </tr><tr>
-	<th>Conforms to</th>
-	<td>AVAudioPlayerDelegate</td>
-</tr><tr>
 	<th>Declared in</th>
-	<td>BG1.h</td>
+	<td>BG1.h<br />BG1.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -111,7 +110,7 @@
 						
 
 						
-						
+						<h2 class="task-title">Other Methods</h2>
 
 						<div class="task-list">
 							<div class="section-method">
@@ -140,11 +139,6 @@
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Initialization for BG1 Instance.</p>
-			</div>
 			
 
 			
@@ -177,7 +171,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandConnectBGwithDeviceModel:(NSNumber *)<em>bg1Model</em> DisposeDiscoverBlock:(DisposeDiscoverBGBlock)<em>disposeDiscoverBGBlock</em> DisposeBGIDPSBlock:(DisposeBGIDPSBlock)<em>disposeBGIDPSBlock</em> DisposeConnectBGBlock:(DisposeConnectBGBlock)<em>disposeConnectBGBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandConnectBGwithDeviceModel:(NSNumber *)<em>BG1Model</em> DisposeDiscoverBlock:(DisposeDiscoverBGBlock)<em>disposeDiscoverBGBlock</em> DisposeBGIDPSBlock:(DisposeBGIDPSBlock)<em>disposeBGIDPSBlock</em> DisposeConnectBGBlock:(DisposeConnectBGBlock)<em>disposeConnectBGBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
 
 		    
 			
@@ -186,7 +180,7 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>bg1Model</code></th>
+						<th scope="row" class="argument-name"><code>BG1Model</code></th>
 						<td><p>the BG1 type.</p></td>
 					</tr>
 				
@@ -201,13 +195,14 @@
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeConnectBGBlock,</code></th>
+						<th scope="row" class="argument-name"><code>disposeConnectBGBlock</code></th>
 						<td><p>This block returns the connection status, the connection of the BG meter is regular , the measurement could be processed.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock,This</code></th>
-						<td><p>block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>block returns error codes,please refer to error codes list in BGMacroFile.
+@Notice  Notice: Using this method should be placed BG1ConnectNoti callback</p></td>
 					</tr>
 				
 				</table>
@@ -218,11 +213,6 @@
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Start connect BG1 and get the connection status.</p>
-			</div>
 			
 
 			
@@ -239,8 +229,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandCreateBGtestWithUser:clientID:clientSecret:Authentication:WithCode:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:" title="commandCreateBGtestWithUser:clientID:clientSecret:Authentication:WithCode:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandCreateBGtestWithUser:clientID:clientSecret:Authentication:WithCode:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandCreateBGtestWithUser:clientID:clientSecret:Authentication:WithCode:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:</a></code>
+	<a name="//api/name/commandCreateBGtestWithMeasureType:CodeType:CodeString:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:" title="commandCreateBGtestWithMeasureType:CodeType:CodeString:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandCreateBGtestWithMeasureType:CodeType:CodeString:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandCreateBGtestWithMeasureType:CodeType:CodeString:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -250,12 +240,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Establish connection and start BG measurement.</p>
+				<p>Establish connection and start BG measurement.(New)</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandCreateBGtestWithUser:(NSString *)<em>userID</em> clientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> Authentication:(DisposeAuthenticationBlock)<em>disposeAuthenticationBlock</em> WithCode:(NSString *)<em>codeStrips</em> DisposeBGSendCodeBlock:(DisposeBGSendCodeBlock)<em>disposeBGSendCodeBlock</em> DisposeBGStripInBlock:(DisposeBGStripInBlock)<em>disposeBGStripInBlock</em> DisposeBGBloodBlock:(DisposeBGBloodBlock)<em>disposeBGBloodBlock</em> DisposeBGResultBlock:(DisposeBGResultBlock)<em>disposeBGResultBlock</em> DisposeBGStripOutBlock:(DisposeBGStripOutBlock)<em>disposeBGStripOutBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandCreateBGtestWithMeasureType:(BGMeasureMode)<em>testType</em> CodeType:(BGCodeMode)<em>codeType</em> CodeString:(NSString *)<em>codeStrips</em> DisposeBGSendCodeBlock:(DisposeBGSendCodeBlock)<em>disposeBGSendCodeBlock</em> DisposeBGStripInBlock:(DisposeBGStripInBlock)<em>disposeBGStripInBlock</em> DisposeBGBloodBlock:(DisposeBGBloodBlock)<em>disposeBGBloodBlock</em> DisposeBGResultBlock:(DisposeBGResultBlock)<em>disposeBGResultBlock</em> DisposeBGStripOutBlock:(DisposeBGStripOutBlock)<em>disposeBGStripOutBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
 
 		    
 			
@@ -264,33 +254,13 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>userID</code></th>
-						<td><p>The only user label, is indicated by form of email address.
-@param clientID</p></td>
+						<th scope="row" class="argument-name"><code>testType</code></th>
+						<td><p>Set the measure test type,BGMeasureMode_Blood is Blood Test,BGMeasureMode_NoBlood is CTL Test.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>clientSecret</code></th>
-						<td><p>&lsquo;clientID&rsquo; and &lsquo;clientSecret&rsquo; are the only user label, will be achieved after the register of SDK application. Please contact louie@ihealthlabs.com for the registration.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeAuthenticationBlock</code></th>
-						<td><p>This block returns results after  the verification of userID,clientID,clientSecret.
-Results:
-a)  UserAuthen_RegisterSuccess, new register successes.
-b)  UserAuthen_LoginSuccess, user logs in successfully.
-c)  UserAuthen_CombinedSuccess, user has been recognised as iHealth user, the measurement via SDK could be activated, the result data belongs to the user.
-d)  UserAuthen_TrySuccess, network error, the measurement is only for testing, SDK is not fully functional.
-e)  UserAuthen_InvalidateUserInfo, the verification of userID/clientID/clientSecret failed.
-f)  UserAuthen_SDKInvalidateRight, the application has not been authorised.
-g)  UserAuthen_UserInvalidateRight, the user has not been authorised.
-h)  UserAuthen_InternetError, network error, verification    failed.
-&ndash; PS:
-1. the measurement via SDK is functional in the case from a) to d).
-2. the measurement via SDK will be determined in the case from e) to h), please contact iHealth support team, louie@ihealthlabs.com
-3. “iHealth Disclaimer” will pop up and need to be proved by the user when SDK is activated for the first time.
-4. if iHealth SDK has been using without internet, there is only 10-day try out because the SDK can not be certified.</p></td>
+						<th scope="row" class="argument-name"><code>codeType</code></th>
+						<td><p>Set the code type,BGCodeMode_GOD is GOD,BGCodeMode_GDH is GDH.</p></td>
 					</tr>
 				
 					<tr>
@@ -328,11 +298,6 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
 					</tr>
 				
-					<tr>
-						<th scope="row" class="argument-name"><code>unitstate</code></th>
-						<td><p>BGUnit_mmolPL stands for mmol/L, BGUnit_mgPmL stands for mg/dL.</p></td>
-					</tr>
-				
 				</table>
 			</div>
 			
@@ -341,11 +306,6 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Establish connection and start BG measurement.</p>
-			</div>
 			
 
 			
@@ -400,11 +360,6 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			
 
 			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Analyze code include bottleID，DueDate and the number of strips.</p>
-			</div>
-			
 
 			
 
@@ -414,6 +369,55 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 			<div class="method-subsection declared-in-section">
 				<h4 class="method-subtitle">Declared In</h4>
 				<p><code class="declared-in-ref">BG1.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/getDueDate:" title="getDueDate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/getDueDate:">&ndash;&nbsp;getDueDate:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p><strong><strong><strong><strong>此处加效期为15.1.5的处理,10条有的正确有的不正确</strong></strong></strong></strong>****</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSDate *)getDueDate:(uint8_t *)<em>someCodeBuf</em></code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG1.m</code></p>
 			</div>
 			
 			
@@ -434,7 +438,7 @@ h)  UserAuthen_InternetError, network error, verification    failed.
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 iHealth. All rights reserved. Updated: 2016-10-23</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

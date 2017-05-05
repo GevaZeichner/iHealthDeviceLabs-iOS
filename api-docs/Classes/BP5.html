@@ -14,7 +14,7 @@
 		<div class="container" class="hide-in-xcode">
 			
 			<h1 id="library-title">
-				<a href="../index.html">iHealth </a>
+				<a href="../index.html">iHealthSDKStatic </a>
 			</h1>
 
 			<p id="developer-home">
@@ -58,7 +58,7 @@
 	
 	<optgroup label="Instance Methods">
 		
-		<option value="//api/name/commandStartMeasureWithUser:clientID:clientSecret:Authentication:pressure:xiaoboWithHeart:xiaoboNoHeart:result:errorBlock:">- commandStartMeasureWithUser:clientID:clientSecret:Authentication:pressure:xiaoboWithHeart:xiaoboNoHeart:result:errorBlock:</option>
+		<option value="//api/name/commandStartMeasureWithZeroingState:pressure:waveletWithHeartbeat:waveletWithoutHeartbeat:result:errorBlock:">- commandStartMeasureWithZeroingState:pressure:waveletWithHeartbeat:waveletWithoutHeartbeat:result:errorBlock:</option>
 		
 	</optgroup>
 	
@@ -81,10 +81,10 @@
 					<div class="section section-specification"><table cellspacing="0"><tbody>
 						<tr>
 	<th>Inherits from</th>
-	<td><a href="../Classes/BP7.html">BP7</a> : NSObject</td>
+	<td><a href="../Classes/BP7.html">BP7</a> : <a href="../Classes/BPDevice.html">BPDevice</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>BP5.h</td>
+	<td>BP5.h<br />BP5.m</td>
 </tr>
 						</tbody></table></div>
 					
@@ -102,8 +102,8 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/commandStartMeasureWithUser:clientID:clientSecret:Authentication:pressure:xiaoboWithHeart:xiaoboNoHeart:result:errorBlock:" title="commandStartMeasureWithUser:clientID:clientSecret:Authentication:pressure:xiaoboWithHeart:xiaoboNoHeart:result:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandStartMeasureWithUser:clientID:clientSecret:Authentication:pressure:xiaoboWithHeart:xiaoboNoHeart:result:errorBlock:">&ndash;&nbsp;commandStartMeasureWithUser:clientID:clientSecret:Authentication:pressure:xiaoboWithHeart:xiaoboNoHeart:result:errorBlock:</a></code>
+	<a name="//api/name/commandStartMeasureWithZeroingState:pressure:waveletWithHeartbeat:waveletWithoutHeartbeat:result:errorBlock:" title="commandStartMeasureWithZeroingState:pressure:waveletWithHeartbeat:waveletWithoutHeartbeat:result:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandStartMeasureWithZeroingState:pressure:waveletWithHeartbeat:waveletWithoutHeartbeat:result:errorBlock:">&ndash;&nbsp;commandStartMeasureWithZeroingState:pressure:waveletWithHeartbeat:waveletWithoutHeartbeat:result:errorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -118,7 +118,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandStartMeasureWithUser:(NSString *)<em>userID</em> clientID:(NSString *)<em>clientID</em> clientSecret:(NSString *)<em>clientSecret</em> Authentication:(BlockUserAuthentication)<em>disposeAuthenticationBlock</em> pressure:(BlockPressure)<em>pressure</em> xiaoboWithHeart:(BlockXioaboWithHeart)<em>xiaobo</em> xiaoboNoHeart:(BlockXioaboNoHeart)<em>xiaoboNoHeart</em> result:(BlockMesureResult)<em>result</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandStartMeasureWithZeroingState:(BlockZero)<em>blockZeroState</em> pressure:(BlockPressure)<em>pressure</em> waveletWithHeartbeat:(BlockWavelet)<em>blockWaveletWithHeartbeat</em> waveletWithoutHeartbeat:(BlockWavelet)<em>blockWaveletWithoutHeartbeat</em> result:(BlockMeasureResult)<em>result</em> errorBlock:(BlockError)<em>error</em></code></div>
 
 		    
 			
@@ -127,30 +127,8 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>userID</code></th>
-						<td><p>The only identification for the user，by the form of email or cell phone #(cell-phone-# form is not supported temperately).</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>clientID</code></th>
-						<td><p>See param &lsquo;clientsecret&rsquo;.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeAuthenticationBlock</code></th>
-						<td><p>A block to return parameter of ‘userid’, ’clientID’, ’clientSecret’ after the verification.
-The interpretation for the verification:
-1. UserAuthen_RegisterSuccess, New-user registration succeeded.
-2. UserAuthen_LoginSuccess， User login succeeded.
-3. UserAuthen_CombinedSuccess, The user is iHealth user as well, measurement via SDK has been activated, and the data from the measurement belongs to the user.
-4. UserAuthen_TrySuccess, testing without Internet connection succeeded.
-5. UserAuthen_InvalidateUserInfo, Userid/clientID/clientSecret verification failed.
-6. UserAuthen_SDKInvalidateRight, SDK has not been authorized.
-7. UserAuthen_UserInvalidateRight,User has not been authorized.
-8. UserAuthen_InternetError, Internet error, verification failed.
-&ndash;PS:
-The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.
-@Notice   By the first time of new user register via SDK, ‘iHealth disclaimer’ will pop up automatically, and require the user agrees to continue. SDK application requires Internet connection; there is 10-day tryout if SDK cannot connect Internet, SDK is fully functional during tryout period, but will be terminated without verification through Internet after 10 days.</p></td>
+						<th scope="row" class="argument-name"><code>blockZeroState</code></th>
+						<td><p>Zeroing state</p></td>
 					</tr>
 				
 					<tr>
@@ -159,8 +137,13 @@ The measurement via SDK will be operated in the case of 1-4, and will be termina
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>xiaobo</code></th>
+						<th scope="row" class="argument-name"><code>blockWaveletWithHeartbeat</code></th>
 						<td><p>Wavelet data set including pulse rate</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>blockWaveletWithoutHeartbeat</code></th>
+						<td><p>Wavelet data set without pulse rate</p></td>
 					</tr>
 				
 					<tr>
@@ -199,16 +182,6 @@ Specification:
 25.  BPInputParameterError=400:  Parameter input error.</p></td>
 					</tr>
 				
-					<tr>
-						<th scope="row" class="argument-name"><code>clientsecret</code></th>
-						<td><p>‘clientID’ and ‘clientsecret’ are the only identification for user of SDK, are required registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>xiaoboNoHeart’:</code></th>
-						<td><p>Wavelet data set without pulse rate</p></td>
-					</tr>
-				
 				</table>
 			</div>
 			
@@ -217,11 +190,6 @@ Specification:
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p>Establish measurement connection and start BP measurement（Only for BP5）.</p>
-			</div>
 			
 
 			
@@ -252,7 +220,7 @@ Specification:
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2016 iHealth. All rights reserved. Updated: 2016-10-23</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
