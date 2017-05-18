@@ -76,8 +76,6 @@
 
 ![box-model](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/blob/master/public/iOS_ihealth_Frameworks_doc.png?raw=true)
 
-![box-model](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/blob/master/public/iOS_ihealth_Frameworks_doc_lib.png?raw=true)
-
 
 3、Configuration
 
