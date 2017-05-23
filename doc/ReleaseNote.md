@@ -14,9 +14,9 @@ Release Date: 2016-3-7
 
 ### 3. V1.0.16
 ```
-Description: More function for AM 
+Description: More function for AM
 Release Date: 2016-5-3
-   a. Add dataID for measure result(BP BG HS AM PO), 
+   a. Add dataID for measure result(BP BG HS AM PO),
    	  etc: {"weight":60,"dataID":"xxxxxxx"}  
    b. Add 'activityLevel' property for AM user, 'bmr' property is invalidate now.   
       activityLevel=1, Sedentary,spend most of day sitting.      
@@ -41,7 +41,7 @@ Release Date: 2016-5-5
 
 ```
 Old version：SDK will scan and connect all iHealth Device automatically.
-New version: SDK supply the Api for scan, and Api for connect Separately. 
+New version: SDK supply the Api for scan, and Api for connect Separately.
 
 More info, please read class :
 ScanDeviceController.h
@@ -61,15 +61,14 @@ Release Date: 2016-5-12
 ```
 Description:
 
-1，Modify the authentication way, If you want to use the iHealth Device, you must first call authentication method, can call after certification by iHealth relevant methods of the device.
-2，Method call any product authentication cancelled.
-3,Add support Device:iHealth BP5S 、Continua BP
-4,Support BG5 GDH code
-5,upgrade SDKUpdateDevice Method  support file download progess
-6,To optimize the demo program
-7,To reconstruct the BP method is called
-8,To optimize the interface calls, support the instruction cache
+1. Modify the authentication way, If you want to use the iHealth Device, you must first call authentication method, can call after certification by iHealth relevant methods of the device.
+2. Method call any product authentication cancelled.
+3. Add support Device:iHealth BP5S 、Continua BP
+4. Support GDH code
+5. upgrade SDKUpdateDevice Method  support file download progess
+6. To optimize the demo program
+7. To reconstruct the BP method is called
+8. To optimize the interface calls, support the instruction cache
 
 Release Date: 2017-5-5
 ```
-
