@@ -94,7 +94,7 @@ Add 2 new Item in ‘Supported external accessory protocols’: com.jiuan.BPV20,
 [Click this link](https://github.com/iHealthDeviceLabs/iHealthDeviceLabs-iOS/blob/master/doc/Developer_Registration_Application_Instruction.md)
 
 ### How to use the iHealth SDK
-```
+
 
  1. Operation procedure for BP3.
 
@@ -229,7 +229,6 @@ getAllCurrentBP3LInstace]; ```
 	```Reference BP5```
 
 
-```
 
 ### BP Device change mothod
 
