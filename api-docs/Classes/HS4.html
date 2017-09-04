@@ -121,12 +121,6 @@
 			<div class="method-subsection brief-description">
 				<ul>
 <li>Establish memory and measurement connection</li>
-<li>When using the SDK for the first time, measuring method needs to be called to finish user verification.</li>
-<li><p>Import parameter:
-  tempUnit: Unit displayed on HS4: HSUnit_Kg、HSUnit_LB、HSUnit_ST。</p></li>
-<li><p>Return parameters:
-  The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.
-  Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection; there is 10-day trial period if the SDK cannot connect to the internet, the SDK is fully functional during tryout period, but will be terminated without a working internet connection after 10 days.</p></li>
 </ul>
 
 			</div>
@@ -145,12 +139,26 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<pre><code>* @param unStableWeight: Current weight, (Kg) [Value Range:0~180]
-* @param stableWeight: Stable weight, (Kg) [Value Range:0~180]
-* @param disposeErrorBlock: error code
-* @param Error code definition：
-*  refer to “error” : HS4 error instruction.
-</code></pre>
+				<ul>
+<li><p>Import parameter:</p>
+
+<ul>
+<li>@param tempUnit  -Unit displayed on HS4: HSUnit_Kg、HSUnit_LB、HSUnit_ST。</li>
+</ul>
+</li>
+<li><p>Return parameters:</p>
+
+<ul>
+<li><p>The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.</p></li>
+<li><p>@param unStableWeight     - Current weight, (Kg) [Value Range:0~180]</p></li>
+<li>@param stableWeight       - Stable weight, (Kg) [Value Range:0~180]</li>
+<li>@param disposeErrorBlock  - error code</li>
+<li>Error code definition：</li>
+<li> refer to “error” : HS4 error instruction.</li>
+</ul>
+</li>
+</ul>
+
 			</div>
 			
 
@@ -181,16 +189,6 @@
 			<div class="method-subsection brief-description">
 				<ul>
 <li>Upload memory data</li>
-<li>If user doesn’t pass the verification, HS4UserInvalidate will be returned for calling this method, user information invalid.</li>
-<li>Import parameters：
-tempUser, included properties: userID, refer to the instructions for <a href="../Classes/HS3.html">HS3</a></li>
-<li>Return parameters:</li>
-<li>@param  startTransmission：Start Memory transmission.</li>
-<li>@param   progress: Memory transmission progress，[Range:0.0～1.0].</li>
-<li>@param   memorryData:Record data including weight (kg), measurement time，coordinated key：weight，date.[Range of weight 0.0~180.0(kg)]</li>
-<li> @param  finishTransmission：Finish memory transmission.</li>
-<li> @param  disposeErrorBlock: Record the error code in uploading process.
-Error code definition: refer to ”error” : HS4 error instruction.</li>
 </ul>
 
 			</div>
@@ -206,6 +204,20 @@ Error code definition: refer to ”error” : HS4 error instruction.</li>
 
 			
 
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<ul>
+<li>Return parameters:</li>
+<li>@param  startTransmission -Start Memory transmission.</li>
+<li>@param  progress         -Memory transmission progress，[Range:0.0～1.0].</li>
+<li>@param  memorryData      -Record data including weight (kg), measurement time，coordinated key：weight，date.[Range of weight 0.0~180.0(kg)]</li>
+<li>@param  finishTransmission -Finish memory transmission.</li>
+<li>@param  disposeErrorBlock  -Record the error code in uploading process.</li>
+<li>Error code definition: refer to ”error” : HS4 error instruction.</li>
+</ul>
+
+			</div>
 			
 
 			
@@ -241,6 +253,30 @@ Error code definition: refer to ”error” : HS4 error instruction.</li>
 			<div class="method-subsection method-declaration"><code>- (void)commandEndCurrentConnection:(DisposeResult)<em>result</em> DisposeErrorBlock:(DisposeHS4ErrorBlock)<em>disposeErrorBlock</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>result</code></th>
+						<td><ul>
+<li>the result of end current action</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><ul>
+<li>error code
+Error code definition &mdash;refer to “error” : HS4 error instruction.</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -318,7 +354,7 @@ Error code definition: refer to ”error” : HS4 error instruction.</li>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

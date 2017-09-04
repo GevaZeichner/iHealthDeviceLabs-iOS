@@ -149,17 +149,28 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Import Parameters:
-    tempUser, included properties: userID、clientID、clientSecret。
-    userID: either email or mobile phone number (mobile phone number is not currently supported yet)
-    height: the height of a user (cm);
-    clientID &amp; clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: heguangming@ihealthlabs.com.cn for more information.
-Return Parameters:
-    The measurement via SDK will be operated in the case of 1-3, and will be terminated if any of 4-8 occurs. The interface needs to be re-called after analyzing the return parameters.
-    Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection; UserAuthen_TrySuccess is invalidate for HS5.
-    SerialNub: The only identification of a user，should be reserved in third party apps，provide to other Apps [Range:0~0xFFFFFFF]
-    MemorryUserListHS5Data：Existing user info in HS5，including serialNub、Position of users. Related key: serialNumber、position
-    disposeErrorBlock：error codes in transmission process: Errors in HS5</p>
+				<ul>
+<li>Import Parameters:
+
+<ul>
+<li>@param tempUser  - included properties: userAccount、clientID、clientSecret。</li>
+<li>userAccount: either email or mobile phone number (mobile phone number is not currently supported yet)</li>
+<li>height: the height of a user (cm);</li>
+<li>clientID &amp; clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: heguangming@ihealthlabs.com.cn for more information.</li>
+</ul>
+</li>
+<li>Return Parameters:
+
+<ul>
+<li>The measurement via SDK will be operated in the case of 1-3, and will be terminated if any of 4-8 occurs. The interface needs to be re-called after analyzing the return parameters.</li>
+<li>Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection; UserAuthen_TrySuccess is invalidate for HS5.</li>
+<li>@param serialNub  - The only identification of a user，should be reserved in third party apps，provide to other Apps [Range:0~0xFFFFFFF]</li>
+<li>@param <a href="../Blocks/MemorryUserListHS5Data.html">MemorryUserListHS5Data</a>  - Existing user info in HS5，including serialNub、Position of users. Related key: serialNumber、position</li>
+<li>@param disposeErrorBlock   - error codes in transmission process: Errors in HS5</li>
+</ul>
+</li>
+</ul>
+
 			</div>
 			
 
@@ -188,23 +199,9 @@ Return Parameters:
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Create new user</li>
-<li>Use the function if the SerialNub of current user is not included in user list of HS5 and the user number is less than 20</li>
-<li>Import parameters:
-tempUser,  included properties: serialNub、age、birthday、height、isAthlete、sex。
-serialNub: The only identification for user [Range:0~0x7FFFFFFF]
-age:user&rsquo;s age  Range:7~99
-birthday: User’s birthday, NSDate
-height: User’s height, (cm) Range:81~219
-isAthlete: If user is an athelete, UserIsAthelete_No: no, UserIsAthelete_Yes: Yes
-sex: User’s sex, UserSex_Female: female, UserSex_Male: male
-tempPosition: Position of user, range: 0～19, pick from empty position that has never been occupied
-Return Parameters：
-disposeHS5Result：Success:Yes，Fail:No.
-disposeErrorBlock: error codes in transmission process: Errors in HS5</li>
-</ul>
-
+				<p>Create new user
+Use the function if the SerialNub of current user is not included in user list of HS5 and the user number is less than 20
+Import parameters:</p>
 			</div>
 			
 		    
@@ -212,6 +209,52 @@ disposeErrorBlock: error codes in transmission process: Errors in HS5</li>
 			<div class="method-subsection method-declaration"><code>- (void)commandCreateUser:(HealthUser *)<em>tempUser</em> position:(uint8_t)<em>tempPosition</em> DisposeHS5Result:(DisposeHS5Result)<em>disposeHS5Result</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempUser</code></th>
+						<td><ul>
+<li>included properties: serialNub、age、birthday、height、isAthlete、sex。
+serialNub: The only identification for user [Range:0~0x7FFFFFFF]
+age:user&rsquo;s age  Range:7~99
+birthday: User’s birthday, NSDate
+height: User’s height, (cm) Range:81~219
+isAthlete: If user is an athelete, UserIsAthelete_No: no, UserIsAthelete_Yes: Yes
+sex: User’s sex, UserSex_Female: female, UserSex_Male: male</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempPosition</code></th>
+						<td><ul>
+<li>Position of user, range: 0～19, pick from empty position that has never been occupied
+Return Parameters：</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeHS5Result</code></th>
+						<td><ul>
+<li>Success:Yes，Fail:No.</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><ul>
+<li>error codes in transmission process: Errors in HS5</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -245,16 +288,9 @@ disposeErrorBlock: error codes in transmission process: Errors in HS5</li>
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Edit User Info</li>
-<li>If the SerialNub of current user already exists in the user list of HS5, this will be used when user info is changed.
-Import Parameters：
-  tempUser, included properties： serialNub、birthday、height、isAthlete、sex，instructions refer to “new user Api”.
-Return Parameters：
-  disposeHS5Result：Success:Yes，Fail:No.
-  disposeErrorBlock: error codes in transmission process: Errors in HS5</li>
-</ul>
-
+				<p>Edit User Info
+If the SerialNub of current user already exists in the user list of HS5, this will be used when user info is changed.
+Import Parameters：</p>
 			</div>
 			
 		    
@@ -262,6 +298,38 @@ Return Parameters：
 			<div class="method-subsection method-declaration"><code>- (void)commandModifyUser:(HealthUser *)<em>tempUser</em> DisposeHS5Result:(DisposeHS5Result)<em>disposeHS5Result</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempUser</code></th>
+						<td><ul>
+<li>included properties： serialNub、birthday、height、isAthlete、sex，instructions refer to “new user Api”.
+Return Parameters：</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeHS5Result</code></th>
+						<td><ul>
+<li>Success:Yes，Fail:No.</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><ul>
+<li>error codes in transmission process: Errors in HS5</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -295,16 +363,9 @@ Return Parameters：
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Delete Specified User</li>
-<li>This will be used deleting account in HS5.
-Import Parameters:
-  tempUser, included properties: serialNub，instructions refer to “new user Api”.
-Return Parameters:
-  disposeHS5Result：Success:Yes，Fail:No.
-  disposeErrorBlock：error codes in transmission proces: Errors in HS5</li>
-</ul>
-
+				<p>Delete Specified User
+This will be used deleting account in HS5.
+Import Parameters:</p>
 			</div>
 			
 		    
@@ -312,6 +373,38 @@ Return Parameters:
 			<div class="method-subsection method-declaration"><code>- (void)commandDelteUser:(HealthUser *)<em>tempUser</em> DisposeHS5Result:(DisposeHS5Result)<em>disposeHS5Result</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempUser</code></th>
+						<td><ul>
+<li>included properties: serialNub，instructions refer to “new user Api”.
+Return Parameters:</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeHS5Result</code></th>
+						<td><ul>
+<li>Success:Yes，Fail:No.</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><ul>
+<li>error codes in transmission proces: Errors in HS5</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -365,15 +458,15 @@ Return Parameters:
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<p>Import Parameters
-    tempUser, included properties： serialNub [Range:0~0x7FFFFFFF]，instructions refer to “new user Api”.
+				<p><em>Import Parameters
+    * @param tempUser  -included properties： serialNub [Range:0~0x7FFFFFFF]，instructions refer to “new user Api”.
 Return Parameters:
-    disposeHS5Result: Success:Yes，Fail:No.
-    startTransmission: Finish memory transmission.
-    progress: Memory transmission progress，0.0～1.0.
-    memorryData: Record data，More details and key refer Measure API. Additionally add time-measure property, related key: date.dataID
-    finishTransmission：Finish Memory Transmission
-    disposeErrorBlock: error codes in transmission process: Errors in HS5</p>
+    * @param disposeHS5Result - Success:Yes，Fail:No.
+    * @param startTransmission  - Finish memory transmission.
+    * @param progress  - Memory transmission progress，0.0～1.0.
+    * @param memorryData  - Record data，More details and key refer Measure API. </em>Additionally add time-measure property, related key: date.dataID
+    * @param finishTransmission  - Finish Memory Transmission
+    * @param disposeErrorBlock  - error codes in transmission process: Errors in HS5</p>
 			</div>
 			
 
@@ -402,19 +495,8 @@ Return Parameters:
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Establish Measurement Connection
-Import Parameters:
-  tempUser, included properties: serialNub [Range:0~0x7FFFFFFF]、height，instructions refer to “new user Api”.
-Return Parameters:
-  unStableHS5Weight: Current weight, (kg) [Value Range:0.0~150.0]
-  stableHS5Weight: Stable weight, (kg) [Value Range:0.0~150.0]
-  impedanceWeight: Weight by impedence, (kg)[Value Range:0.0~150.0]
-  bodyCompositionMeasurements: body info, includes weight(kg) Range:0.0~150.0,  fat content(%) Rnage:0.0~100.0, water content(%) Range:0.0~100.0, muscle content(%) Rnage:0.0~100.0, bone mass Range:0.0~25.5, visceral fat level Range:0~255, DCI(Kcal) Range:0~65535. keys: weight, weightFatValue, waterValue, muscleValue, skeletonValue, VFatLevelValue, DCIValue, dataID
-  disposeHS5Result: Success:Yes，Fail:No.
-  disposeErrorBlock: error codes in transmission process: Errors in HS5</li>
-</ul>
-
+				<p>Establish Measurement Connection
+Import Parameters:</p>
 			</div>
 			
 		    
@@ -422,6 +504,62 @@ Return Parameters:
 			<div class="method-subsection method-declaration"><code>- (void)commandCreateMeasureWithUser:(HealthUser *)<em>tempUser</em> unStableWeight:(UnStableHS5Weight)<em>unStableHS5Weight</em> MeasureWeight:(StableHS5Weight)<em>stableHS5Weight</em> ImpedanceType:(ImpedanceWeight)<em>impedanceWeight</em> BodyCompositionMeasurements:(BodyCompositionMeasurements)<em>bodyCompositionMeasurements</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempUser</code></th>
+						<td><ul>
+<li>included properties: serialNub [Range:0~0x7FFFFFFF]、height，instructions refer to “new user Api”.
+Return Parameters:</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>unStableHS5Weight</code></th>
+						<td><ul>
+<li>Current weight, (kg) [Value Range:0.0~150.0]</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>stableHS5Weight</code></th>
+						<td><ul>
+<li>Stable weight, (kg) [Value Range:0.0~150.0]</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>impedanceWeight</code></th>
+						<td><ul>
+<li>Weight by impedence, (kg)[Value Range:0.0~150.0]</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bodyCompositionMeasurements</code></th>
+						<td><ul>
+<li>body info, includes weight(kg) Range:0.0~150.0,  fat content(%) Rnage:0.0~100.0, water content(%) Range:0.0~100.0, muscle content(%) Rnage:0.0~100.0, bone mass Range:0.0~25.5, visceral fat level Range:0~255, DCI(Kcal) Range:0~65535. keys: weight, weightFatValue, waterValue, muscleValue, skeletonValue, VFatLevelValue, DCIValue, dataID</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><ul>
+<li>error codes in transmission process: Errors in HS5</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -455,7 +593,17 @@ Return Parameters:
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Stop Current Action</p>
+				<ul>
+<li>Stop Current Action and disconnect</li>
+<li>Return Parameters:
+
+<ul>
+<li>@param disposeHS5Result  - Success:Yes，Fail:No.</li>
+<li>@param disposeErrorBlock  - error codes in endCurrentConnect: Errors in HS5</li>
+</ul>
+</li>
+</ul>
+
 			</div>
 			
 		    
@@ -496,14 +644,9 @@ Return Parameters:
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Clean HS5
+				<p>Clean HS5
 Explanation:Delete current Auten Device and then rebuild connection.
-Return Parameters:
-disposeHS5Result: Success:Yes，Fail:No.
-disposeErrorBlock: error codes in transmission process: Errors in HS5</li>
-</ul>
-
+Return Parameters:</p>
 			</div>
 			
 		    
@@ -511,6 +654,29 @@ disposeErrorBlock: error codes in transmission process: Errors in HS5</li>
 			<div class="method-subsection method-declaration"><code>- (void)commandcleanDeviceDisposeHS5Result:(DisposeHS5Result)<em>disposeHS5Result</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeHS5Result</code></th>
+						<td><ul>
+<li>Success:Yes，Fail:No.</li>
+</ul>
+</td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><ul>
+<li>error codes in transmission process: Errors in HS5</li>
+</ul>
+</td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -588,7 +754,7 @@ disposeErrorBlock: error codes in transmission process: Errors in HS5</li>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

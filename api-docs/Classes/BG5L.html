@@ -76,6 +76,8 @@
 		
 		<option value="//api/name/commandInitBGSetUnit:DisposeBGBottleID:DisposeBGErrorBlock:">- commandInitBGSetUnit:DisposeBGBottleID:DisposeBGErrorBlock:</option>
 		
+		<option value="//api/name/commandKeepConnect:DisposeErrorBlock:">- commandKeepConnect:DisposeErrorBlock:</option>
+		
 		<option value="//api/name/commandQueryBattery:DisposeErrorBlock:">- commandQueryBattery:DisposeErrorBlock:</option>
 		
 		<option value="//api/name/commandReadBGCodeDic:DisposeBGErrorBlock:">- commandReadBGCodeDic:DisposeBGErrorBlock:</option>
@@ -110,7 +112,7 @@
 	<td><a href="../Classes/BGDevice.html">BGDevice</a> : NSObject</td>
 </tr><tr>
 	<th>Declared in</th>
-	<td>BG5L.h<br />BG5L.m</td>
+	<td>BG5L.h</td>
 </tr>
 						</tbody></table></div>
 					
@@ -608,7 +610,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Read the information of the code from the BG meter</p>
+				<p>Read the information of the code from the BG meter. This command can be available when code type is GOD. If code type is GDH, Strips is always O, and Date is not right.</p>
 			</div>
 			
 		    
@@ -623,7 +625,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeBGCodeDic</code></th>
-						<td><p>This block returns the information of the code, bottleID means the strip ID, Strips means the number of strips which has been used, Date means expired date.</p></td>
+						<td><p>This block returns the information of the code, Strips means the number of strips which has been used, Date means expired date.</p></td>
 					</tr>
 				
 					<tr>
@@ -686,17 +688,17 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>codeType</code></th>
-						<td><p>Set the code type,@1 is GOD,@2 is GDH.</p></td>
+						<td><p>Set the code type,BGCodeMode_GOD is GOD,BGCodeMode_GDH is GDH.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>encodeString</code></th>
-						<td><p>The code String gets by scanning the QR code.</p></td>
+						<td><p>The code String gets by scanning the QR code. If codeType is BGCodeMode_GDH, this parameter can be nil.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>bottleID</code></th>
-						<td><p>Generate from the QR code through some algorithms,ranging from 0-0xFFFFFFFF.</p></td>
+						<td><p>Generate from the QR code through some algorithms,ranging from 0-0xFFFFFFFF. If codeType is BGCodeMode_GDH, this parameter can be nil.</p></td>
 					</tr>
 				
 					<tr>
@@ -706,7 +708,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>num</code></th>
-						<td><p>the number of strips which is last,ranging from 1-255. num = 0 will determine the measurement.</p></td>
+						<td><p>The number of strips which is last,ranging from 1-255. If codeType is BGCodeMode_GOD, this parameter must be 1-255. If codeType is BGCodeMode_GDH, the default value is 255.</p></td>
 					</tr>
 				
 					<tr>
@@ -837,7 +839,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Analyze code include bottleID，DueDate and the number of strips.</p>
+				<p>Analyze code include bottleID，DueDate and the number of strips. Only Available for GOD Code</p>
 			</div>
 			
 		    
@@ -852,13 +854,18 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>encodeString</code></th>
-						<td><p>The code string gets by scanning the QR code.</p></td>
+						<td><p>The code String gets by scanning the QR code.</p></td>
 					</tr>
 				
 				</table>
 			</div>
 			
 
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>return a dictionary contains keys such as @&ldquo;BottleID&rdquo;,@&ldquo;StripNum&rdquo;,@&ldquo;DueDate&rdquo;,@&ldquo;OpenDate&rdquo;,@&ldquo;CodeDueDateOfOpen&rdquo;; return nil if input parameter is GDH code.</p>
+			</div>
 			
 
 			
@@ -906,6 +913,65 @@
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeBatteryBlock</code></th>
 						<td><p>A block to return the device battery remaining energy percentage, ‘80’ stands for 80%.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5L.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandKeepConnect:DisposeErrorBlock:" title="commandKeepConnect:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandKeepConnect:DisposeErrorBlock:">&ndash;&nbsp;commandKeepConnect:DisposeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Keep the connection. After successfully called, BG5L reset its Timer to enter sleep mode.
+Keep the connection to wait for user to scan code,need to loop call.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandKeepConnect:(DisposeBG5KeepConnectBlock)<em>disposeBG5KeepConnectBlock</em> DisposeErrorBlock:(DisposeBGErrorBlock)<em>disposeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBG5KeepConnectBlock</code></th>
+						<td><p>A block returns the result of the keeping connection order,&lsquo;YES&rsquo; means setting success.</p></td>
 					</tr>
 				
 					<tr>
@@ -992,7 +1058,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

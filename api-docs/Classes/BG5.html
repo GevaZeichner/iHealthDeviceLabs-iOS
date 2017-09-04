@@ -52,6 +52,32 @@
 
 	
 	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/experiedDataString">experiedDataString</option>
+		
+		<option value="//api/name/historyArray">historyArray</option>
+		
+		<option value="//api/name/memeryNum">memeryNum</option>
+		
+		<option value="//api/name/openMode">openMode</option>
+		
+		<option value="//api/name/packageIndex">packageIndex</option>
+		
+		<option value="//api/name/remainingNumber">remainingNumber</option>
+		
+		<option value="//api/name/selectBottleID">selectBottleID</option>
+		
+		<option value="//api/name/selectCodeMode">selectCodeMode</option>
+		
+		<option value="//api/name/selectMeasureMode">selectMeasureMode</option>
+		
+		<option value="//api/name/selectQRCode">selectQRCode</option>
+		
+		<option value="//api/name/syncedDate">syncedDate</option>
+		
+	</optgroup>
+	
 
 	
 
@@ -66,13 +92,11 @@
 		
 		<option value="//api/name/commandBGSetUnit:DisposeSetUnitResult:DisposeBGErrorBlock:">- commandBGSetUnit:DisposeSetUnitResult:DisposeBGErrorBlock:</option>
 		
-		<option value="//api/name/commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:">- commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:</option>
+		<option value="//api/name/commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:">- commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:</option>
 		
-		<option value="//api/name/commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:">- commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:</option>
+		<option value="//api/name/commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:">- commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:</option>
 		
-		<option value="//api/name/commandDeleteMemorryData:">- commandDeleteMemorryData:</option>
-		
-		<option value="//api/name/commandInitBGSetUnit:DisposeBGBottleID:DisposeBGErrorBlock:">- commandInitBGSetUnit:DisposeBGBottleID:DisposeBGErrorBlock:</option>
+		<option value="//api/name/commandDeleteMemorryData:DisposeBGErrorBlock:">- commandDeleteMemorryData:DisposeBGErrorBlock:</option>
 		
 		<option value="//api/name/commandKeepConnect:DisposeErrorBlock:">- commandKeepConnect:DisposeErrorBlock:</option>
 		
@@ -80,13 +104,11 @@
 		
 		<option value="//api/name/commandReadBGCodeDic:DisposeBGErrorBlock:">- commandReadBGCodeDic:DisposeBGErrorBlock:</option>
 		
-		<option value="//api/name/commandSendBGCodeWithMeasureType:CodeType:CodeString:bottleID:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:">- commandSendBGCodeWithMeasureType:CodeType:CodeString:bottleID:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:</option>
+		<option value="//api/name/commandSendBGCodeWithMeasureType:CodeType:CodeString:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:">- commandSendBGCodeWithMeasureType:CodeType:CodeString:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:</option>
 		
 		<option value="//api/name/commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:">- commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:</option>
 		
 		<option value="//api/name/commandTransferMemorryData:DisposeBGHistoryData:DisposeBGErrorBlock:">- commandTransferMemorryData:DisposeBGHistoryData:DisposeBGErrorBlock:</option>
-		
-		<option value="//api/name/getDueDate:">- getDueDate:</option>
 		
 	</optgroup>
 	
@@ -130,64 +152,6 @@
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/commandInitBGSetUnit:DisposeBGBottleID:DisposeBGErrorBlock:" title="commandInitBGSetUnit:DisposeBGBottleID:DisposeBGErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandInitBGSetUnit:DisposeBGBottleID:DisposeBGErrorBlock:">&ndash;&nbsp;commandInitBGSetUnit:DisposeBGBottleID:DisposeBGErrorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Establish measurement connection</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandInitBGSetUnit:(BGUnit)<em>unitState</em> DisposeBGBottleID:(DisposeBGBottleID)<em>disposeBGBottleID</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGBottleID</code></th>
-						<td><p>This block returns the ID which is stored in the BG meter, to verify if the strip has been used is from the same bottle of the registered one. if not, the app will notify the user need scan the new bottle, if yes, the app will get the number of left strips and expire date.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
-						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
 	<a name="//api/name/commandBGSetTime:DisposeBGErrorBlock:" title="commandBGSetTime:DisposeBGErrorBlock:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/commandBGSetTime:DisposeBGErrorBlock:">&ndash;&nbsp;commandBGSetTime:DisposeBGErrorBlock:</a></code>
 </h3>
@@ -199,7 +163,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set Time (only for react-Native project)</p>
+				<p>Set Time</p>
 			</div>
 			
 		    
@@ -214,7 +178,7 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeBGSetTime</code></th>
-						<td><p>The block return means set success.</p></td>
+						<td><p>The block return YES means set success, NO means set fail.</p></td>
 					</tr>
 				
 					<tr>
@@ -230,6 +194,11 @@
 
 			
 
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> Time is local time</p></div>
+			</div>
 			
 
 			
@@ -257,7 +226,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Set Unit (only for react-Native project)</p>
+				<p>Set Unit</p>
 			</div>
 			
 		    
@@ -272,604 +241,12 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>unitState</code></th>
-						<td><p>The block return means set success.</p></td>
+						<td><p>The block return YES means set success, NO means set fail.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
 						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:" title="commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Send BottleID to the BG meter (only for react-Native project)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandSendBottleID:(NSNumber *)<em>BottleID</em> DisposeBGSendBottleIDBlock:(DisposeBGSendBottleIDBlock)<em>disposeBGSendBottleIDBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>BottleID</code></th>
-						<td><p>bottleID</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGSendBottleIDBlock</code></th>
-						<td><p>This block returns yes means send BottleID success.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
-						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandBGGetBottleID:DisposeBGErrorBlock:" title="commandBGGetBottleID:DisposeBGErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandBGGetBottleID:DisposeBGErrorBlock:">&ndash;&nbsp;commandBGGetBottleID:DisposeBGErrorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Get the bottleID stored in the BG meter (only for react-Native project)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandBGGetBottleID:(DisposeBGBottleID)<em>disposeBGBottleID</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGBottleID</code></th>
-						<td><p>This block returns the ID which is stored in the BG meter, to verify if the strip has been used is from the same bottle of the registered one. if not, the app will notify the user need scan the new bottle, if yes, the app will get the number of left strips and expire date.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
-						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandTransferMemorryData:DisposeBGHistoryData:DisposeBGErrorBlock:" title="commandTransferMemorryData:DisposeBGHistoryData:DisposeBGErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemorryData:DisposeBGHistoryData:DisposeBGErrorBlock:">&ndash;&nbsp;commandTransferMemorryData:DisposeBGHistoryData:DisposeBGErrorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Tranfer offline history records</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemorryData:(DisposeBGDataCount)<em>disposeBGDataCount</em> DisposeBGHistoryData:(DisposeBGHistoryData)<em>disposeBGHistoryData</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGDataCount</code></th>
-						<td><p>The number of the records in the meter memory.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGHistoryData</code></th>
-						<td><p>The offline history records detail, result means result, date means the measurement time.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
-						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandDeleteMemorryData:" title="commandDeleteMemorryData:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandDeleteMemorryData:">&ndash;&nbsp;commandDeleteMemorryData:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Delete offline history records</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandDeleteMemorryData:(DisposeBGDeleteData)<em>DisposeBGDeleteData</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>DisposeBGDeleteData</code></th>
-						<td><p>This block returns yes means deleted success.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandReadBGCodeDic:DisposeBGErrorBlock:" title="commandReadBGCodeDic:DisposeBGErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandReadBGCodeDic:DisposeBGErrorBlock:">&ndash;&nbsp;commandReadBGCodeDic:DisposeBGErrorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Read the information of the code from the BG meter</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandReadBGCodeDic:(DisposeBGCodeDic)<em>disposeBGCodeDic</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGCodeDic</code></th>
-						<td><p>This block returns the information of the code, Strips means the number of strips which has been used, Date means expired date.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
-						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandSendBGCodeWithMeasureType:CodeType:CodeString:bottleID:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:" title="commandSendBGCodeWithMeasureType:CodeType:CodeString:bottleID:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandSendBGCodeWithMeasureType:CodeType:CodeString:bottleID:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:">&ndash;&nbsp;commandSendBGCodeWithMeasureType:CodeType:CodeString:bottleID:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Send code with type (Note: every time you get the CTL test results you need to send the blood CODE again.)</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandSendBGCodeWithMeasureType:(BGMeasureMode)<em>testType</em> CodeType:(BGCodeMode)<em>codeType</em> CodeString:(NSString *)<em>encodeString</em> bottleID:(NSNumber *)<em>bottleID</em> validDate:(NSDate *)<em>date</em> remainNum:(NSNumber *)<em>num</em> DisposeBGSendCodeBlock:(DisposeBGSendCodeBlock)<em>disposeBGSendCodeBlock</em> DisposeBGStartModel:(DisposeBGStartModel)<em>disposeBGStartModel</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>testType</code></th>
-						<td><p>Set the measure test type,@1 is Blood Test,@2 is CTL Test.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>codeType</code></th>
-						<td><p>Set the code type,@1 is GOD,@2 is GDH.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>encodeString</code></th>
-						<td><p>The code String gets by scanning the QR code.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>bottleID</code></th>
-						<td><p>Generate from the QR code through some algorithms,ranging from 0-0xFFFFFFFF.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>date</code></th>
-						<td><p>The expir'ed date.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>num</code></th>
-						<td><p>the number of strips which is last,ranging from 1-255. num = 0 will determine the measurement.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGSendCodeBlock</code></th>
-						<td><p>This block returns yes means code has been sent regularly.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGStartModel</code></th>
-						<td><p>The boot mode of the BG meter, BGOpenMode_Strip means booting the meter by sliding the strip, BGOpenMode_Hand means booting the meter by pressing the on/off button. interface (6) will be called by the first mode, interface (7) will be called by the second mode.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
-						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:" title="commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Strip-Sliding booting mode</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandCreateBGtestStripInBlock:(DisposeBGStripInBlock)<em>disposeBGStripInBlock</em> DisposeBGBloodBlock:(DisposeBGBloodBlock)<em>disposeBGBloodBlock</em> DisposeBGResultBlock:(DisposeBGResultBlock)<em>disposeBGResultBlock</em> DisposeBGTestModelBlock:(DisposeBGTestModelBlock)<em>disposeBGTestModelBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGStripInBlock</code></th>
-						<td><p>This block returns yes means strip slides in.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGBloodBlock</code></th>
-						<td><p>This block returns yes means the blood drop has beed sensed from the strip.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGResultBlock</code></th>
-						<td><p>This block returns the measurement by the unit of mg/dL, range from 20-600.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGTestModelBlock</code></th>
-						<td><p>This block returns measurement mode, BGMeasureMode_Blood means blood measurement mode, BGMeasureMode_NoBlood means control solution measurement mode.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
-						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:" title="commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGTestModelBlock:DisposeBGErrorBlock:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Button-pressing booting mode</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (void)commandCreateBGtestModel:(BGMeasureMode)<em>testMode</em> DisposeBGStripInBlock:(DisposeBGStripInBlock)<em>disposeBGStripInBlock</em> DisposeBGBloodBlock:(DisposeBGBloodBlock)<em>disposeBGBloodBlock</em> DisposeBGResultBlock:(DisposeBGResultBlock)<em>disposeBGResultBlock</em> DisposeBGTestModelBlock:(DisposeBGTestModelBlock)<em>disposeBGTestModelBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>testMode</code></th>
-						<td><p>Set the measurement mode,must be the same as the testType in send code method, BGMeasureMode_Blood means blood measurement mode, BGMeasureMode_NoBlood means control solution measurement mode.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGStripInBlock</code></th>
-						<td><p>This block returns yes means strip slides in.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGBloodBlock</code></th>
-						<td><p>This block returns yes means the blood drop has beed sensed from the strip.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGResultBlock</code></th>
-						<td><p>This block returns the measurement by the unit of mg/dL, range from 20-600.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGTestModelBlock</code></th>
-						<td><p>This block returns measurement mode, BGMeasureMode_Blood means blood measurement mode, BGMeasureMode_NoBlood means control solution measurement mode.</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
-						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
-					</tr>
-				
-				</table>
-			</div>
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG5.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/codeStripStrAnalysis:" title="codeStripStrAnalysis:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/codeStripStrAnalysis:">&ndash;&nbsp;codeStripStrAnalysis:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Analyze code include bottleID，DueDate and the number of strips.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSDictionary *)codeStripStrAnalysis:(NSString *)<em>encodeString</em></code></div>
-
-		    
-			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>encodeString</code></th>
-						<td><p>The code String gets by scanning the QR code.</p></td>
 					</tr>
 				
 				</table>
@@ -922,11 +299,541 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeBatteryBlock</code></th>
-						<td><p>A block to return the device battery remaining energy percentage, ‘80’ stands for 80%.</p></td>
+						<td><p>A block to return the device battery remaining energy percentage, ‘80’ stands for 80%. 255 means device in charging.</p></td>
 					</tr>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandTransferMemorryData:DisposeBGHistoryData:DisposeBGErrorBlock:" title="commandTransferMemorryData:DisposeBGHistoryData:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemorryData:DisposeBGHistoryData:DisposeBGErrorBlock:">&ndash;&nbsp;commandTransferMemorryData:DisposeBGHistoryData:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Tranfer offline history records.
+For BG5 V3.0, after calling this method, you should call commandDelete<a href="../Blocks/MemorryData.html">MemorryData</a>: method. Otherwise, the measure date may be wrong.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemorryData:(DisposeBGDataCount)<em>disposeBGDataCount</em> DisposeBGHistoryData:(DisposeBGHistoryData)<em>disposeBGHistoryData</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGDataCount</code></th>
+						<td><p>The number of the records in the meter memory.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGHistoryData</code></th>
+						<td><p>The offline history records detail, result means result, date means the measurement time.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandDeleteMemorryData:DisposeBGErrorBlock:" title="commandDeleteMemorryData:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandDeleteMemorryData:DisposeBGErrorBlock:">&ndash;&nbsp;commandDeleteMemorryData:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Delete offline history records</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandDeleteMemorryData:(DisposeBGDeleteData)<em>DisposeBGDeleteData</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>DisposeBGDeleteData</code></th>
+						<td><p>deleteOk YES or NO</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandSendBGCodeWithMeasureType:CodeType:CodeString:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:" title="commandSendBGCodeWithMeasureType:CodeType:CodeString:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandSendBGCodeWithMeasureType:CodeType:CodeString:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:">&ndash;&nbsp;commandSendBGCodeWithMeasureType:CodeType:CodeString:validDate:remainNum:DisposeBGSendCodeBlock:DisposeBGStartModel:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Send code with type (Note: After you got the CTL test results, you need to send the blood Code again.)</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandSendBGCodeWithMeasureType:(BGMeasureMode)<em>testType</em> CodeType:(BGCodeMode)<em>codeType</em> CodeString:(NSString *)<em>encodeString</em> validDate:(NSDate *)<em>date</em> remainNum:(NSNumber *)<em>num</em> DisposeBGSendCodeBlock:(DisposeBGSendCodeBlock)<em>disposeBGSendCodeBlock</em> DisposeBGStartModel:(DisposeBGStartModel)<em>disposeBGStartModel</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>testType</code></th>
+						<td><p>Set the measure test type,@1 is Blood Test,@2 is CTL Test.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>codeType</code></th>
+						<td><p>Set the code type,@1 is GOD,@2 is GDH.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>encodeString</code></th>
+						<td><p>The code String gets by scanning the QR code. Only used when codetype is GOD</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>date</code></th>
+						<td><p>The strip expired date.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>num</code></th>
+						<td><p>the number of remaining strips,ranging from 1-255.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGSendCodeBlock</code></th>
+						<td><p>YES means success, NO means fail.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGStartModel</code></th>
+						<td><p>The boot mode of the BG meter, BGOpenMode_Strip means booting the meter by sliding the strip, BGOpenMode_Hand means booting the meter by pressing the on/off button. commandCreateBGtestStripInBlock should be called after recieving BGOpenMode_Strip, commandCreateBGtestModel should be called after recieving BGOpenMode_Hand.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandReadBGCodeDic:DisposeBGErrorBlock:" title="commandReadBGCodeDic:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandReadBGCodeDic:DisposeBGErrorBlock:">&ndash;&nbsp;commandReadBGCodeDic:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Read the information of the strip from the BG meter</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandReadBGCodeDic:(DisposeBGCodeDic)<em>disposeBGCodeDic</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGCodeDic</code></th>
+						<td><p>This block returns the information of the strip, Strips means the number of strips which has been used, Date means expired date.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:" title="commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandSendBottleID:DisposeBGSendBottleIDBlock:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Send BottleID to the BG meter</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandSendBottleID:(NSNumber *)<em>bottleID</em> DisposeBGSendBottleIDBlock:(DisposeBGSendBottleIDBlock)<em>disposeBGSendBottleIDBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>bottleID</code></th>
+						<td><p>bottleID, 4 bytes,0x00000000-0xFFFFFFFF</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGSendBottleIDBlock</code></th>
+						<td><p>The block return YES means set success, NO means set fail.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandBGGetBottleID:DisposeBGErrorBlock:" title="commandBGGetBottleID:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandBGGetBottleID:DisposeBGErrorBlock:">&ndash;&nbsp;commandBGGetBottleID:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get the bottleID stored in the BG meter</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandBGGetBottleID:(DisposeBGBottleID)<em>disposeBGBottleID</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGBottleID</code></th>
+						<td><p>This block returns the ID which is stored in the BG meter, to verify if the strip that has been used is from the same bottle of the registered one. if not match, the app will notify the user need scan the new bottle; If match, the app can get the number of used strips and expire date.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:" title="commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandCreateBGtestStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Strip-Sliding booting mode</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandCreateBGtestStripInBlock:(DisposeBGStripInBlock)<em>disposeBGStripInBlock</em> DisposeBGBloodBlock:(DisposeBGBloodBlock)<em>disposeBGBloodBlock</em> DisposeBGResultBlock:(DisposeBGResultBlock)<em>disposeBGResultBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGStripInBlock</code></th>
+						<td><p>This block returns yes means strip slides in.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGBloodBlock</code></th>
+						<td><p>This block returns yes means the blood drop has beed sensed from the strip.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGResultBlock</code></th>
+						<td><p>This block returns the measurement by the unit of mg/dL, range from 20-600.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:" title="commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandCreateBGtestModel:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Button-pressing booting mode</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandCreateBGtestModel:(BGMeasureMode)<em>testMode</em> DisposeBGStripInBlock:(DisposeBGStripInBlock)<em>disposeBGStripInBlock</em> DisposeBGBloodBlock:(DisposeBGBloodBlock)<em>disposeBGBloodBlock</em> DisposeBGResultBlock:(DisposeBGResultBlock)<em>disposeBGResultBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>testMode</code></th>
+						<td><p>Set the measurement mode,must be the same as the testType in send code method, BGMeasureMode_Blood means blood measurement mode, BGMeasureMode_NoBlood means control solution measurement mode.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGStripInBlock</code></th>
+						<td><p>This block returns yes means strip slides in.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGBloodBlock</code></th>
+						<td><p>This block returns yes means the blood drop has beed sensed from the strip.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGResultBlock</code></th>
+						<td><p>This block returns the measurement by the unit of mg/dL, range from 20-600.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
 						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
 					</tr>
 				
@@ -965,8 +872,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Keep the connection
-Keep the connection to wait for user to scan code,need to loop call.</p>
+				<p>Keep the connection to enable enough time for operation such as scan code, insert strip and drop blood.</p>
 			</div>
 			
 		    
@@ -981,7 +887,7 @@ Keep the connection to wait for user to scan code,need to loop call.</p>
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>disposeBG5KeepConnectBlock</code></th>
-						<td><p>A block returns the result of the keeping connection order,&lsquo;YES&rsquo; means setting success.</p></td>
+						<td><p>A block returns the result of the keeping connection order,&lsquo;YES&rsquo; means setting success,&lsquo;NO&rsquo; means fail.</p></td>
 					</tr>
 				
 					<tr>
@@ -1012,17 +918,9 @@ Keep the connection to wait for user to scan code,need to loop call.</p>
 			
 		</div>
 	</div>
-</div>
-						</div>
-						
-
-						
-						<h2 class="task-title">Other Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/getDueDate:" title="getDueDate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getDueDate:">&ndash;&nbsp;getDueDate:</a></code>
+</div><div class="section-method">
+	<a name="//api/name/codeStripStrAnalysis:" title="codeStripStrAnalysis:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/codeStripStrAnalysis:">&ndash;&nbsp;codeStripStrAnalysis:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -1032,12 +930,488 @@ Keep the connection to wait for user to scan code,need to loop call.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p><strong><strong><strong><strong>此处加效期为15.1.5的处理,10条有的正确有的不正确</strong></strong></strong></strong>****</p>
+				<p>Analyze code include bottleID，DueDate and the number of strips. Only Available for GOD Code</p>
 			</div>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (NSDate *)getDueDate:(uint8_t *)<em>someCodeBuf</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (NSDictionary *)codeStripStrAnalysis:(NSString *)<em>encodeString</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>encodeString</code></th>
+						<td><p>The code String gets by scanning the QR code.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>return a dictionary contains keys such as @&ldquo;BottleID&rdquo;,@&ldquo;StripNum&rdquo;,@&ldquo;DueDate&rdquo;,@&ldquo;OpenDate&rdquo;,@&ldquo;CodeDueDateOfOpen&rdquo;; return nil if input parameter is GDH code.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/memeryNum" title="memeryNum"></a>
+	<h3 class="method-title"><code><a href="#//api/name/memeryNum">&nbsp;&nbsp;memeryNum</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>保存查询的离线数据的总条数</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) NSInteger memeryNum</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/packageIndex" title="packageIndex"></a>
+	<h3 class="method-title"><code><a href="#//api/name/packageIndex">&nbsp;&nbsp;packageIndex</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>保存离线数据的包序号</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) int packageIndex</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/historyArray" title="historyArray"></a>
+	<h3 class="method-title"><code><a href="#//api/name/historyArray">&nbsp;&nbsp;historyArray</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>保存需要返回的离线数据数组</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) NSMutableArray *historyArray</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/openMode" title="openMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/openMode">&nbsp;&nbsp;openMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>保存下位机发送的开机模式</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BGOpenMode openMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectMeasureMode" title="selectMeasureMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectMeasureMode">&nbsp;&nbsp;selectMeasureMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>保存用户发Code信息时，传入的测量类型，用于设置BottleID后，发Code信息时使用；用于判断开始测量时传入的测量类型是否一致</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BGMeasureMode selectMeasureMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectCodeMode" title="selectCodeMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectCodeMode">&nbsp;&nbsp;selectCodeMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>保存用户发Code信息时，传入的试条类型，用于设置BottleID后，发Code信息时使用</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BGCodeMode selectCodeMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectQRCode" title="selectQRCode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectQRCode">&nbsp;&nbsp;selectQRCode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>保存用户发Code信息时，传入的QR Code，用于设置BottleID后，发Code信息时使用</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *selectQRCode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/selectBottleID" title="selectBottleID"></a>
+	<h3 class="method-title"><code><a href="#//api/name/selectBottleID">&nbsp;&nbsp;selectBottleID</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>保存用户发Code信息时，解析的BottleID，用于在线测量结果上云时使用</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSNumber *selectBottleID</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/experiedDataString" title="experiedDataString"></a>
+	<h3 class="method-title"><code><a href="#//api/name/experiedDataString">&nbsp;&nbsp;experiedDataString</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>保存用户发Code信息时，传入的效期字符串，用于设置BottleID后，发Code信息时使用</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSString *experiedDataString</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/remainingNumber" title="remainingNumber"></a>
+	<h3 class="method-title"><code><a href="#//api/name/remainingNumber">&nbsp;&nbsp;remainingNumber</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>保存用户发Code信息时，传入的剩余试条数，用于设置BottleID后，发Code信息时使用</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSNumber *remainingNumber</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BG5.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/syncedDate" title="syncedDate"></a>
+	<h3 class="method-title"><code><a href="#//api/name/syncedDate">&nbsp;&nbsp;syncedDate</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>记录BG5 3.0设置时间方法发给下位机的时间</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, copy) NSDate *syncedDate</code></div>
 
 		    
 			
@@ -1076,7 +1450,7 @@ Keep the connection to wait for user to scan code,need to loop call.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

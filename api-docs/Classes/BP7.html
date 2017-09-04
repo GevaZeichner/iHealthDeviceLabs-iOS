@@ -70,7 +70,13 @@
 		
 		<option value="//api/name/commandStartGetAngle:errorBlock:">- commandStartGetAngle:errorBlock:</option>
 		
-		<option value="//api/name/stopBPMeassureErrorBlock:errorBlock:">- stopBPMeassureErrorBlock:errorBlock:</option>
+		<option value="//api/name/commandStartMeasureWithZeroingState:pressure:waveletWithHeartbeat:waveletWithoutHeartbeat:result:errorBlock:">- commandStartMeasureWithZeroingState:pressure:waveletWithHeartbeat:waveletWithoutHeartbeat:result:errorBlock:</option>
+		
+		<option value="//api/name/commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:">- commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:</option>
+		
+		<option value="//api/name/commandTransferMemoryTotalCount:errorBlock:">- commandTransferMemoryTotalCount:errorBlock:</option>
+		
+		<option value="//api/name/stopBPMeassureSuccessBlock:errorBlock:">- stopBPMeassureSuccessBlock:errorBlock:</option>
 		
 	</optgroup>
 	
@@ -96,7 +102,7 @@
 	<td><a href="../Classes/BPDevice.html">BPDevice</a> : NSObject</td>
 </tr><tr>
 	<th>Conforms to</th>
-	<td>BPCommandCacheDelegate</td>
+	<td><a href="../Protocols/BPBasicProtocol.html">BPBasicProtocol</a><br /><a href="../Protocols/BPOfflineDataTransferProtocol.html">BPOfflineDataTransferProtocol</a><br /><a href="../Protocols/BPRealtimeMeasureProtocol.html">BPRealtimeMeasureProtocol</a></td>
 </tr><tr>
 	<th>Declared in</th>
 	<td>BP7.h<br />BP7.m</td>
@@ -113,7 +119,7 @@
 						
 
 						
-						
+						<h2 class="task-title">Other Methods</h2>
 
 						<div class="task-list">
 							<div class="section-method">
@@ -438,6 +444,110 @@ Specification:
 		</div>
 	</div>
 </div><div class="section-method">
+	<a name="//api/name/commandStartMeasureWithZeroingState:pressure:waveletWithHeartbeat:waveletWithoutHeartbeat:result:errorBlock:" title="commandStartMeasureWithZeroingState:pressure:waveletWithHeartbeat:waveletWithoutHeartbeat:result:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandStartMeasureWithZeroingState:pressure:waveletWithHeartbeat:waveletWithoutHeartbeat:result:errorBlock:">&ndash;&nbsp;commandStartMeasureWithZeroingState:pressure:waveletWithHeartbeat:waveletWithoutHeartbeat:result:errorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Establish measurement connection and start BP measurement.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandStartMeasureWithZeroingState:(BlockZero)<em>blockZeroState</em> pressure:(BlockPressure)<em>pressure</em> waveletWithHeartbeat:(BlockWavelet)<em>blockWaveletWithHeartbeat</em> waveletWithoutHeartbeat:(BlockWavelet)<em>blockWaveletWithoutHeartbeat</em> result:(BlockMeasureResult)<em>result</em> errorBlock:(BlockError)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>blockZeroState</code></th>
+						<td><p>Zeroing state</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pressure</code></th>
+						<td><p>Pressure value in the process of measurement, the unit is ‘mmHg’.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>blockWaveletWithHeartbeat</code></th>
+						<td><p>Wavelet data set including pulse rate</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>blockWaveletWithoutHeartbeat</code></th>
+						<td><p>Wavelet data set without pulse rate</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>result</code></th>
+						<td><p>result of the measurement, including systolic pressure, diastolic pressure, pulse rate and irregular judgment. Relevant key: time, sys, dia, heartRate, irregular. irregular will be 0 or 1.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>Return error codes.
+Specification:
+1.  BPError0 = 0: Unable to take measurements due to arm/wrist movements.
+2.  BPError1:  Failed to detect systolic pressure.
+3.  BPError2:  Failed to detect diastolic pressure.
+4.  BPError3:  Pneumatic system blocked or cuff is too tight during inflation.
+5.  BPError4:  Pneumatic system leakage or cuff is too loose during inflation.
+6.  BPError5:  Cuff pressure reached over 300mmHg.
+7.  BPError6:  Cuff pressure reached over 15 mmHg for more than 160 seconds.
+8.  BPError7:  Data retrieving error.
+9.  BPError8:  Data retrieving error.
+10.  BPError9:  Data retrieving error.
+11.  BPError10:  Data retrieving error.
+12.  BPError11:  Communication Error.
+13.  BPError12:  Communication Error.
+14.  BPError13:  Low battery.
+15.  BPError14:  Device bluetooth set failed.
+16.  BPError15:  Systolic exceeds 260mmHg or diastolic exceeds 199mmHg.
+17.  BPError16:  Systolic below 60mmHg or diastolic below 40mmHg.
+18.  BPError17:  Arm/wrist movement beyond range.
+19.  BPNormalError=30:  device error, error message displayed automatically.
+20.  BPOverTimeError:  Abnormal communication.
+21.  BPNoRespondError:  Abnormal communication.
+22.  BPBeyondRangeError:  device is out of communication range.
+23.  BPDidDisconnect:  device is disconnected.
+24.  BPAskToStopMeasure:  measurement has been stopped.
+25.  BPInputParameterError=400:  Parameter input error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BPDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
 	<a name="//api/name/commandBatchUpload:pregress:dataArray:errorBlock:" title="commandBatchUpload:pregress:dataArray:errorBlock:"></a>
 	<h3 class="method-title"><code><a href="#//api/name/commandBatchUpload:pregress:dataArray:errorBlock:">&ndash;&nbsp;commandBatchUpload:pregress:dataArray:errorBlock:</a></code>
 </h3>
@@ -506,8 +616,8 @@ Specification:
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/stopBPMeassureErrorBlock:errorBlock:" title="stopBPMeassureErrorBlock:errorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/stopBPMeassureErrorBlock:errorBlock:">&ndash;&nbsp;stopBPMeassureErrorBlock:errorBlock:</a></code>
+	<a name="//api/name/stopBPMeassureSuccessBlock:errorBlock:" title="stopBPMeassureSuccessBlock:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopBPMeassureSuccessBlock:errorBlock:">&ndash;&nbsp;stopBPMeassureSuccessBlock:errorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -522,7 +632,7 @@ Specification:
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)stopBPMeassureErrorBlock:(BlockSuccess)<em>success</em> errorBlock:(BlockError)<em>error</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)stopBPMeassureSuccessBlock:(BlockSuccess)<em>success</em> errorBlock:(BlockError)<em>error</em></code></div>
 
 		    
 			
@@ -566,6 +676,169 @@ Specification:
 </div>
 						</div>
 						
+
+						
+						<h2 class="task-title">Other Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/commandTransferMemoryTotalCount:errorBlock:" title="commandTransferMemoryTotalCount:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemoryTotalCount:errorBlock:">&ndash;&nbsp;commandTransferMemoryTotalCount:errorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Upload offline data total Count.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemoryTotalCount:(BlockBachCount)<em>totalCount</em> errorBlock:(BlockError)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>totalCount</code></th>
+						<td><p>item quantity of total data.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>A block to return the error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BPDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:" title="commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:">&ndash;&nbsp;commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Upload offline data.
+@Notice   By the first time of new user register via SDK, ‘iHealth disclaimer’ will pop up automatically, and require the user agrees to continue. SDK application requires Internet connection; there is 10-day tryout if SDK cannot connect Internet, SDK is fully functional during tryout period, but will be terminated without verification through Internet after 10 days.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemoryDataWithTotalCount:(BlockBachCount)<em>totalCount</em> progress:(BlockBachProgress)<em>progress</em> dataArray:(BlockBachArray)<em>uploadDataArray</em> errorBlock:(BlockError)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>totalCount</code></th>
+						<td><p>item quantity of total data</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>progress</code></th>
+						<td><p>upload completion ratio , from 0.0 to 1.0 or 0%~100％, 100% means upload completed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uploadDataArray</code></th>
+						<td><p>offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment,scheme ID,body movement flag. corresponding KEY as time, sys, dia, heartRate, irregular,schemeID,bodyMovementFlg.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>error codes.
+Specification:
+1.  BPError0 = 0: Unable to take measurements due to arm/wrist movements.
+2.  BPError1:  Failed to detect systolic pressure.
+3.  BPError2:  Failed to detect diastolic pressure.
+4.  BPError3:  Pneumatic system blocked or cuff is too tight during inflation.
+5.  BPError4:  Pneumatic system leakage or cuff is too loose during inflation.
+6.  BPError5:  Cuff pressure reached over 300mmHg.
+7.  BPError6:  Cuff pressure reached over 15 mmHg for more than 160 seconds.
+8.  BPError7:  Data retrieving error.
+9.  BPError8:  Data retrieving error.
+10.  BPError9:  Data retrieving error.
+11.  BPError10:  Data retrieving error.
+12.  BPError11:  Communication Error.
+13.  BPError12:  Communication Error.
+14.  BPError13:  Low battery.
+15.  BPError14:  Device bluetooth set failed.
+16.  BPError15:  Systolic exceeds 260mmHg or diastolic exceeds 199mmHg.
+17.  BPError16:  Systolic below 60mmHg or diastolic below 40mmHg.
+18.  BPError17:  Arm/wrist movement beyond range.
+19.  BPError21:  Blood pressure meter is in progress, unable to respond to command.
+20.  BPNormalError=30:  device error, error message displayed automatically.
+21.  BPOverTimeError:  Abnormal communication.
+22.  BPNoRespondError:  Abnormal communication.
+23.  BPBeyondRangeError:  device is out of communication range.
+24.  BPDidDisconnect:  device is disconnected.
+25.  BPAskToStopMeasure:  measurement has been stopped.
+26.  BPDeviceBusy:  device is busy doing other things
+27.  BPInputParameterError=400:  Parameter input error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BPDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
 					</div>
 					
 					
@@ -578,7 +851,7 @@ Specification:
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DFUProtocol110Delegate Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">iHealthSDKStatic </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">iHealth</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/DFUProtocol110:deviceDisconnectWhenComamand:">- DFUProtocol110:deviceDisconnectWhenComamand:</option>
+		
+		<option value="//api/name/DFUProtocol110:deviceNotResponseCommand:">- DFUProtocol110:deviceNotResponseCommand:</option>
+		
+		<option value="//api/name/DFUProtocol110:didRecieveCanUpdateFlag:">- DFUProtocol110:didRecieveCanUpdateFlag:</option>
+		
+		<option value="//api/name/DFUProtocol110:didRecieveDeviceFirmwareInfo:">- DFUProtocol110:didRecieveDeviceFirmwareInfo:</option>
+		
+		<option value="//api/name/DFUProtocol110:didRecieveTransmissionResult:pauseReason:pauseLength:">- DFUProtocol110:didRecieveTransmissionResult:pauseReason:pauseLength:</option>
+		
+		<option value="//api/name/DFUProtocol110:timeoutCommand:">- DFUProtocol110:timeoutCommand:</option>
+		
+		<option value="//api/name/DFUProtocol110:transmissionProgress:">- DFUProtocol110:transmissionProgress:</option>
+		
+		<option value="//api/name/DFUProtocol110DidRecieveQueryOfFirmwareDetail:">- DFUProtocol110DidRecieveQueryOfFirmwareDetail:</option>
+		
+		<option value="//api/name/DFUProtocol110DidRecieveStopUpdate:">- DFUProtocol110DidRecieveStopUpdate:</option>
+		
+		<option value="//api/name/DFUProtocol110DidRecieveStopUpdateConfirm:">- DFUProtocol110DidRecieveStopUpdateConfirm:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DFUProtocol110Delegate Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>DFUProtocol110.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/DFUProtocol110:didRecieveDeviceFirmwareInfo:" title="DFUProtocol110:didRecieveDeviceFirmwareInfo:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/DFUProtocol110:didRecieveDeviceFirmwareInfo:">&ndash;&nbsp;DFUProtocol110:didRecieveDeviceFirmwareInfo:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>下位机回复D0时的代理</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)DFUProtocol110:(DFUProtocol110 *)<em>protocol</em> didRecieveDeviceFirmwareInfo:(DFUDeviceFirmwareInfo *)<em>info</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protocol</code></th>
+						<td><p>DFUProtocol110 object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>info</code></th>
+						<td><p><a href="../Classes/DFUDeviceFirmwareInfo.html">DFUDeviceFirmwareInfo</a> object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUProtocol110.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/DFUProtocol110:didRecieveCanUpdateFlag:" title="DFUProtocol110:didRecieveCanUpdateFlag:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/DFUProtocol110:didRecieveCanUpdateFlag:">&ndash;&nbsp;DFUProtocol110:didRecieveCanUpdateFlag:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>下位机回复D1时的代理</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)DFUProtocol110:(DFUProtocol110 *)<em>protocol</em> didRecieveCanUpdateFlag:(NSInteger)<em>flag</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protocol</code></th>
+						<td><p>DFUProtocol110 object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>flag</code></th>
+						<td><p>0:agree to update 1-255:disagree to update(1:unknown reason 2:battery reason 3:measuring)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUProtocol110.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/DFUProtocol110DidRecieveQueryOfFirmwareDetail:" title="DFUProtocol110DidRecieveQueryOfFirmwareDetail:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/DFUProtocol110DidRecieveQueryOfFirmwareDetail:">&ndash;&nbsp;DFUProtocol110DidRecieveQueryOfFirmwareDetail:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>下位机回复D2时的代理</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)DFUProtocol110DidRecieveQueryOfFirmwareDetail:(DFUProtocol110 *)<em>protocol</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protocol</code></th>
+						<td><p>DFUProtocol110 object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUProtocol110.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/DFUProtocol110:transmissionProgress:" title="DFUProtocol110:transmissionProgress:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/DFUProtocol110:transmissionProgress:">&ndash;&nbsp;DFUProtocol110:transmissionProgress:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>根据D3指令中的块编号，计算固件传输进度的代理</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)DFUProtocol110:(DFUProtocol110 *)<em>protocol</em> transmissionProgress:(NSInteger)<em>progress</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protocol</code></th>
+						<td><p>DFUProtocol110 object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>progress</code></th>
+						<td><p>float type,range:[0,100]</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUProtocol110.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/DFUProtocol110:didRecieveTransmissionResult:pauseReason:pauseLength:" title="DFUProtocol110:didRecieveTransmissionResult:pauseReason:pauseLength:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/DFUProtocol110:didRecieveTransmissionResult:pauseReason:pauseLength:">&ndash;&nbsp;DFUProtocol110:didRecieveTransmissionResult:pauseReason:pauseLength:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>下位机主发D5时的代理</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)DFUProtocol110:(DFUProtocol110 *)<em>protocol</em> didRecieveTransmissionResult:(NSInteger)<em>result</em> pauseReason:(NSInteger)<em>pauseReason</em> pauseLength:(NSInteger)<em>pauseLength</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protocol</code></th>
+						<td><p>DFUProtocol110 object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>result</code></th>
+						<td><p>0:All sub-firmware transmission finish 1:pause transmission</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pauseReason</code></th>
+						<td><p>0:unknown 1:need to disconnect, update flash and reboot (only available when result is 1)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>pauseLength</code></th>
+						<td><p>pause length with seconds,range:<a href="only%20available%20when%20result%20is%201">1-255</a></p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUProtocol110.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/DFUProtocol110DidRecieveStopUpdate:" title="DFUProtocol110DidRecieveStopUpdate:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/DFUProtocol110DidRecieveStopUpdate:">&ndash;&nbsp;DFUProtocol110DidRecieveStopUpdate:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>下位机主发D6时的代理</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)DFUProtocol110DidRecieveStopUpdate:(DFUProtocol110 *)<em>protocol</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protocol</code></th>
+						<td><p>DFUProtocol110 object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUProtocol110.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/DFUProtocol110DidRecieveStopUpdateConfirm:" title="DFUProtocol110DidRecieveStopUpdateConfirm:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/DFUProtocol110DidRecieveStopUpdateConfirm:">&ndash;&nbsp;DFUProtocol110DidRecieveStopUpdateConfirm:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>下位机回复D6时的代理</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)DFUProtocol110DidRecieveStopUpdateConfirm:(DFUProtocol110 *)<em>protocol</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protocol</code></th>
+						<td><p>DFUProtocol110 object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUProtocol110.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/DFUProtocol110:timeoutCommand:" title="DFUProtocol110:timeoutCommand:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/DFUProtocol110:timeoutCommand:">&ndash;&nbsp;DFUProtocol110:timeoutCommand:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>方法超时的代理，SDK主发指令超时</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)DFUProtocol110:(DFUProtocol110 *)<em>protocol</em> timeoutCommand:(DFUProtocol110CommandType)<em>type</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protocol</code></th>
+						<td><p>DFUProtocol110 object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p><a href="../Constants/DFUProtocol110CommandType.html">DFUProtocol110CommandType</a> enum</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUProtocol110.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/DFUProtocol110:deviceNotResponseCommand:" title="DFUProtocol110:deviceNotResponseCommand:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/DFUProtocol110:deviceNotResponseCommand:">&ndash;&nbsp;DFUProtocol110:deviceNotResponseCommand:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>方法超时的代理，下位机主发指令的超时，比如D2指令、D3指令都是下位机主发的，如果制定时间内，收不到指令，会执行这个代理</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)DFUProtocol110:(DFUProtocol110 *)<em>protocol</em> deviceNotResponseCommand:(DFUProtocol110CommandType)<em>type</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protocol</code></th>
+						<td><p>DFUProtocol110 object</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>type</code></th>
+						<td><p><a href="../Constants/DFUProtocol110CommandType.html">DFUProtocol110CommandType</a> enum</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUProtocol110.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/DFUProtocol110:deviceDisconnectWhenComamand:" title="DFUProtocol110:deviceDisconnectWhenComamand:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/DFUProtocol110:deviceDisconnectWhenComamand:">&ndash;&nbsp;DFUProtocol110:deviceDisconnectWhenComamand:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>下位机断开</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)DFUProtocol110:(DFUProtocol110 *)<em>protocol</em> deviceDisconnectWhenComamand:(DFUProtocol110CommandType)<em>type</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>protocol</code></th>
+						<td><p>DFUProtocol110 object</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUProtocol110.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

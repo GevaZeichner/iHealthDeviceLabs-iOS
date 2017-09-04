@@ -72,3 +72,44 @@ Description:
 
 Release Date: 2017-5-5
 ```
+
+### 7. V2.1.1
+```
+Description:
+
+1. Support HS2  
+2. Support the new device update method
+3. Change  po3 method
+
+old:
+	--(void)commandPO3OfflineDataCount:(DisposePO3OfflineDataCount)offlineDataCount withStartUpload:(DisposePO3StartUpload)startUpload withOfflineData:(DisposePO3OfflineData)measureData withOfflineWaveData:(DisposePO3OfflineWaveData)offlineWaveData withFinishMeasure:(DisposePO3FinishUpload)finishUpload withErrorBlock:(DisposePO3ErrorBlock)errorBlock; 
+new:
+-(void)commandPO3OfflineDataCount:(DisposePO3OfflineDataCount)offlineDataCount withOfflineData:(DisposePO3OfflineData)offlineData withOfflineWaveData:(DisposePO3OfflineWaveData)offlineWaveData withFinishMeasure:(DisposePO3FinishUpload)finishUpload withErrorBlock:(DisposePO3ErrorBlock)errorBlock;
+
+4. Change BP  stop measure  method name
+5. BP5/7  result  add HSD
+6. Change BG5
+
+1）delete method  -(void)commandInitBGSetUnit:(BGUnit )unitState DisposeBGBottleID:(DisposeBGBottleID)disposeBGBottleID DisposeBGErrorBlock:(DisposeBGErrorBlock)disposeBGErrorBlock;
+
+2）
+old：
+--(void)commandCreateBGtestStripInBlock:(DisposeBGStripInBlock)disposeBGStripInBlock DisposeBGBloodBlock:(DisposeBGBloodBlock)disposeBGBloodBlock DisposeBGResultBlock:(DisposeBGResultBlock)disposeBGResultBlock  DisposeBGTestModelBlock:(DisposeBGTestModelBlock)disposeBGTestModelBlock DisposeBGErrorBlock:(DisposeBGErrorBlock)disposeBGErrorBlock;
+new：
+-(void)commandCreateBGtestStripInBlock:(DisposeBGStripInBlock)disposeBGStripInBlock
+                   DisposeBGBloodBlock:(DisposeBGBloodBlock)disposeBGBloodBlock
+                  DisposeBGResultBlock:(DisposeBGResultBlock)disposeBGResultBlock
+                   DisposeBGErrorBlock:(DisposeBGErrorBlock)disposeBGErrorBlock;
+3）
+old：
+-(void)commandCreateBGtestModel:(BGMeasureMode)testMode DisposeBGStripInBlock:(DisposeBGStripInBlock)disposeBGStripInBlock DisposeBGBloodBlock:(DisposeBGBloodBlock)disposeBGBloodBlock DisposeBGResultBlock:(DisposeBGResultBlock)disposeBGResultBlock DisposeBGTestModelBlock:(DisposeBGTestModelBlock)disposeBGTestModelBlock  DisposeBGErrorBlock:(DisposeBGErrorBlock)disposeBGErrorBlock;
+new：
+-(void)commandCreateBGtestModel:(BGMeasureMode)testMode
+         DisposeBGStripInBlock:(DisposeBGStripInBlock)disposeBGStripInBlock
+           DisposeBGBloodBlock:(DisposeBGBloodBlock)disposeBGBloodBlock
+           DisposeBGResultBlock:(DisposeBGResultBlock)disposeBGResultBlock
+            DisposeBGErrorBlock:(DisposeBGErrorBlock)disposeBGErrorBlock;
+
+
+Release Date: 2017-9-4
+```

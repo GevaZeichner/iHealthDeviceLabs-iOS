@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>BPOfflineDataTransferProtocol Protocol Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">iHealthSDKStatic </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">iHealth</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:">- commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:</option>
+		
+		<option value="//api/name/commandTransferMemoryTotalCount:errorBlock:">- commandTransferMemoryTotalCount:errorBlock:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">BPOfflineDataTransferProtocol Protocol Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Conforms to</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>BPDevice.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:" title="commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:">&ndash;&nbsp;commandTransferMemoryDataWithTotalCount:progress:dataArray:errorBlock:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Upload offline data.
+@Notice   By the first time of new user register via SDK, ‘iHealth disclaimer’ will pop up automatically, and require the user agrees to continue. SDK application requires Internet connection; there is 10-day tryout if SDK cannot connect Internet, SDK is fully functional during tryout period, but will be terminated without verification through Internet after 10 days.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemoryDataWithTotalCount:(BlockBachCount)<em>totalCount</em> progress:(BlockBachProgress)<em>progress</em> dataArray:(BlockBachArray)<em>uploadDataArray</em> errorBlock:(BlockError)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>totalCount</code></th>
+						<td><p>item quantity of total data</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>progress</code></th>
+						<td><p>upload completion ratio , from 0.0 to 1.0 or 0%~100％, 100% means upload completed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uploadDataArray</code></th>
+						<td><p>offline data set, including measurement time, systolic pressure, diastolic pressure, pulse rate, irregular judgment,scheme ID,body movement flag. corresponding KEY as time, sys, dia, heartRate, irregular,schemeID,bodyMovementFlg.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>error codes.
+Specification:
+1.  BPError0 = 0: Unable to take measurements due to arm/wrist movements.
+2.  BPError1:  Failed to detect systolic pressure.
+3.  BPError2:  Failed to detect diastolic pressure.
+4.  BPError3:  Pneumatic system blocked or cuff is too tight during inflation.
+5.  BPError4:  Pneumatic system leakage or cuff is too loose during inflation.
+6.  BPError5:  Cuff pressure reached over 300mmHg.
+7.  BPError6:  Cuff pressure reached over 15 mmHg for more than 160 seconds.
+8.  BPError7:  Data retrieving error.
+9.  BPError8:  Data retrieving error.
+10.  BPError9:  Data retrieving error.
+11.  BPError10:  Data retrieving error.
+12.  BPError11:  Communication Error.
+13.  BPError12:  Communication Error.
+14.  BPError13:  Low battery.
+15.  BPError14:  Device bluetooth set failed.
+16.  BPError15:  Systolic exceeds 260mmHg or diastolic exceeds 199mmHg.
+17.  BPError16:  Systolic below 60mmHg or diastolic below 40mmHg.
+18.  BPError17:  Arm/wrist movement beyond range.
+19.  BPError21:  Blood pressure meter is in progress, unable to respond to command.
+20.  BPNormalError=30:  device error, error message displayed automatically.
+21.  BPOverTimeError:  Abnormal communication.
+22.  BPNoRespondError:  Abnormal communication.
+23.  BPBeyondRangeError:  device is out of communication range.
+24.  BPDidDisconnect:  device is disconnected.
+25.  BPAskToStopMeasure:  measurement has been stopped.
+26.  BPDeviceBusy:  device is busy doing other things
+27.  BPInputParameterError=400:  Parameter input error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BPDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/commandTransferMemoryTotalCount:errorBlock:" title="commandTransferMemoryTotalCount:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandTransferMemoryTotalCount:errorBlock:">&ndash;&nbsp;commandTransferMemoryTotalCount:errorBlock:</a></code>
+<span class="task-item-suffix">required method</span></h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Upload offline data total Count.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemoryTotalCount:(BlockBachCount)<em>totalCount</em> errorBlock:(BlockError)<em>error</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>totalCount</code></th>
+						<td><p>item quantity of total data.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>A block to return the error.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">BPDevice.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

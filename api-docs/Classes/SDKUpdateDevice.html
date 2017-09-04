@@ -52,6 +52,20 @@
 
 	
 	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/disposeUpdateErrorBlock">disposeUpdateErrorBlock</option>
+		
+		<option value="//api/name/isInUpdateModel">isInUpdateModel</option>
+		
+		<option value="//api/name/isOfflineUpdateMode">isOfflineUpdateMode</option>
+		
+		<option value="//api/name/offlineUpdateFirmwareVersion">offlineUpdateFirmwareVersion</option>
+		
+		<option value="//api/name/offlineUpdateInfoFilePath">offlineUpdateInfoFilePath</option>
+		
+	</optgroup>
+	
 
 	
 	<optgroup label="Class Methods">
@@ -66,11 +80,11 @@
 		
 		<option value="//api/name/commandEndUpdateWithDeviceUUID:DisposeEndUpdateResult:DisposeErrorBlock:">- commandEndUpdateWithDeviceUUID:DisposeEndUpdateResult:DisposeErrorBlock:</option>
 		
-		<option value="//api/name/commandGetUpdateModuleState:DisposeErrorBlock:">- commandGetUpdateModuleState:DisposeErrorBlock:</option>
+		<option value="//api/name/commandGetUpdateModuleState:">- commandGetUpdateModuleState:</option>
 		
 		<option value="//api/name/commandGetUpdateVersionWithDeviceUUID:DisposeUpdateVersionResult:DisposeErrorBlock:">- commandGetUpdateVersionWithDeviceUUID:DisposeUpdateVersionResult:DisposeErrorBlock:</option>
 		
-		<option value="//api/name/commandStartUpdateWithDeviceUUID:DeviceType:InfoFilePath:UpadteFilePath:FileCRC:AppSecret:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:">- commandStartUpdateWithDeviceUUID:DeviceType:InfoFilePath:UpadteFilePath:FileCRC:AppSecret:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:</option>
+		<option value="//api/name/commandStartUpdateWithDeviceUUID:DeviceType:InfoFilePath:UpadteFilePath:FileCRC:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:">- commandStartUpdateWithDeviceUUID:DeviceType:InfoFilePath:UpadteFilePath:FileCRC:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:</option>
 		
 		<option value="//api/name/commandStartUpdateWithDeviceUUID:DownloadFirmwareStart:DisposeDownloadFirmwareFinish:DisposeDownloadProgress:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:">- commandStartUpdateWithDeviceUUID:DownloadFirmwareStart:DisposeDownloadFirmwareFinish:DisposeDownloadProgress:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:</option>
 		
@@ -114,7 +128,7 @@
 						
 
 						
-						
+						<h2 class="task-title">Other Methods</h2>
 
 						<div class="task-list">
 							<div class="section-method">
@@ -170,8 +184,12 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Get device Version and cloudDeviceVersion.
-Import Parameters: UUIDString:device UUID.</p>
+				<ul>
+<li>Get device Version and cloudDeviceVersion.</li>
+<li>Import Parameters: UUIDString:device UUID.</li>
+<li>@param updateVersionDic  include:DeviceType、DeviceVersion、DeviceStatus(1：YES，0：NO)、CloudDeviceVersion、KeepUpdateFlag（flag，0：firstUpdate，1：go on update）、CloudUpdateServer（1:enforce update 0: optional update）、UpdateProtocolVersion(100:Equipment upgrades returned directly after the success or failure 101:Upgrade is complete only on behalf of the firmware successfully transferred, reconnect the device after the upgrade success or failure).</li>
+</ul>
+
 			</div>
 			
 		    
@@ -180,28 +198,17 @@ Import Parameters: UUIDString:device UUID.</p>
 
 		    
 			
-			<div class="method-subsection arguments-section parameters">
-				<h4 class="method-subtitle parameter-title">Parameters</h4>
-				<table class="argument-def parameter-def">
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>updateVersionDic</code></th>
-						<td><p>include:DeviceType、DeviceVersion、DeviceStatus(1：YES，0：NO)、CloudDeviceVersion、KeepUpdateFlag（flag，0：firstUpdate，1：go on update）、CloudUpdateServer（1:enforce update 0: optional update）、UpdateProtocolVersion(100:Equipment upgrades returned directly after the success or failure 101:Upgrade is complete only on behalf of the firmware successfully transferred, reconnect the device after the upgrade success or failure).</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>Update error codes, see UpdateDeviceError error descriptions.</p></td>
-					</tr>
-				
-				</table>
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> DeviceVerion means firmware version in Flash, may not match with the current running firmware version.
+* @param disposeErrorBlock Update error codes, see UpdateDeviceError error descriptions.</p></div>
 			</div>
-			
-
-			
-
-			
-
 			
 
 			
@@ -218,8 +225,8 @@ Import Parameters: UUIDString:device UUID.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandGetUpdateModuleState:DisposeErrorBlock:" title="commandGetUpdateModuleState:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandGetUpdateModuleState:DisposeErrorBlock:">&ndash;&nbsp;commandGetUpdateModuleState:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandGetUpdateModuleState:" title="commandGetUpdateModuleState:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandGetUpdateModuleState:">&ndash;&nbsp;commandGetUpdateModuleState:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -234,7 +241,7 @@ Import Parameters: UUIDString:device UUID.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandGetUpdateModuleState:(UpdateModuleState)<em>updateModuleState</em> DisposeErrorBlock:(DisposeUpdateErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandGetUpdateModuleState:(UpdateModuleState)<em>updateModuleState</em></code></div>
 
 		    
 			
@@ -245,11 +252,6 @@ Import Parameters: UUIDString:device UUID.</p>
 					<tr>
 						<th scope="row" class="argument-name"><code>updateModuleState</code></th>
 						<td><p>(0:free,1:uploading)</p></td>
-					</tr>
-				
-					<tr>
-						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
-						<td><p>Update error codes, see UpdateDeviceError error descriptions.</p></td>
 					</tr>
 				
 				</table>
@@ -413,8 +415,8 @@ Import Parameters: UUIDString:device UUID.</p>
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandStartUpdateWithDeviceUUID:DeviceType:InfoFilePath:UpadteFilePath:FileCRC:AppSecret:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:" title="commandStartUpdateWithDeviceUUID:DeviceType:InfoFilePath:UpadteFilePath:FileCRC:AppSecret:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandStartUpdateWithDeviceUUID:DeviceType:InfoFilePath:UpadteFilePath:FileCRC:AppSecret:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:">&ndash;&nbsp;commandStartUpdateWithDeviceUUID:DeviceType:InfoFilePath:UpadteFilePath:FileCRC:AppSecret:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:</a></code>
+	<a name="//api/name/commandStartUpdateWithDeviceUUID:DeviceType:InfoFilePath:UpadteFilePath:FileCRC:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:" title="commandStartUpdateWithDeviceUUID:DeviceType:InfoFilePath:UpadteFilePath:FileCRC:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandStartUpdateWithDeviceUUID:DeviceType:InfoFilePath:UpadteFilePath:FileCRC:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:">&ndash;&nbsp;commandStartUpdateWithDeviceUUID:DeviceType:InfoFilePath:UpadteFilePath:FileCRC:DisposeUpdateProgress:DisposeUpdateResult:TransferSuccess:DisposeErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -425,14 +427,13 @@ Import Parameters: UUIDString:device UUID.</p>
 			
 			<div class="method-subsection brief-description">
 				<ul>
-<li>Update Device.</li>
+<li>Update Device with local file</li>
 <li>Import Parameters:
   uuidString:device UUID.
   deviceType: UpdateDeviceType
   infoFilePath: infoFilePath
   upadteFilePath: upadteFilePath
-  fileCRC: file CRC
-  appSecret: appSecret</li>
+  fileCRC: info file CRC</li>
 <li>@param disposeUpdateProgress   Update Device progress（0-100）.</li>
 <li>@param disposeUpdateResult  Update Device result（bool 1：sucess，0：fail）Applicable to the protocol of 100.</li>
 <li>@param transferSuccess  <a href="../Blocks/TransferSuccess.html">TransferSuccess</a> Applicable to the protocol of 101.</li>
@@ -443,7 +444,7 @@ Import Parameters: UUIDString:device UUID.</p>
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandStartUpdateWithDeviceUUID:(NSString *)<em>uuidString</em> DeviceType:(UpdateDeviceType)<em>deviceType</em> InfoFilePath:(NSString *)<em>infoFilePath</em> UpadteFilePath:(NSString *)<em>upadteFilePath</em> FileCRC:(NSNumber *)<em>fileCRC</em> AppSecret:(NSString *)<em>appSecret</em> DisposeUpdateProgress:(DisposeUpdateProgress)<em>disposeUpdateProgress</em> DisposeUpdateResult:(DisposeUpdateResult)<em>disposeUpdateResult</em> TransferSuccess:(TransferSuccess)<em>transferSuccess</em> DisposeErrorBlock:(DisposeUpdateErrorBlock)<em>disposeErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandStartUpdateWithDeviceUUID:(NSString *)<em>uuidString</em> DeviceType:(UpdateDeviceType)<em>deviceType</em> InfoFilePath:(NSString *)<em>infoFilePath</em> UpadteFilePath:(NSString *)<em>upadteFilePath</em> FileCRC:(NSNumber *)<em>fileCRC</em> DisposeUpdateProgress:(DisposeUpdateProgress)<em>disposeUpdateProgress</em> DisposeUpdateResult:(DisposeUpdateResult)<em>disposeUpdateResult</em> TransferSuccess:(TransferSuccess)<em>transferSuccess</em> DisposeErrorBlock:(DisposeUpdateErrorBlock)<em>disposeErrorBlock</em></code></div>
 
 		    
 			
@@ -479,7 +480,7 @@ Import Parameters: UUIDString:device UUID.</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Update Device.
+				<p>Update Device showing download progress
 Import Parameters: UUIDString:device UUID.</p>
 			</div>
 			
@@ -554,6 +555,219 @@ Import Parameters: UUIDString:device UUID.</p>
 </div>
 						</div>
 						
+
+						<a title="Extension Methods" name="task_Extension Methods"></a>
+						<h2 class="task-title">Extension Methods</h2>
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/isOfflineUpdateMode" title="isOfflineUpdateMode"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isOfflineUpdateMode">&nbsp;&nbsp;isOfflineUpdateMode</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>是否是离线升级模式，用于下位机回复D0时的处理</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) BOOL isOfflineUpdateMode</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SDKUpdateDevice.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/offlineUpdateFirmwareVersion" title="offlineUpdateFirmwareVersion"></a>
+	<h3 class="method-title"><code><a href="#//api/name/offlineUpdateFirmwareVersion">&nbsp;&nbsp;offlineUpdateFirmwareVersion</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>离线升级接口中，传入固件文件的固件版本号</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) NSString *offlineUpdateFirmwareVersion</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SDKUpdateDevice.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/offlineUpdateInfoFilePath" title="offlineUpdateInfoFilePath"></a>
+	<h3 class="method-title"><code><a href="#//api/name/offlineUpdateInfoFilePath">&nbsp;&nbsp;offlineUpdateInfoFilePath</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>保存离线升级接口中，传入的info文件的路径</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) NSString *offlineUpdateInfoFilePath</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SDKUpdateDevice.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isInUpdateModel" title="isInUpdateModel"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isInUpdateModel">&nbsp;&nbsp;isInUpdateModel</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>判断是否在升级模块</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (assign, nonatomic) BOOL isInUpdateModel</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SDKUpdateDevice.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/disposeUpdateErrorBlock" title="disposeUpdateErrorBlock"></a>
+	<h3 class="method-title"><code><a href="#//api/name/disposeUpdateErrorBlock">&nbsp;&nbsp;disposeUpdateErrorBlock</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>保持错误块</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) DisposeUpdateErrorBlock disposeUpdateErrorBlock</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">SDKUpdateDevice.m</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
 					</div>
 					
 					
@@ -566,7 +780,7 @@ Import Parameters: UUIDString:device UUID.</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-05-05</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

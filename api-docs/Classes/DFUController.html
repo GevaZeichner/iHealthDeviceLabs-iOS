@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>DFUController Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">iHealthSDKStatic </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">iHealth</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/shareInstance">+ shareInstance</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/UUIDInDFU">- UUIDInDFU</option>
+		
+		<option value="//api/name/cancelDownloadFirmwareWithDeviceType:successBlock:">- cancelDownloadFirmwareWithDeviceType:successBlock:</option>
+		
+		<option value="//api/name/deleteFirmwareWithIdentifier:successBlock:errorBlock:">- deleteFirmwareWithIdentifier:successBlock:errorBlock:</option>
+		
+		<option value="//api/name/downloadFirmwareWithDeviceType:productModel:firmwareVersion:hardwareVersion:downloadStartBlock:downloadFirmwareProgressBlock:successblock:errorBlock:">- downloadFirmwareWithDeviceType:productModel:firmwareVersion:hardwareVersion:downloadStartBlock:downloadFirmwareProgressBlock:successblock:errorBlock:</option>
+		
+		<option value="//api/name/queryDFUState">- queryDFUState</option>
+		
+		<option value="//api/name/queryDeviceFirmwareInfoWithDeviceType:uuid:successBlock:errorBlock:">- queryDeviceFirmwareInfoWithDeviceType:uuid:successBlock:errorBlock:</option>
+		
+		<option value="//api/name/queryServerFirmwareInfoWithDeviceType:productModel:currentFirmwareVersion:hardwareVersion:successBlock:errorBlock:">- queryServerFirmwareInfoWithDeviceType:productModel:currentFirmwareVersion:hardwareVersion:successBlock:errorBlock:</option>
+		
+		<option value="//api/name/startUpgradeWithDeviceType:productModel:uuid:firmwareVersion:hardwareVersion:firmwareIdentifier:deviceReplyCannotUpgradeBlock:transferBeginBlock:transferProgressBlock:transferSuccessBlock:transferResultBlock:upgradeSuccessBlock:upgradeFailBlock:upgradeErrorBlock:">- startUpgradeWithDeviceType:productModel:uuid:firmwareVersion:hardwareVersion:firmwareIdentifier:deviceReplyCannotUpgradeBlock:transferBeginBlock:transferProgressBlock:transferSuccessBlock:transferResultBlock:upgradeSuccessBlock:upgradeFailBlock:upgradeErrorBlock:</option>
+		
+		<option value="//api/name/stopUpgradeWithDeviceType:uuid:successBlock:failBlock:">- stopUpgradeWithDeviceType:uuid:successBlock:failBlock:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">DFUController Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>DFUController.h<br />DFUController.m</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/shareInstance" title="shareInstance"></a>
+	<h3 class="method-title"><code><a href="#//api/name/shareInstance">+&nbsp;shareInstance</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Get instance</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>+ (instancetype)shareInstance</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>DFUController object</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/queryDeviceFirmwareInfoWithDeviceType:uuid:successBlock:errorBlock:" title="queryDeviceFirmwareInfoWithDeviceType:uuid:successBlock:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/queryDeviceFirmwareInfoWithDeviceType:uuid:successBlock:errorBlock:">&ndash;&nbsp;queryDeviceFirmwareInfoWithDeviceType:uuid:successBlock:errorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query device firmware information in Flash</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)queryDeviceFirmwareInfoWithDeviceType:(DFUDeviceType)<em>deviceType</em> uuid:(NSString *)<em>uuid</em> successBlock:(QueryDeviceFirmwareInfoSuccessBlock)<em>successBlock</em> errorBlock:(DFUErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>deviceType</code></th>
+						<td><p><a href="../Constants/DFUDeviceType.html">DFUDeviceType</a> enum</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uuid</code></th>
+						<td><p>device UUID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successBlock</code></th>
+						<td><p>success block</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p><a href="../Constants/DFUError.html">DFUError</a> enum(<a href="../Constants/DFUError.html">DFUError</a><em>InUpgradeCannotExecuteCommand,<a href="../Constants/DFUError.html">DFUError</a></em>UnsupportedDeviceType,<a href="../Constants/DFUError.html">DFUError</a><em>InvalidUUID,<a href="../Constants/DFUError.html">DFUError</a></em>NoConnectedDevice,<a href="../Constants/DFUError.html">DFUError</a><em>CommandTimeOut,<a href="../Constants/DFUError.html">DFUError</a></em>DeviceDisconnect)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> The method should be called when device is connected.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/queryServerFirmwareInfoWithDeviceType:productModel:currentFirmwareVersion:hardwareVersion:successBlock:errorBlock:" title="queryServerFirmwareInfoWithDeviceType:productModel:currentFirmwareVersion:hardwareVersion:successBlock:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/queryServerFirmwareInfoWithDeviceType:productModel:currentFirmwareVersion:hardwareVersion:successBlock:errorBlock:">&ndash;&nbsp;queryServerFirmwareInfoWithDeviceType:productModel:currentFirmwareVersion:hardwareVersion:successBlock:errorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query the latest firmware information from server</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)queryServerFirmwareInfoWithDeviceType:(DFUDeviceType)<em>deviceType</em> productModel:(NSString *)<em>productModel</em> currentFirmwareVersion:(NSString *)<em>currentFirmwareVersion</em> hardwareVersion:(NSString *)<em>hardwareVersion</em> successBlock:(QueryServerFirmwareInfoSuccessBlock)<em>successBlock</em> errorBlock:(DFUErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>deviceType</code></th>
+						<td><p><a href="../Constants/DFUDeviceType.html">DFUDeviceType</a> enum</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>productModel</code></th>
+						<td><p>Model Number（you can get from IDPS）</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>currentFirmwareVersion</code></th>
+						<td><p>current firmware version (you can get from IDPS）</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>hardwareVersion</code></th>
+						<td><p>hardware version (you can get from IDPS）</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successBlock</code></th>
+						<td><p>success block</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p><a href="../Constants/DFUError.html">DFUError</a> enum(<a href="../Constants/DFUError.html">DFUError</a><em>UnsupportedDeviceType,<a href="../Constants/DFUError.html">DFUError</a></em>InvalidFirmwareVersion,<a href="../Constants/DFUError.html">DFUError</a><em>InvalidHardwareVersion,<a href="../Constants/DFUError.html">DFUError</a></em>NetworkError,DFUError_ServerError)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<div class="note"><p><strong>Note:</strong> No need to connect but IDPS should be known.</p></div>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/downloadFirmwareWithDeviceType:productModel:firmwareVersion:hardwareVersion:downloadStartBlock:downloadFirmwareProgressBlock:successblock:errorBlock:" title="downloadFirmwareWithDeviceType:productModel:firmwareVersion:hardwareVersion:downloadStartBlock:downloadFirmwareProgressBlock:successblock:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/downloadFirmwareWithDeviceType:productModel:firmwareVersion:hardwareVersion:downloadStartBlock:downloadFirmwareProgressBlock:successblock:errorBlock:">&ndash;&nbsp;downloadFirmwareWithDeviceType:productModel:firmwareVersion:hardwareVersion:downloadStartBlock:downloadFirmwareProgressBlock:successblock:errorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Download firmware file</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)downloadFirmwareWithDeviceType:(DFUDeviceType)<em>deviceType</em> productModel:(NSString *)<em>productModel</em> firmwareVersion:(NSString *)<em>firmwareVersion</em> hardwareVersion:(NSString *)<em>hardwareVersion</em> downloadStartBlock:(DownloadFirmwareStartBlock)<em>startBlock</em> downloadFirmwareProgressBlock:(DownloadFirmwareProgressBlock)<em>downloadFirmwareProgressBlock</em> successblock:(DownloadFirmwareSuccessBlock)<em>successBlock</em> errorBlock:(DFUErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>deviceType</code></th>
+						<td><p><a href="../Constants/DFUDeviceType.html">DFUDeviceType</a> enum</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>productModel</code></th>
+						<td><p>Model Number（you can get from IDPS）</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>firmwareVersion</code></th>
+						<td><p>firmware version you want to download (the latest version you can get from &ldquo;queryServerFirmwareInfoWithDeviceType:&rdquo;)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>hardwareVersion</code></th>
+						<td><p>hardware version (you can get from IDPS)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startBlock</code></th>
+						<td><p>download start block</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>downloadFirmwareProgressBlock</code></th>
+						<td><p>download progress block [0-100]</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successBlock</code></th>
+						<td><p>success block (firmwareIdentifier is used to in &ldquo;startUpgradeWithDeviceType:&rdquo;)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p><a href="../Constants/DFUError.html">DFUError</a> enum(<a href="../Constants/DFUError.html">DFUError</a><em>UnsupportedDeviceType,<a href="../Constants/DFUError.html">DFUError</a></em>InvalidFirmwareVersion,<a href="../Constants/DFUError.html">DFUError</a><em>InvalidHardwareVersion,<a href="../Constants/DFUError.html">DFUError</a></em>FileSaveError,<a href="../Constants/DFUError.html">DFUError</a><em>NetworkError,<a href="../Constants/DFUError.html">DFUError</a></em>ServerError,<a href="../Constants/DFUError.html">DFUError</a><em>RequestedFileNotExist,<a href="../Constants/DFUError.html">DFUError</a></em>InfoFileCheckNotPass,DFUError_firmwareFileCheckNotPass)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/cancelDownloadFirmwareWithDeviceType:successBlock:" title="cancelDownloadFirmwareWithDeviceType:successBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/cancelDownloadFirmwareWithDeviceType:successBlock:">&ndash;&nbsp;cancelDownloadFirmwareWithDeviceType:successBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Cancel downloading firmware file</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)cancelDownloadFirmwareWithDeviceType:(DFUDeviceType)<em>deviceType</em> successBlock:(CancelDownloadFirmwareSuccessBlock)<em>successBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>deviceType</code></th>
+						<td><p><a href="../Constants/DFUDeviceType.html">DFUDeviceType</a> enum</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successBlock</code></th>
+						<td><p>success block</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/startUpgradeWithDeviceType:productModel:uuid:firmwareVersion:hardwareVersion:firmwareIdentifier:deviceReplyCannotUpgradeBlock:transferBeginBlock:transferProgressBlock:transferSuccessBlock:transferResultBlock:upgradeSuccessBlock:upgradeFailBlock:upgradeErrorBlock:" title="startUpgradeWithDeviceType:productModel:uuid:firmwareVersion:hardwareVersion:firmwareIdentifier:deviceReplyCannotUpgradeBlock:transferBeginBlock:transferProgressBlock:transferSuccessBlock:transferResultBlock:upgradeSuccessBlock:upgradeFailBlock:upgradeErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/startUpgradeWithDeviceType:productModel:uuid:firmwareVersion:hardwareVersion:firmwareIdentifier:deviceReplyCannotUpgradeBlock:transferBeginBlock:transferProgressBlock:transferSuccessBlock:transferResultBlock:upgradeSuccessBlock:upgradeFailBlock:upgradeErrorBlock:">&ndash;&nbsp;startUpgradeWithDeviceType:productModel:uuid:firmwareVersion:hardwareVersion:firmwareIdentifier:deviceReplyCannotUpgradeBlock:transferBeginBlock:transferProgressBlock:transferSuccessBlock:transferResultBlock:upgradeSuccessBlock:upgradeFailBlock:upgradeErrorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Start update</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)startUpgradeWithDeviceType:(DFUDeviceType)<em>deviceType</em> productModel:(NSString *)<em>productModel</em> uuid:(NSString *)<em>uuid</em> firmwareVersion:(NSString *)<em>firmwareVersion</em> hardwareVersion:(NSString *)<em>hardwareVersion</em> firmwareIdentifier:(NSString *)<em>firmwareIdentifier</em> deviceReplyCannotUpgradeBlock:(DeviceReplyCannotUpgradeBlock)<em>deviceReplyCannotUpgradeBlock</em> transferBeginBlock:(TransferBeginBlock)<em>transferBeginBlock</em> transferProgressBlock:(TransferProgressBlock)<em>transferProgressBlock</em> transferSuccessBlock:(TransferSuccessBlock)<em>transferSuccessBlock</em> transferResultBlock:(TransferResultBlock)<em>transferResultBlock</em> upgradeSuccessBlock:(UpgradeSuccessBlock)<em>upgradeSuccessBlock</em> upgradeFailBlock:(UpgradeFailBlock)<em>upgradeFailBlock</em> upgradeErrorBlock:(DFUErrorBlock)<em>upgradeErrorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>deviceType</code></th>
+						<td><p><a href="../Constants/DFUDeviceType.html">DFUDeviceType</a> enum</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>productModel</code></th>
+						<td><p>Model Number（you can get from IDPS）</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uuid</code></th>
+						<td><p>device UUID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>firmwareVersion</code></th>
+						<td><p>destination firmware version</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>hardwareVersion</code></th>
+						<td><p>hardware version (you can get from IDPS)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>firmwareIdentifier</code></th>
+						<td><p>firmware identifier</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>deviceReplyCannotUpgradeBlock</code></th>
+						<td><p>cannot upgrade and return reason</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>transferBeginBlock</code></th>
+						<td><p>transfer begin</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>transferProgressBlock</code></th>
+						<td><p>transfer progress block [0-100]</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>transferSuccessBlock</code></th>
+						<td><p>transfer success block (return write MCU speed, unit:Byte/s, only support AM3S,<a href="../Classes/AM4.html">AM4</a>,<a href="../Classes/PO3.html">PO3</a>,<a href="../Classes/HS2.html">HS2</a>,<a href="../Classes/HS4.html">HS4</a>,ECG,<a href="../Classes/ABPM.html">ABPM</a>)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>transferResultBlock</code></th>
+						<td><p>transfer result block (return result type, pasue reason, pause length,only support <a href="../Classes/BG5S.html">BG5S</a>,BP5S)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>upgradeSuccessBlock</code></th>
+						<td><p>upgrade success block（only support AM3）</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>upgradeFailBlock</code></th>
+						<td><p>upgrade fail block (return fail reason, only support <a href="../Classes/AM3.html">AM3</a>,AM3S,<a href="../Classes/AM4.html">AM4</a>,<a href="../Classes/PO3.html">PO3</a>,<a href="../Classes/HS2.html">HS2</a>,<a href="../Classes/HS4.html">HS4</a>,ECG,<a href="../Classes/ABPM.html">ABPM</a>)</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>upgradeErrorBlock</code></th>
+						<td><p>upgrade error blcok (<a href="../Constants/DFUError.html">DFUError</a> enum(<a href="../Constants/DFUError.html">DFUError</a><em>InUpgradeCannotExecuteCommand,<a href="../Constants/DFUError.html">DFUError</a></em>UnsupportedDeviceType,<a href="../Constants/DFUError.html">DFUError</a><em>InvalidUUID,<a href="../Constants/DFUError.html">DFUError</a></em>NoConnectedDevice,<a href="../Constants/DFUError.html">DFUError</a><em>NoFirmwareFile,<a href="../Constants/DFUError.html">DFUError</a></em>InvalidFirmwareInfoFile,<a href="../Constants/DFUError.html">DFUError</a><em>CommandTimeOut,<a href="../Constants/DFUError.html">DFUError</a></em>DeviceDisconnect))</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stopUpgradeWithDeviceType:uuid:successBlock:failBlock:" title="stopUpgradeWithDeviceType:uuid:successBlock:failBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stopUpgradeWithDeviceType:uuid:successBlock:failBlock:">&ndash;&nbsp;stopUpgradeWithDeviceType:uuid:successBlock:failBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Stop update</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)stopUpgradeWithDeviceType:(DFUDeviceType)<em>deviceType</em> uuid:(NSString *)<em>uuid</em> successBlock:(StopUpgradeSuccessBlock)<em>successBlock</em> failBlock:(DFUErrorBlock)<em>failBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>deviceType</code></th>
+						<td><p><a href="../Constants/DFUDeviceType.html">DFUDeviceType</a> enum</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>uuid</code></th>
+						<td><p>device UUID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successBlock</code></th>
+						<td><p>success block</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>failBlock</code></th>
+						<td><p>fail block, <a href="../Constants/DFUError.html">DFUError</a> enum:(<a href="../Constants/DFUError.html">DFUError</a><em>UnsupportedDeviceType,<a href="../Constants/DFUError.html">DFUError</a></em>InvalidUUID,DFUError_CommandTimeOut)</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/deleteFirmwareWithIdentifier:successBlock:errorBlock:" title="deleteFirmwareWithIdentifier:successBlock:errorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/deleteFirmwareWithIdentifier:successBlock:errorBlock:">&ndash;&nbsp;deleteFirmwareWithIdentifier:successBlock:errorBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Delete firmware file</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)deleteFirmwareWithIdentifier:(NSString *)<em>firmwareIdentifier</em> successBlock:(DeleteFirmwareSuccessBlock)<em>successBlock</em> errorBlock:(DFUErrorBlock)<em>errorBlock</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>firmwareIdentifier</code></th>
+						<td><p>firmware identifier</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>successBlock</code></th>
+						<td><p>success block</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>error block <a href="../Constants/DFUError.html">DFUError</a> enum:DFUError_DeleteError</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/queryDFUState" title="queryDFUState"></a>
+	<h3 class="method-title"><code><a href="#//api/name/queryDFUState">&ndash;&nbsp;queryDFUState</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query DFU <a href="#//api/name/state">state</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (DFUState)queryDFUState</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Busy or Free</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/UUIDInDFU" title="UUIDInDFU"></a>
+	<h3 class="method-title"><code><a href="#//api/name/UUIDInDFU">&ndash;&nbsp;UUIDInDFU</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Query Device UUID in updating</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)UUIDInDFU</code></div>
+
+		    
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Device UUID</p>
+			</div>
+			
+
+			
+
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">DFUController.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
