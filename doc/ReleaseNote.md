@@ -73,7 +73,7 @@ Description:
 Release Date: 2017-5-5
 ```
 
-### 7. V2.1.1
+### 8. V2.1.1
 ```
 Description:
 
@@ -112,4 +112,14 @@ new：
 
 
 Release Date: 2017-9-4
+```
+
+### 9. V2.1.2
+```
+Description:
+
+1. Fix BP bug
+2. Fix HS5 bug
+
+Release Date: 2017-9-26
 ```
