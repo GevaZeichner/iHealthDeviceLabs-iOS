@@ -123,3 +123,45 @@ Description:
 
 Release Date: 2017-9-26
 ```
+
+### 10. V2.1.3
+```
+Description:
+
+1. Support BG5S  
+
+2. support  THV3  TS28B
+
+3. To optimize the user authentication method, the authentication method must be called first when using the SDK. You can use the SDK offline when the authentication is successful
+
+4. Optimize the BG1 code，Change  BG1 method，The incoming parameters and return values are unchanged.
+
+old:
+	-(void)commandConnectBGwithDeviceModel:(NSNumber *)bg1Model DisposeDiscoverBlock:(DisposeDiscoverBGBlock)disposeDiscoverBGBlock DisposeBGIDPSBlock:(DisposeBGIDPSBlock)disposeBGIDPSBlock DisposeConnectBGBlock:(DisposeConnectBGBlock)disposeConnectBGBlock DisposeBGErrorBlock:(DisposeBGErrorBlock)disposeBGErrorBlock;
+
+new:
+
+     - (void)commandBG1DeviceModel:(NSNumber *)BG1Model withDiscoverBlock:(DisposeBG1DiscoverBlock)discover withDiscoverBlock:(DisposeBG1IDPSBlock)IDPSInfo withConnectBlock:(DisposeBG1ConnectBlock)connect withErrorBlock:(DisposeBG1ErrorBlock)error;
+
+
+old：
+
+-(void)commandCreateBGtestWithMeasureType:(BGMeasureMode)testType CodeType:(BGCodeMode)codeType CodeString:(NSString*)codeStrips DisposeBGSendCodeBlock:(DisposeBGSendCodeBlock)disposeBGSendCodeBlock DisposeBGStripInBlock:(DisposeBGStripInBlock)disposeBGStripInBlock DisposeBGBloodBlock:(DisposeBGBloodBlock)disposeBGBloodBlock DisposeBGResultBlock:(DisposeBGResultBlock)disposeBGResultBlock DisposeBGStripOutBlock:(DisposeBGStripOutBlock)disposeBGStripOutBlock DisposeBGErrorBlock:(DisposeBGErrorBlock)disposeBGErrorBlock;
+
+new：
+- (void)commandBG1MeasureMode:(BGMeasureMode)measureMode withCodeMode:(BGCodeMode)codeMode withCodeString:(NSString *)codeString withSendCodeResultBlock:(DisposeBG1SendCodeResultBlock)sendCodeResult withStripInBlock:(DisposeBGStripInBlock)stripIn withBloodBlock:(DisposeBGBloodBlock)blood withResultBlock:(DisposeBGResultBlock)measureResult withStripOutBlock:(DisposeBGStripOutBlock)stripOut withErrorBlock:(DisposeBG1ErrorBlock)error;
+
+
+BG1 modifies the notification name and the notification is defined in the BGMacrofile.h file：
+
+old macros：      BG1ConnectNoti              BG1DisConnectNoti           MicroPhoneEnableBG1
+
+new macros：    kNotificationNameAudioDeviceInsert      kNotificationNameBG1DidDisConnect   kNotificationNameNeedAudioPermission
+
+
+5. Update the commandSendBottleID method of BG5 to fix the problem that bottleID can't parse correctly in 32-bit iOS devices, and the incoming type is changed from NSNumber to long long
+
+6. Modified BP interface spelling error new exposed interface, pregress changed to progress
+
+Release Date: 2017-10-20
+```

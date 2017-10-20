@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -96,6 +98,14 @@
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>HS4</p>
+					</div>
+					
+					
 
 					
 					
@@ -119,10 +129,8 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Establish memory and measurement connection</li>
-</ul>
-
+				<p>Establish memory and measurement connection
+Import parameter:</p>
 			</div>
 			
 		    
@@ -131,35 +139,40 @@
 
 		    
 			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<ul>
-<li><p>Import parameter:</p>
-
-<ul>
-<li>@param tempUnit  -Unit displayed on HS4: HSUnit_Kg、HSUnit_LB、HSUnit_ST。</li>
-</ul>
-</li>
-<li><p>Return parameters:</p>
-
-<ul>
-<li><p>The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.</p></li>
-<li><p>@param unStableWeight     - Current weight, (Kg) [Value Range:0~180]</p></li>
-<li>@param stableWeight       - Stable weight, (Kg) [Value Range:0~180]</li>
-<li>@param disposeErrorBlock  - error code</li>
-<li>Error code definition：</li>
-<li> refer to “error” : HS4 error instruction.</li>
-</ul>
-</li>
-</ul>
-
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempUnit</code></th>
+						<td><p>Unit displayed on HS4: HSUnit_Kg、HSUnit_LB、HSUnit_ST。
+Return parameters:
+The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>unStableWeight</code></th>
+						<td><p>Current weight, (Kg) [Value Range:0~180]</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>stableWeight</code></th>
+						<td><p>Stable weight, (Kg) [Value Range:0~180]</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>error code</p></td>
+					</tr>
+				
+				</table>
 			</div>
+			
+
+			
+
+			
+
 			
 
 			
@@ -187,10 +200,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Upload memory data</li>
-</ul>
-
+				<p>Upload memory data</p>
 			</div>
 			
 		    
@@ -198,6 +208,38 @@
 			<div class="method-subsection method-declaration"><code>- (void)commandTransferMemorryData:(StartHS4Transmission)<em>startTransmission</em> DisposeProgress:(DisposeProgress)<em>progress</em> MemorryData:(MemorryData)<em>memorryData</em> FinishTransmission:(FinishHS4Transmission)<em>finishTransmission</em> DisposeErrorBlock:(DisposeHS4ErrorBlock)<em>disposeErrorBlock</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startTransmission</code></th>
+						<td><p>Start Memory transmission.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>progress</code></th>
+						<td><p>Memory transmission progress，[Range:0.0～1.0].</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>memorryData</code></th>
+						<td><p>Record data including weight (kg), measurement time，coordinated key：weight，date.[Range of weight 0.0~180.0(kg)]</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>finishTransmission</code></th>
+						<td><p>Finish memory transmission.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>Record the error code in uploading process.</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -207,16 +249,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<ul>
-<li>Return parameters:</li>
-<li>@param  startTransmission -Start Memory transmission.</li>
-<li>@param  progress         -Memory transmission progress，[Range:0.0～1.0].</li>
-<li>@param  memorryData      -Record data including weight (kg), measurement time，coordinated key：weight，date.[Range of weight 0.0~180.0(kg)]</li>
-<li>@param  finishTransmission -Finish memory transmission.</li>
-<li>@param  disposeErrorBlock  -Record the error code in uploading process.</li>
-<li>Error code definition: refer to ”error” : HS4 error instruction.</li>
-</ul>
-
+				<p>Return parameters:</p>
 			</div>
 			
 
@@ -354,7 +387,7 @@ Error code definition &mdash;refer to “error” : HS4 error instruction.</li>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-10-18</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

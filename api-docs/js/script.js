@@ -57,4 +57,3 @@ function fixScrollPosition(element) {
 
 window.addEventListener("hashchange", hashChanged);
 hashChanged();
-

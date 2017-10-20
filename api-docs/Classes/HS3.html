@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -94,6 +96,14 @@
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>HS3</p>
+					</div>
+					
+					
 
 					
 					
@@ -117,10 +127,8 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Establish memory and measurement connection</li>
-</ul>
-
+				<p>Establish memory and measurement connection
+The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.</p>
 			</div>
 			
 		    
@@ -129,29 +137,53 @@
 
 		    
 			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<ul>
-<li><p>The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.</p></li>
-<li><p>@param startTransmission  - Start Memory transmission，Success: Yes，Fail: No.</p></li>
-<li>@param hs3UploadDataNum   - MemoryNumber，Range:0～200.</li>
-<li>@param progress           - Memory transmission progress，Range:0.0～1.0.</li>
-<li>@param memorryData        - Record data including weight(kg)[Range:0.0~150.0], measure time，coordinated key：weight、date.</li>
-<li>@param finishTransmission - Finish memory transmission.</li>
-<li>@param stableWeight       - weight (Kg) [value range:0.0~150.0]</li>
-<li>@param disposeHS3ErrorBlock  - Error code in measurement process</li>
-<li>error code definition refer to ‘error’ in Section 6: HS3 error instructions.</li>
-</ul>
-
-
-<p>*</p>
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startTransmission</code></th>
+						<td><p>Start Memory transmission，Success: Yes，Fail: No.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>hs3UploadDataNum</code></th>
+						<td><p>MemoryNumber，Range:0～200.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>progress</code></th>
+						<td><p>Memory transmission progress，Range:0.0～1.0.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>memorryData</code></th>
+						<td><p>Record data including weight(kg)[Range:0.0~150.0], measure time，coordinated key：weight、date.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>finishTransmission</code></th>
+						<td><p>Finish memory transmission.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>stableWeight</code></th>
+						<td><p>weight (Kg) [value range:0.0~150.0]</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeHS3ErrorBlock</code></th>
+						<td><p>Error code in measurement process</p></td>
+					</tr>
+				
+				</table>
 			</div>
+			
+
+			
+
+			
+
 			
 
 			
@@ -179,9 +211,9 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>Turn off Bluetooth Connection
-This method can be called only for hsInstance.HS3 with FirmwareVersion>=1.0.2
-Return parameters:</p>
+				<p>  Turn off Bluetooth Connection
+  This method can be called only for hsInstance.HS3 with FirmwareVersion>=1.0.2
+  Return parameters:</p>
 			</div>
 			
 		    
@@ -242,18 +274,9 @@ Return parameters:</p>
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Turn on Bluetooth Connection</li>
-<li>This method can be called only for hsInstance.HS3 with FirmwareVersion>=1.0.2</li>
-<li>Return parameters:
-
-<ul>
-<li>@param disposeResult  - ‘YES’ means measurement has been terminated, ‘NO’ means termination failed.</li>
-<li>@param disposeHS3ErrorBlock  -  refer to “error” : HS3 error instruction.</li>
-</ul>
-</li>
-</ul>
-
+				<p>Turn on Bluetooth Connection
+This method can be called only for hsInstance.HS3 with FirmwareVersion>=1.0.2
+Return parameters:</p>
 			</div>
 			
 		    
@@ -261,6 +284,23 @@ Return parameters:</p>
 			<div class="method-subsection method-declaration"><code>- (void)commandTurnOnBTConnectAutoResult:(DisposeResult)<em>disposeResult</em> DisposeErrorBlock:(DisposeHS3ErrorBlock)<em>disposeHS3ErrorBlock</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeResult</code></th>
+						<td><p>‘YES’ means measurement has been terminated, ‘NO’ means termination failed.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeHS3ErrorBlock</code></th>
+						<td><p>refer to “error” : HS3 error instruction.</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -297,7 +337,7 @@ Return parameters:</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-10-18</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

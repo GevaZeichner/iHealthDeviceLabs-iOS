@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -54,23 +56,15 @@
 	
 
 	
-	<optgroup label="Class Methods">
-		
-		<option value="//api/name/shareBG1CommunicationObject">+ shareBG1CommunicationObject</option>
-		
-	</optgroup>
-	
 
 	
 	<optgroup label="Instance Methods">
 		
 		<option value="//api/name/codeStripStrAnalysis:">- codeStripStrAnalysis:</option>
 		
-		<option value="//api/name/commandConnectBGwithDeviceModel:DisposeDiscoverBlock:DisposeBGIDPSBlock:DisposeConnectBGBlock:DisposeBGErrorBlock:">- commandConnectBGwithDeviceModel:DisposeDiscoverBlock:DisposeBGIDPSBlock:DisposeConnectBGBlock:DisposeBGErrorBlock:</option>
+		<option value="//api/name/commandBG1DeviceModel:withDiscoverBlock:withDiscoverBlock:withConnectBlock:withErrorBlock:">- commandBG1DeviceModel:withDiscoverBlock:withDiscoverBlock:withConnectBlock:withErrorBlock:</option>
 		
-		<option value="//api/name/commandCreateBGtestWithMeasureType:CodeType:CodeString:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:">- commandCreateBGtestWithMeasureType:CodeType:CodeString:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:</option>
-		
-		<option value="//api/name/getDueDate:">- getDueDate:</option>
+		<option value="//api/name/commandBG1MeasureMode:withCodeMode:withCodeString:withSendCodeResultBlock:withStripInBlock:withBloodBlock:withResultBlock:withStripOutBlock:withErrorBlock:">- commandBG1MeasureMode:withCodeMode:withCodeString:withSendCodeResultBlock:withStripInBlock:withBloodBlock:withResultBlock:withStripOutBlock:withErrorBlock:</option>
 		
 	</optgroup>
 	
@@ -102,6 +96,14 @@
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>BG1</p>
+					</div>
+					
+					
 
 					
 					
@@ -110,53 +112,12 @@
 						
 
 						
-						<h2 class="task-title">Other Methods</h2>
+						
 
 						<div class="task-list">
 							<div class="section-method">
-	<a name="//api/name/shareBG1CommunicationObject" title="shareBG1CommunicationObject"></a>
-	<h3 class="method-title"><code><a href="#//api/name/shareBG1CommunicationObject">+&nbsp;shareBG1CommunicationObject</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p>Initialization for BG1 Instance.</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>+ (BG1 *)shareBG1CommunicationObject</code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG1.h</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div><div class="section-method">
-	<a name="//api/name/commandConnectBGwithDeviceModel:DisposeDiscoverBlock:DisposeBGIDPSBlock:DisposeConnectBGBlock:DisposeBGErrorBlock:" title="commandConnectBGwithDeviceModel:DisposeDiscoverBlock:DisposeBGIDPSBlock:DisposeConnectBGBlock:DisposeBGErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandConnectBGwithDeviceModel:DisposeDiscoverBlock:DisposeBGIDPSBlock:DisposeConnectBGBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandConnectBGwithDeviceModel:DisposeDiscoverBlock:DisposeBGIDPSBlock:DisposeConnectBGBlock:DisposeBGErrorBlock:</a></code>
+	<a name="//api/name/commandBG1DeviceModel:withDiscoverBlock:withDiscoverBlock:withConnectBlock:withErrorBlock:" title="commandBG1DeviceModel:withDiscoverBlock:withDiscoverBlock:withConnectBlock:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandBG1DeviceModel:withDiscoverBlock:withDiscoverBlock:withConnectBlock:withErrorBlock:">&ndash;&nbsp;commandBG1DeviceModel:withDiscoverBlock:withDiscoverBlock:withConnectBlock:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -171,7 +132,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandConnectBGwithDeviceModel:(NSNumber *)<em>BG1Model</em> DisposeDiscoverBlock:(DisposeDiscoverBGBlock)<em>disposeDiscoverBGBlock</em> DisposeBGIDPSBlock:(DisposeBGIDPSBlock)<em>disposeBGIDPSBlock</em> DisposeConnectBGBlock:(DisposeConnectBGBlock)<em>disposeConnectBGBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandBG1DeviceModel:(NSNumber *)<em>BG1Model</em> withDiscoverBlock:(DisposeBG1DiscoverBlock)<em>discover</em> withDiscoverBlock:(DisposeBG1IDPSBlock)<em>IDPSInfo</em> withConnectBlock:(DisposeBG1ConnectBlock)<em>connect</em> withErrorBlock:(DisposeBG1ErrorBlock)<em>error</em></code></div>
 
 		    
 			
@@ -185,24 +146,24 @@
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeDiscoverBGBlock</code></th>
+						<th scope="row" class="argument-name"><code>discover</code></th>
 						<td><p>This block returns means blood glucose meter plugged in.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGIDPSBlock</code></th>
+						<th scope="row" class="argument-name"><code>IDPSInfo</code></th>
 						<td><p>This block returns the IDPS of the meter, this will be operated for the first time when the app talks to the meter.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeConnectBGBlock</code></th>
+						<th scope="row" class="argument-name"><code>connect</code></th>
 						<td><p>This block returns the connection status, the connection of the BG meter is regular , the measurement could be processed.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<th scope="row" class="argument-name"><code>error</code></th>
 						<td><p>block returns error codes,please refer to error codes list in BGMacroFile.
-@Notice  Notice: Using this method should be placed BG1ConnectNoti callback</p></td>
+@Notice  Notice: Using this method should be placed kNotificationNameNeedAudioPermission callback</p></td>
 					</tr>
 				
 				</table>
@@ -229,8 +190,8 @@
 		</div>
 	</div>
 </div><div class="section-method">
-	<a name="//api/name/commandCreateBGtestWithMeasureType:CodeType:CodeString:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:" title="commandCreateBGtestWithMeasureType:CodeType:CodeString:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/commandCreateBGtestWithMeasureType:CodeType:CodeString:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:">&ndash;&nbsp;commandCreateBGtestWithMeasureType:CodeType:CodeString:DisposeBGSendCodeBlock:DisposeBGStripInBlock:DisposeBGBloodBlock:DisposeBGResultBlock:DisposeBGStripOutBlock:DisposeBGErrorBlock:</a></code>
+	<a name="//api/name/commandBG1MeasureMode:withCodeMode:withCodeString:withSendCodeResultBlock:withStripInBlock:withBloodBlock:withResultBlock:withStripOutBlock:withErrorBlock:" title="commandBG1MeasureMode:withCodeMode:withCodeString:withSendCodeResultBlock:withStripInBlock:withBloodBlock:withResultBlock:withStripOutBlock:withErrorBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/commandBG1MeasureMode:withCodeMode:withCodeString:withSendCodeResultBlock:withStripInBlock:withBloodBlock:withResultBlock:withStripOutBlock:withErrorBlock:">&ndash;&nbsp;commandBG1MeasureMode:withCodeMode:withCodeString:withSendCodeResultBlock:withStripInBlock:withBloodBlock:withResultBlock:withStripOutBlock:withErrorBlock:</a></code>
 </h3>
 
 	<div class="method-info">
@@ -245,7 +206,7 @@
 			
 		    
 
-			<div class="method-subsection method-declaration"><code>- (void)commandCreateBGtestWithMeasureType:(BGMeasureMode)<em>testType</em> CodeType:(BGCodeMode)<em>codeType</em> CodeString:(NSString *)<em>codeStrips</em> DisposeBGSendCodeBlock:(DisposeBGSendCodeBlock)<em>disposeBGSendCodeBlock</em> DisposeBGStripInBlock:(DisposeBGStripInBlock)<em>disposeBGStripInBlock</em> DisposeBGBloodBlock:(DisposeBGBloodBlock)<em>disposeBGBloodBlock</em> DisposeBGResultBlock:(DisposeBGResultBlock)<em>disposeBGResultBlock</em> DisposeBGStripOutBlock:(DisposeBGStripOutBlock)<em>disposeBGStripOutBlock</em> DisposeBGErrorBlock:(DisposeBGErrorBlock)<em>disposeBGErrorBlock</em></code></div>
+			<div class="method-subsection method-declaration"><code>- (void)commandBG1MeasureMode:(BGMeasureMode)<em>measureMode</em> withCodeMode:(BGCodeMode)<em>codeMode</em> withCodeString:(NSString *)<em>codeString</em> withSendCodeResultBlock:(DisposeBG1SendCodeResultBlock)<em>sendCodeResult</em> withStripInBlock:(DisposeBGStripInBlock)<em>stripIn</em> withBloodBlock:(DisposeBGBloodBlock)<em>blood</em> withResultBlock:(DisposeBGResultBlock)<em>measureResult</em> withStripOutBlock:(DisposeBGStripOutBlock)<em>stripOut</em> withErrorBlock:(DisposeBG1ErrorBlock)<em>error</em></code></div>
 
 		    
 			
@@ -254,47 +215,47 @@
 				<table class="argument-def parameter-def">
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>testType</code></th>
-						<td><p>Set the measure test type,BGMeasureMode_Blood is Blood Test,BGMeasureMode_NoBlood is CTL Test.</p></td>
+						<th scope="row" class="argument-name"><code>measureMode</code></th>
+						<td><p>Set the measure test type,<a href="../Constants/BGMeasureMode.html">BGMeasureMode</a><em>Blood is Blood Test,<a href="../Constants/BGMeasureMode.html">BGMeasureMode</a></em>NoBlood is CTL Test.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>codeType</code></th>
-						<td><p>Set the code type,BGCodeMode_GOD is GOD,BGCodeMode_GDH is GDH.</p></td>
+						<th scope="row" class="argument-name"><code>codeMode</code></th>
+						<td><p>Set the code type,<a href="../Constants/BGCodeMode.html">BGCodeMode</a><em>GOD is GOD,<a href="../Constants/BGCodeMode.html">BGCodeMode</a></em>GDH is GDH.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>codeStrips</code></th>
+						<th scope="row" class="argument-name"><code>codeString</code></th>
 						<td><p>The code String gets by scanning the QR code.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGSendCodeBlock</code></th>
+						<th scope="row" class="argument-name"><code>sendCodeResult</code></th>
 						<td><p>If the QR code is accepted, yes means accepted, no means deny.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGStripInBlock</code></th>
-						<td><p>This block returns yes means the strips slide into the BG meter.</p></td>
+						<th scope="row" class="argument-name"><code>stripIn</code></th>
+						<td><p>The strips slide into the BG meter.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGBloodBlock</code></th>
-						<td><p>This block returns yes means the blood drop has beed sensed from the strip.</p></td>
+						<th scope="row" class="argument-name"><code>blood</code></th>
+						<td><p>The blood drop has beed sensed from the strip.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGResultBlock</code></th>
+						<th scope="row" class="argument-name"><code>measureResult</code></th>
 						<td><p>Returns the measurement by the unit of mg/dL, range from 20-600.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGStripOutBlock</code></th>
-						<td><p>This block returns yes means the strip has been pulled out.</p></td>
+						<th scope="row" class="argument-name"><code>stripOut</code></th>
+						<td><p>The strip has been pulled out.</p></td>
 					</tr>
 				
 					<tr>
-						<th scope="row" class="argument-name"><code>disposeBGErrorBlock</code></th>
+						<th scope="row" class="argument-name"><code>error</code></th>
 						<td><p>This block returns error codes,please refer to error codes list in BGMacroFile.</p></td>
 					</tr>
 				
@@ -382,55 +343,6 @@
 </div>
 						</div>
 						
-
-						
-						<h2 class="task-title">Other Methods</h2>
-
-						<div class="task-list">
-							<div class="section-method">
-	<a name="//api/name/getDueDate:" title="getDueDate:"></a>
-	<h3 class="method-title"><code><a href="#//api/name/getDueDate:">&ndash;&nbsp;getDueDate:</a></code>
-</h3>
-
-	<div class="method-info">
-		<div class="pointy-thing"></div>
-
-		<div class="method-info-container">
-			
-			
-			<div class="method-subsection brief-description">
-				<p><strong><strong><strong><strong>此处加效期为15.1.5的处理,10条有的正确有的不正确</strong></strong></strong></strong>****</p>
-			</div>
-			
-		    
-
-			<div class="method-subsection method-declaration"><code>- (NSDate *)getDueDate:(uint8_t *)<em>someCodeBuf</em></code></div>
-
-		    
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-
-			
-			<div class="method-subsection declared-in-section">
-				<h4 class="method-subtitle">Declared In</h4>
-				<p><code class="declared-in-ref">BG1.m</code></p>
-			</div>
-			
-			
-		</div>
-	</div>
-</div>
-						</div>
-						
 					</div>
 					
 					
@@ -443,7 +355,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-10-18</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

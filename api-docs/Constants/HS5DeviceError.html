@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>HS5DeviceError Constants Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">iHealthSDKStatic </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">iHealth</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">HS5DeviceError Constants Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>HSMacroFile.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+
+                    
+                    <h3 class="subsubtitle method-title">HS5DeviceError</h3>
+                    
+                    <div class="section">
+                        <!-- display enum values -->
+                        
+                        <h4 class="method-subtitle">Definition</h4>
+                        <code>typedef NS_ENUM(NSInteger, HS5DeviceError ) {<br>
+                            
+                            &nbsp;&nbsp; <a href="">IHSCOverTimeError</a> = 0,<br>
+                            
+                            &nbsp;&nbsp; <a href="">IHSCUserInScale</a> = 5,<br>
+                            
+                            &nbsp;&nbsp; <a href="">IHSCLowPower</a> = 6,<br>
+                            
+                            &nbsp;&nbsp; <a href="">IHSCScaleEr0</a> = 7,<br>
+                            
+                            &nbsp;&nbsp; <a href="">IHSCScaleEr1</a> = 8,<br>
+                            
+                            &nbsp;&nbsp; <a href="">IHSCScaleEr2</a> = 9,<br>
+                            
+                            &nbsp;&nbsp; <a href="">IHSCScaleEr7</a> = 10,<br>
+                            
+                            &nbsp;&nbsp; <a href="">IHSCScaleEr8</a> = 11,<br>
+                            
+                            &nbsp;&nbsp; <a href="">IHSCScaleEr9</a> = 12,<br>
+                            
+                            &nbsp;&nbsp; <a href="">IHScaleBusy</a> = 13,<br>
+                            
+                            &nbsp;&nbsp; <a href="">HS5DataZeor</a> = 14,<br>
+                            
+                            &nbsp;&nbsp; <a href="">IHSCScaleCreateUserTestError</a> = 15,<br>
+                            
+                            &nbsp;&nbsp; <a href="">HS5Disconnect</a> = 16,<br>
+                            
+                            &nbsp;&nbsp; <a href="">HS5UserInvalidate</a> = 400,<br>
+                            
+                            };</code>
+                    
+                    </div>
+                    
+                    <div class="section section-methods">
+                        <h4 class="method-subtitle">Constants</h4>
+                        <dl class="termdef">
+                            
+                            <dt><a name="" title="IHSCOverTimeError"></a><code>IHSCOverTimeError</code></dt>
+<dd>
+
+
+<p>Communication error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">HSMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="IHSCUserInScale"></a><code>IHSCUserInScale</code></dt>
+<dd>
+
+
+<p>Communication Error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">HSMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="IHSCLowPower"></a><code>IHSCLowPower</code></dt>
+<dd>
+
+
+<p>Make sure batteries are installed correctly, if the problem persists, replace with a new set of batteries.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">HSMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="IHSCScaleEr0"></a><code>IHSCScaleEr0</code></dt>
+<dd>
+
+
+<p>Remove the batteries, wait 1 minute and then replace with a new set of batteries.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">HSMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="IHSCScaleEr1"></a><code>IHSCScaleEr1</code></dt>
+<dd>
+
+
+<p>The current weight may be beyond the measurement range of 330 lbs/150 kg.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">HSMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="IHSCScaleEr2"></a><code>IHSCScaleEr2</code></dt>
+<dd>
+
+
+<p>Stand still on all four electrodes with bare feet.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">HSMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="IHSCScaleEr7"></a><code>IHSCScaleEr7</code></dt>
+<dd>
+
+
+<p>Communication Error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">HSMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="IHSCScaleEr8"></a><code>IHSCScaleEr8</code></dt>
+<dd>
+
+
+<p>Communication Error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">HSMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="IHSCScaleEr9"></a><code>IHSCScaleEr9</code></dt>
+<dd>
+
+
+<p>Communication Error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">HSMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="IHScaleBusy"></a><code>IHScaleBusy</code></dt>
+<dd>
+
+
+<p>Scale is busy</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">HSMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="HS5DataZeor"></a><code>HS5DataZeor</code></dt>
+<dd>
+
+
+<p>No memory</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">HSMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="IHSCScaleCreateUserTestError"></a><code>IHSCScaleCreateUserTestError</code></dt>
+<dd>
+
+
+<p>Scale Create User Test Error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">HSMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="HS5Disconnect"></a><code>HS5Disconnect</code></dt>
+<dd>
+
+
+<p>Device disconnect</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">HSMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="HS5UserInvalidate"></a><code>HS5UserInvalidate</code></dt>
+<dd>
+
+
+<p>User verify error</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">HSMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                        </dl>
+                    </div>
+                    
+
+                    
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-10-18</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -98,6 +100,14 @@
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>HS6</p>
+					</div>
+					
+					
 
 					
 					
@@ -121,11 +131,9 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Binding QR Device</li>
-<li>When using the SDK for the first time, measuring method needs to be called to finish user verification.</li>
-</ul>
-
+				<p>Binding QR Device
+When using the SDK for the first time, measuring method needs to be called to finish user verification.
+Import parameter:</p>
 			</div>
 			
 		    
@@ -134,35 +142,48 @@
 
 		    
 			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<ul>
-<li>Import parameter:</li>
-<li>@param tempUser  - Properties included: clientID，clientSecret，userAccount，height，weight，isAthlete，sex.</li>
-<li>clientID &amp; clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: daiqingquan@ihealthlabs.com.cn for more information.</li>
-<li>@param tempDeviceID  - device Mac</li>
-<li>Return parameters:</li>
-<li>The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.</li>
-<li><p>Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection; there is 10-day trial period if the SDK cannot connect to the internet, the SDK is fully functional during tryout period, but will be terminated without a working internet connection after 10 days.</p></li>
-<li><p>@param result  - Action = 1;(1:bind sucess 2：full user bind faild 3,:ts error bind faild 4 other),</p></li>
-<li>BineNum=10</li>
-<li>MAC</li>
-<li>Position = 1;（user in weight number）</li>
-<li>SetWifi=0</li>
-<li>Status = 1;（1:binding 2：unbind）</li>
-<li><p>TS (time);</p></li>
-<li><p>@param error  - error code</p></li>
-<li>Error code definition：</li>
-<li>refer to “error” : HS6 error instruction.</li>
-</ul>
-
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempUser</code></th>
+						<td><p>Properties included: clientID，clientSecret，userAccount，height，weight，isAthlete，sex.
+     clientID &amp; clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: daiqingquan@ihealthlabs.com.cn for more information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempDeviceID</code></th>
+						<td><p>device Mac
+Return parameters:
+  The measurement via SDK will be operated in the case of 1-4, and will be terminated if any of 5-8 occurs. The interface needs to be re-called after analyzing the return parameters.
+  Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection; there is 10-day trial period if the SDK cannot connect to the internet, the SDK is fully functional during tryout period, but will be terminated without a working internet connection after 10 days.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>result</code></th>
+						<td><p>Action = 1;(1:bind sucess 2：full user bind faild 3,:ts error bind faild 4 other),
+  BineNum=10
+  MAC
+  Position = 1;（user in weight number）
+  SetWifi=0
+  Status = 1;（1:binding 2：unbind）
+  TS (time);</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>error code</p></td>
+					</tr>
+				
+				</table>
 			</div>
+			
+
+			
+
+			
+
 			
 
 			
@@ -190,10 +211,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>unBind QR Device</li>
-</ul>
-
+				<p>unBind QR Device</p>
 			</div>
 			
 		    
@@ -201,6 +219,38 @@
 			<div class="method-subsection method-declaration"><code>- (void)cloudCommandUserDisBinedQRDeviceForUser:(HealthUser *)<em>tempUser</em> withDeviceID:(NSString *)<em>tempDeviceID</em> disBinedResult:(DisBinedQRDeviceBlock)<em>result</em> disBinedError:(DisBinedQRDeviceErrorBlock)<em>error</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempUser</code></th>
+						<td><p>Properties included: clientID，clientSecret，userAccount，height.
+         clientID &amp; clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempDeviceID</code></th>
+						<td><p>device Mac
+Return parameters:</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>result</code></th>
+						<td><p>Action = 1;(1:bind sucess 2：full user bind faild 3,:ts error bind faild 4 other),
+  MAC
+  Status = 2;（1:binding 2：unbind）
+  TS</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>error</code></th>
+						<td><p>error code</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -210,21 +260,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<ul>
-<li>Import parameter:</li>
-<li>@param tempUser  - Properties included: clientID，clientSecret，userAccount，height.</li>
-<li>@param tempDeviceID device Mac</li>
-<li>clientID &amp; clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: lvjincan@ihealthlabs.com.cn.com for more information.</li>
-<li><p>Return parameters:</p></li>
-<li><p>@param result  - Action = 1;(1:bind sucess 2：full user bind faild 3,:ts error bind faild 4 other),</p></li>
-<li>MAC</li>
-<li>Status = 2;（1:binding 2：unbind）</li>
-<li><p>TS</p></li>
-<li><p>@param error  - error code</p></li>
-<li>Error code definition：</li>
-<li>refer to “error” : HS6 error instruction.</li>
-</ul>
-
+				<p>Import parameter:</p>
 			</div>
 			
 
@@ -253,13 +289,8 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>set HS6 wifi</li>
-<li>Import parameter:</li>
-<li>@param password  - wifi password.</li>
-<li>Return parameters:</li>
-</ul>
-
+				<p>Set HS6 wifi
+Import parameter:</p>
 			</div>
 			
 		    
@@ -268,24 +299,45 @@
 
 		    
 			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>password</code></th>
+						<td><p>wifi password.</p>
 
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<ul>
-<li><p>@param disposeHS6SuccessBlock  - set sucess</p></li>
-<li><p>@param disposeHS6FailBlock  - set faild</p></li>
-<li><p>@param disposeHS6EndBlock  - end set</p></li>
-<li><p>@param disposeHS6ErrorBlock - error code</p></li>
-<li>Error code definition：</li>
-<li>refer to “error” : HS6 error instruction.</li>
-</ul>
-
+<p>Return parameters:</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeHS6SuccessBlock</code></th>
+						<td><p>set sucess</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeHS6FailBlock</code></th>
+						<td><p>set faild</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeHS6EndBlock</code></th>
+						<td><p>end set</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeHS6ErrorBlock</code></th>
+						<td><p>error code</p></td>
+					</tr>
+				
+				</table>
 			</div>
+			
+
+			
+
+			
+
 			
 
 			
@@ -313,7 +365,10 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<p>*get open APItoken</p>
+				<p>Get open APItoken
+Get AccessToken of HS6 user,and this method is a time consuming operation that cannot be calledin the main thread.
+After get AccessToken, you can call openApi(<a href="http://developer.ihealthlabs.com">http://developer.ihealthlabs.com</a>) to pull data form iHealth cloud.
+  Import parameter:</p>
 			</div>
 			
 		    
@@ -328,37 +383,40 @@
 				
 					<tr>
 						<th scope="row" class="argument-name"><code>tempUser</code></th>
-						<td><ul>
-<li><p>Properties included: clientID，clientSecret，userAccount,serialNub.</p></li>
-<li><p>Return parameters:</p></li>
-<li>@param  getOpenAPIBlock</li>
-<li>&mdash;&ndash;(NSDictionary){@link iHealthDeviceHs6Callback#onNotify(String, String, String, String)} and its'</li>
-<li><p>action is {@link #ACTION_HS6_GET_TOKEN}.</p></li>
-<li><p>eg. {APIName=&ldquo;OpenApiActivity OpenApiBG OpenApiBP OpenApiFood OpenApiSleep OpenApiSpO2 OpenApiSport</p></li>
-<li>OpenApiUserInfo OpenApiWeight",</li>
-<li>AccessToken=&ldquo;9fuIPl3Bo6lqJfbYjXFjuPnNwNqVfxjiUE7cMCZSjrX22RJSoKf28jtIhI0v86wjV5GJ21bc6LvMNbfYG0QsZ7cYuUSO0EkaiFTST*GcjZvvTKxfEOmhQTfLXTXYAOA</li>
-<li>wCoXlEs0DRqJaHZU5JS30ssyLNlqADPV9dlvWZitQmIfXjF6CSZM2SuRCD<em>bbbrqtwBsn</em>sC24OEoQCRpDau6wQ",</li>
-<li>ClassParamentKey =     {</li>
-<li>&ldquo;client_id&rdquo; = 2a8387e3f4e94407a3a767a72dfd52ea;</li>
-<li>&ldquo;client_para&rdquo; = 99;</li>
-<li>&ldquo;client_secret&rdquo; = fd5e845c47944a818bc511fb7edb0a77;</li>
-<li>hash = d86bf92a851bf9211851d8e6827eea55;</li>
-<li>username = &ldquo;he@12.com&rdquo;;</li>
-<li>};</li>
-<li>&ldquo;Expires&rdquo;:3672000,
-<em>&ldquo;RefreshToken&rdquo;:&ldquo;9fuIPl3Bo6lqJfbYjXFjuPnNwNqVfxjiUE7cMCZSjrX22RJSoKf28jtIhI0v86wjV5GJ21bc6LvMNbfYG0QsZ2TcvTQNInn85XdPIJRIe-9zB-eaY5utBVKmtLjJdEEmBlx5le5mT6oF7WBwVkwx</em>CUpSsdgUcyE3mG3FJnSHlajogaUSUgvMgmgUaVEMYzv4pcbCUltGNAMqJt5wwvBZA&rdquo;,</li>
-<li>&ldquo;RefreshTokenExpires&rdquo;:31536000,</li>
-<li>&ldquo;UUID&rdquo;:&ldquo;&rdquo;,</li>
-<li>&ldquo;UserID&rdquo;:&ldquo;51027f3e09a14a55917e687c628a0f13&rdquo;,</li>
-<li>&ldquo;UserNameKey&rdquo;</li>
-<li>&ldquo;UserOpenID&rdquo;</li>
-<li>&ldquo;UserRegion&rdquo;:&ldquo;https:\/\/api.ihealthlabs.com.cn:8443&rdquo;,</li>
-<li>&ldquo;client_para&rdquo;:&ldquo;random_str&rdquo;}</li>
-<li>@param ErrorBlock  - error code</li>
-<li>Error code definition：</li>
-<li>refer to “error” : HS6 error instruction.</li>
-</ul>
-</td>
+						<td><p>Properties included: clientID，clientSecret，userAccount,serialNub.
+Return parameters:</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>getOpenAPIBlock</code></th>
+						<td><p>(NSDictionary){@link iHealthDeviceHs6Callback#onNotify(String, String, String, String)} and its'
+  action is {@link #ACTION_HS6_GET_TOKEN}.</p>
+
+<p>  eg. {APIName=&ldquo;OpenApiActivity OpenApiBG OpenApiBP OpenApiFood OpenApiSleep OpenApiSpO2 OpenApiSport
+  OpenApiUserInfo OpenApiWeight&rdquo;,
+  AccessToken=&ldquo;9fuIPl3Bo6lqJfbYjXFjuPnNwNqVfxjiUE7cMCZSjrX22RJSoKf28jtIhI0v86wjV5GJ21bc6LvMNbfYG0QsZ7cYuUSO0EkaiFTST<em>GcjZvvTKxfEOmhQTfLXTXYAOA
+  wCoXlEs0DRqJaHZU5JS30ssyLNlqADPV9dlvWZitQmIfXjF6CSZM2SuRCD</em>bbbrqtwBsn<em>sC24OEoQCRpDau6wQ&rdquo;,
+  ClassParamentKey =     {
+  &ldquo;client_id&rdquo; = 2a8387e3f4e94407a3a767a72dfd52ea;
+  &ldquo;client_para&rdquo; = 99;
+  &ldquo;client_secret&rdquo; = fd5e845c47944a818bc511fb7edb0a77;
+  hash = d86bf92a851bf9211851d8e6827eea55;
+  username = &ldquo;he@12.com&rdquo;;
+  };
+  &ldquo;Expires&rdquo;:3672000,
+</em>&ldquo;RefreshToken&rdquo;:&ldquo;9fuIPl3Bo6lqJfbYjXFjuPnNwNqVfxjiUE7cMCZSjrX22RJSoKf28jtIhI0v86wjV5GJ21bc6LvMNbfYG0QsZ2TcvTQNInn85XdPIJRIe-9zB-eaY5utBVKmtLjJdEEmBlx5le5mT6oF7WBwVkwx*CUpSsdgUcyE3mG3FJnSHlajogaUSUgvMgmgUaVEMYzv4pcbCUltGNAMqJt5wwvBZA&rdquo;,
+* &ldquo;RefreshTokenExpires&rdquo;:31536000,
+* &ldquo;UUID&rdquo;:&ldquo;&rdquo;,
+* &ldquo;UserID&rdquo;:&ldquo;51027f3e09a14a55917e687c628a0f13&rdquo;,
+* &ldquo;UserNameKey&rdquo;
+* &ldquo;UserOpenID&rdquo;
+* &ldquo;UserRegion&rdquo;:&ldquo;https:\/\/api.ihealthlabs.com.cn:8443&rdquo;,
+* &ldquo;client_para&rdquo;:&ldquo;random_str&rdquo;}</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>HS6 error instruction.</p></td>
 					</tr>
 				
 				</table>
@@ -369,17 +427,6 @@
 
 			
 
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<ul>
-<li>Get AccessToken of HS6 user,and this method is a time consuming operation that cannot be called</li>
-<li>in the main thread.</li>
-<li>After get AccessToken, you can call openApi(<a href="http://developer.ihealthlabs.com">http://developer.ihealthlabs.com</a>) to pull data form iHealth cloud.</li>
-<li>Import parameter:</li>
-</ul>
-
-			</div>
 			
 
 			
@@ -407,10 +454,8 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>sync Weight Unit</li>
-</ul>
-
+				<p>sync Weight Unit
+Import parameter:</p>
 			</div>
 			
 		    
@@ -419,26 +464,39 @@
 
 		    
 			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<ul>
-<li>Import parameter:</li>
-<li>@param tempUser  - Properties included: clientID，clientSecret，userAccount,serialNub.</li>
-<li>@param unit  - IHHS6SDKUnitWeight_kg,IHHS6SDKUnitWeight_lb,IHHS6SDKUnitWeight_oz</li>
-<li>Return parameters:</li>
-<li>@param unitBlock  - YES or NO</li>
-<li>@param errorBlock  - error code</li>
-<li>Error code definition：</li>
-<li>refer to “error” : HS6 error instruction.</li>
-</ul>
-
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempUser</code></th>
+						<td><p>Properties included: clientID，clientSecret，userAccount,serialNub.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>unit</code></th>
+						<td><p><a href="../Constants/IHHS6SDKUnitWeight.html">IHHS6SDKUnitWeight</a><em>kg,<a href="../Constants/IHHS6SDKUnitWeight.html">IHHS6SDKUnitWeight</a></em>lb,IHHS6SDKUnitWeight_oz
+Return parameters:</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>unitBlock</code></th>
+						<td><p>YES or NO</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>errorBlock</code></th>
+						<td><p>error code</p></td>
+					</tr>
+				
+				</table>
 			</div>
+			
+
+			
+
+			
+
 			
 
 			
@@ -469,7 +527,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-10-18</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

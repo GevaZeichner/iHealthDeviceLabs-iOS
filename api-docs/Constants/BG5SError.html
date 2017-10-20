@@ -77,6 +77,12 @@
                     
                     <h3 class="subsubtitle method-title">BG5SError</h3>
                     
+					
+					<div class="section section-overview">
+                        <p><a href="../Classes/BG5S.html">BG5S</a> error code</p>
+					</div>
+					
+					
                     <div class="section">
                         <!-- display enum values -->
                         
@@ -101,9 +107,19 @@
                             
                             &nbsp;&nbsp; <a href="">BG5SError_BluetoothError</a> = 7,<br>
                             
+                            &nbsp;&nbsp; <a href="">BG5SError_ResultLow</a> = 8,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BG5SError_ResultHigh</a> = 9,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BG5SError_FactoryError</a> = 10,<br>
+                            
                             &nbsp;&nbsp; <a href="">BG5SError_InputParametersError</a> = 400,<br>
                             
                             &nbsp;&nbsp; <a href="">BG5SError_RecordTotalNumberNotMatchTransferTotalNumber</a> = 401,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BG5SError_RecordPacketNotMatch</a> = 402,<br>
+                            
+                            &nbsp;&nbsp; <a href="">BG5SError_RecordPackerIndexNotMatch</a> = 403,<br>
                             
                             &nbsp;&nbsp; <a href="">BG5SError_CommandTimeout</a> = 500,<br>
                             
@@ -120,6 +136,13 @@
                             <dt><a name="" title="BG5SError_Unknown"></a><code>BG5SError_Unknown</code></dt>
 <dd>
 
+
+<p>Unknown error</p>
+
+
+
+
+
     
 	<p>
 		Declared In <code class="declared-in-ref">BGMacroFile.h</code>.
@@ -129,6 +152,13 @@
                             
                             <dt><a name="" title="BG5SError_LowBattery"></a><code>BG5SError_LowBattery</code></dt>
 <dd>
+
+
+<p>Only showed in BG5S&rsquo;s screen and need charging</p>
+
+
+
+
 
     
 	<p>
@@ -140,6 +170,13 @@
                             <dt><a name="" title="BG5SError_PullOffStripWhenMeasuring"></a><code>BG5SError_PullOffStripWhenMeasuring</code></dt>
 <dd>
 
+
+<p>Strip removed in the middle of reading, repeat the test with a new strip.</p>
+
+
+
+
+
     
 	<p>
 		Declared In <code class="declared-in-ref">BGMacroFile.h</code>.
@@ -149,6 +186,13 @@
                             
                             <dt><a name="" title="BG5SError_UnvalidReferenceVoltage"></a><code>BG5SError_UnvalidReferenceVoltage</code></dt>
 <dd>
+
+
+<p>Reference voltage error, not normal measurement, please repeat the test.</p>
+
+
+
+
 
     
 	<p>
@@ -160,6 +204,13 @@
                             <dt><a name="" title="BG5SError_StripUsed"></a><code>BG5SError_StripUsed</code></dt>
 <dd>
 
+
+<p>Strip is used or unknown moisture detected, discard the test strip and repeat the test with a new strip.</p>
+
+
+
+
+
     
 	<p>
 		Declared In <code class="declared-in-ref">BGMacroFile.h</code>.
@@ -169,6 +220,13 @@
                             
                             <dt><a name="" title="BG5SError_ErrorOccurInEEPROM"></a><code>BG5SError_ErrorOccurInEEPROM</code></dt>
 <dd>
+
+
+<p>Reading transmission error. Repeat the test with a new test strip. If the problem persists, contact iHealth customer service for assistance.</p>
+
+
+
+
 
     
 	<p>
@@ -180,6 +238,13 @@
                             <dt><a name="" title="BG5SError_LowTemperature"></a><code>BG5SError_LowTemperature</code></dt>
 <dd>
 
+
+<p>The environmental temperature is beyond normal range, place the meter at room temperature for at least 30 minutes, then repeat the test.</p>
+
+
+
+
+
     
 	<p>
 		Declared In <code class="declared-in-ref">BGMacroFile.h</code>.
@@ -189,6 +254,13 @@
                             
                             <dt><a name="" title="BG5SError_HighTemperature"></a><code>BG5SError_HighTemperature</code></dt>
 <dd>
+
+
+<p>The environmental temperature is beyond normal range, place the meter at room temperature for at least 30 minutes, then repeat the test.</p>
+
+
+
+
 
     
 	<p>
@@ -200,6 +272,64 @@
                             <dt><a name="" title="BG5SError_BluetoothError"></a><code>BG5SError_BluetoothError</code></dt>
 <dd>
 
+
+<p>Only showed in BG5S&rsquo;s screen.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BGMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BG5SError_ResultLow"></a><code>BG5SError_ResultLow</code></dt>
+<dd>
+
+
+<p>Glucose test result is low.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BGMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BG5SError_ResultHigh"></a><code>BG5SError_ResultHigh</code></dt>
+<dd>
+
+
+<p>Glucose test result is high.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BGMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BG5SError_FactoryError"></a><code>BG5SError_FactoryError</code></dt>
+<dd>
+
+
+<p>Reset and if the problem persists, contact iHealth customer service for assistance.</p>
+
+
+
+
+
     
 	<p>
 		Declared In <code class="declared-in-ref">BGMacroFile.h</code>.
@@ -209,6 +339,13 @@
                             
                             <dt><a name="" title="BG5SError_InputParametersError"></a><code>BG5SError_InputParametersError</code></dt>
 <dd>
+
+
+<p>  Parameter input error.</p>
+
+
+
+
 
     
 	<p>
@@ -220,6 +357,47 @@
                             <dt><a name="" title="BG5SError_RecordTotalNumberNotMatchTransferTotalNumber"></a><code>BG5SError_RecordTotalNumberNotMatchTransferTotalNumber</code></dt>
 <dd>
 
+
+<p>  Quantity not match</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BGMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BG5SError_RecordPacketNotMatch"></a><code>BG5SError_RecordPacketNotMatch</code></dt>
+<dd>
+
+
+<p>  Single packet is not full.</p>
+
+
+
+
+
+    
+	<p>
+		Declared In <code class="declared-in-ref">BGMacroFile.h</code>.
+	</p>
+	
+</dd>
+                            
+                            <dt><a name="" title="BG5SError_RecordPackerIndexNotMatch"></a><code>BG5SError_RecordPackerIndexNotMatch</code></dt>
+<dd>
+
+
+<p>  Packet index not match.</p>
+
+
+
+
+
     
 	<p>
 		Declared In <code class="declared-in-ref">BGMacroFile.h</code>.
@@ -230,6 +408,13 @@
                             <dt><a name="" title="BG5SError_CommandTimeout"></a><code>BG5SError_CommandTimeout</code></dt>
 <dd>
 
+
+<p>  Command timeout</p>
+
+
+
+
+
     
 	<p>
 		Declared In <code class="declared-in-ref">BGMacroFile.h</code>.
@@ -239,6 +424,13 @@
                             
                             <dt><a name="" title="BG5SError_CommandNotSupport"></a><code>BG5SError_CommandNotSupport</code></dt>
 <dd>
+
+
+<p>  Command is not supported for current device.</p>
+
+
+
+
 
     
 	<p>
@@ -253,6 +445,17 @@
 
                     
                     
+
+                    
+
+                    
+                    <div class="method-subsection declared-in-section">
+                        <h4 class="method-subtitle">Declared In</h4>
+                        <p><code class="declared-in-ref">BGMacroFile.h</code></p>
+                    </div>
+                    
+                    
+                    
                     
           
 				</main>
@@ -260,7 +463,7 @@
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-10-18</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>

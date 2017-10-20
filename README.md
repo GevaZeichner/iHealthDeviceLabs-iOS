@@ -1,7 +1,7 @@
 # iHealth Device Developer 
 
 
-### Latest version: 2.1.2
+### Latest version: 2.1.3
 
 
 ### Documnentation
@@ -21,29 +21,33 @@
     iHealth BP3    iHealth BP3L  iHealth BP5  iHealth BP7   iHealth BP7S   iHealth Continua BP iHealth KN550BT     iHealth ABI    iHealth ABPM   
     
     HS: 
-    iHealth HS3    iHealth HS4   iHealth HS4S(Same with HS4)   iHealth HS5  iHealth HS6    iHealth HS2      
+    iHealth HS2  iHealth HS3    iHealth HS4   iHealth HS4S(Same with HS4)   iHealth HS5  iHealth HS6
     
     AM: 
     iHealth AM3    iHealth AM3S   iHealth AM4  
          
     BG: 
-    iHealth BG1    iHealth BG3  iHealth BG5
+    iHealth BG1    iHealth BG3  iHealth BG5  iHealth BG5S
     
     PO: 
-    iHealth PO3     
+    iHealth PO3  iHealth PO3M
+    
+    Thermometer:
+    
+    THV3  TS28B
 
 
 ### Support Update iHealth Device for iOS
 
-    AM3 AM3S AM4 HS4 HS4S BP5S ABPM HS2
+    AM3 AM3S AM4 HS4 HS4S BP5S ABPM HS2 BG5S
 
 ### Relevant files and frameworks
 1、Import the following iHealthSDK files：   
 
 
     BP: 
-    BPHeader.h、 BPMacroFile.h、BPCommandCache.h、BPController.h、BPDevice.h、 BP3.h、 BP3Controller.h、BP3L.h、 BP3LController.h、 BP5.h、BP5Controller.h、BP7.h、 BP7Controller.h、BP7S.h、BP7SController.h、 ABI.h, ABIController.h、BPContinua.h、BPContinuaController.h、ABPM.h、ABPMController.h、KN550BT.h、KN550BTController.h  
-    
+    BPHeader.h、 BPMacroFile.h、BPCommandCache.h、BPController.h、BPDevice.h、 BP3.h、 BP3Controller.h、BP3L.h、 BP3LController.h、 BP5.h、BP5Controller.h、BP7.h、 BP7Controller.h、BP7S.h、BP7SController.h、 ABI.h, ABIController.h、BPContinua.h、BPContinuaController.h、ABPM.h、ABPMController.h、KN550BT.h、KN550BTController.h、BP5SRW.h、BP5SRWController.h、BPAlertSettingModel.h、BPAV10Device.h、BPBTLEDevice.h、BPBV10Device.h、BPLoopMeasureSettingModel.h
+     、BPV24Device.h
     
 	HS: 
 	HSHeader.h、HSMacroFile.h、HS3.h、HS3Controller.h、HS4.h、HS4Controller.h、 HS5.h、HS5Controller.h、iHealthHS6.h、HS2.h、HS2Controller.h
@@ -55,20 +59,23 @@
 	POHeader.h、POMacroFile.h、PO3.h、PO3Controller.h
 	
     BG: 
-    BGHeader.h、BGMacroFile.h、BGCommandCache.h、BGController.h、BGDevice.h、BG5.h、BG5Controller.h、BG1.h、BG1Controller.h、BG3.h、BG3Controller.h
-	
-	Common: 
+    BGHeader.h、BGMacroFile.h、BGController.h、BGDevice.h、BG5.h、BG5Controller.h、BG1.h、BG1Controller.h、BG3.h、BG3Controller.h、BG5S.h、BG5SController.h
+    
+    Thermometer:
+    THV3.h、THV3Controller.h、THV3Macro.h、TS28B.h、TS28BController.h、TS28BHeader.h
+    
+    Common:
 	HealthUser.h、ConnectDeviceController.h、ScanDeviceController.h、HealthHeader.h
 
-    Update：
+    Device Update：
 
-    SDKUpdateDevice.h
+    SDKUpdateDevice.h、DFUController.h、DFUDeviceFirmwareInfo.h、DFUHeader.h、DFUMacro.h、DFUServerFirmwareInfo.h
 
     Authentication：
      
     IHSDKCloudUser.h
 	
-	Library: iHealthSDK2.1.1.a
+	Library: iHealthSDK2.1.3.a
 	
 	supports iOS 8.0 and above.
 

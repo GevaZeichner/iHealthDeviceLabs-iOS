@@ -43,6 +43,8 @@
 							<select id="jump-to">
 	<option value="top">Jump To&#133;</option>
 	
+	<option value="overview">Overview</option>
+	
 
 	
 	
@@ -106,6 +108,14 @@
 					
 
                     
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p>HS5</p>
+					</div>
+					
+					
 
 					
 					
@@ -129,10 +139,7 @@
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Establish memory and measurement connection</li>
-</ul>
-
+				<p>Establish memory and measurement connection</p>
 			</div>
 			
 		    
@@ -140,6 +147,40 @@
 			<div class="method-subsection method-declaration"><code>- (void)commandCreateUserManageConnectWithUser:(HealthUser *)<em>tempUser</em> currentUserSerialNub:(CurrentSerialNub)<em>serialNub</em> deviceUserList:(MemorryUserListHS5Data)<em>MemorryUserListHS5Data</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempUser</code></th>
+						<td><p>included properties: userAccount、clientID、clientSecret。
+   userAccount: either email or mobile phone number (mobile phone number is not currently supported yet)
+   height: the height of a user (cm);
+   clientID &amp; clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: heguangming@ihealthlabs.com.cn for more information.</p>
+
+<p>Return Parameters:
+The measurement via SDK will be operated in the case of 1-3, and will be terminated if any of 4-8 occurs. The interface needs to be re-called after analyzing the return parameters.
+Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection; UserAuthen_TrySuccess is invalidate for HS5.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>serialNub</code></th>
+						<td><p>The only identification of a user，should be reserved in third party apps，provide to other Apps [Range:0~0xFFFFFFF]</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>MemorryUserListHS5Data</code></th>
+						<td><p>Existing user info in HS5，including serialNub、Position of users. Related key: serialNumber、position</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>error codes in transmission process: Errors in HS5</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -149,28 +190,7 @@
 			
 			<div class="method-subsection discussion-section">
 				<h4 class="method-subtitle">Discussion</h4>
-				<ul>
-<li>Import Parameters:
-
-<ul>
-<li>@param tempUser  - included properties: userAccount、clientID、clientSecret。</li>
-<li>userAccount: either email or mobile phone number (mobile phone number is not currently supported yet)</li>
-<li>height: the height of a user (cm);</li>
-<li>clientID &amp; clientSecret: the only identification for users of the SDK, requires registration from iHealth administrator, please email: heguangming@ihealthlabs.com.cn for more information.</li>
-</ul>
-</li>
-<li>Return Parameters:
-
-<ul>
-<li>The measurement via SDK will be operated in the case of 1-3, and will be terminated if any of 4-8 occurs. The interface needs to be re-called after analyzing the return parameters.</li>
-<li>Notice: when a new user registers via SDK, an ‘iHealth disclaimer’ will pop up automatically, and will require the user to agree in order to continue. SDK applications require an Internet connection; UserAuthen_TrySuccess is invalidate for HS5.</li>
-<li>@param serialNub  - The only identification of a user，should be reserved in third party apps，provide to other Apps [Range:0~0xFFFFFFF]</li>
-<li>@param <a href="../Blocks/MemorryUserListHS5Data.html">MemorryUserListHS5Data</a>  - Existing user info in HS5，including serialNub、Position of users. Related key: serialNumber、position</li>
-<li>@param disposeErrorBlock   - error codes in transmission process: Errors in HS5</li>
-</ul>
-</li>
-</ul>
-
+				<p>Import Parameters:</p>
 			</div>
 			
 
@@ -438,10 +458,8 @@ Return Parameters:</li>
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>create memory upload connection</li>
-</ul>
-
+				<p>Create memory upload connection
+Import Parameters:</p>
 			</div>
 			
 		    
@@ -450,24 +468,54 @@ Return Parameters:</li>
 
 		    
 			
-
-			
-
-			
-
-			
-			<div class="method-subsection discussion-section">
-				<h4 class="method-subtitle">Discussion</h4>
-				<p><em>Import Parameters
-    * @param tempUser  -included properties： serialNub [Range:0~0x7FFFFFFF]，instructions refer to “new user Api”.
-Return Parameters:
-    * @param disposeHS5Result - Success:Yes，Fail:No.
-    * @param startTransmission  - Finish memory transmission.
-    * @param progress  - Memory transmission progress，0.0～1.0.
-    * @param memorryData  - Record data，More details and key refer Measure API. </em>Additionally add time-measure property, related key: date.dataID
-    * @param finishTransmission  - Finish Memory Transmission
-    * @param disposeErrorBlock  - error codes in transmission process: Errors in HS5</p>
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tempUser</code></th>
+						<td><p>included properties： serialNub [Range:0~0x7FFFFFFF]，instructions refer to “new user Api”.
+Return Parameters:</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeHS5Result</code></th>
+						<td><p>Success:Yes，Fail:No.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>startTransmission</code></th>
+						<td><p>Finish memory transmission.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>progress</code></th>
+						<td><p>Memory transmission progress，0.0～1.0.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>memorryData</code></th>
+						<td><p>Record data，More details and key refer Measure API. Additionally add time-measure property, related key: date.dataID</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>finishTransmission</code></th>
+						<td><p>Finish Memory Transmission</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>error codes in transmission process: Errors in HS5</p></td>
+					</tr>
+				
+				</table>
 			</div>
+			
+
+			
+
+			
+
 			
 
 			
@@ -593,17 +641,8 @@ Return Parameters:</li>
 			
 			
 			<div class="method-subsection brief-description">
-				<ul>
-<li>Stop Current Action and disconnect</li>
-<li>Return Parameters:
-
-<ul>
-<li>@param disposeHS5Result  - Success:Yes，Fail:No.</li>
-<li>@param disposeErrorBlock  - error codes in endCurrentConnect: Errors in HS5</li>
-</ul>
-</li>
-</ul>
-
+				<p>Stop Current Action and disconnect
+Return Parameters:</p>
 			</div>
 			
 		    
@@ -611,6 +650,23 @@ Return Parameters:</li>
 			<div class="method-subsection method-declaration"><code>- (void)commandEndCurrentConnect:(DisposeHS5Result)<em>disposeHS5Result</em> Disposehs5ErrorBlock:(DisposeHS5ErrorBlock)<em>disposeErrorBlock</em></code></div>
 
 		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeHS5Result</code></th>
+						<td><p>Success:Yes，Fail:No.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>disposeErrorBlock</code></th>
+						<td><p>error codes in endCurrentConnect: Errors in HS5</p></td>
+					</tr>
+				
+				</table>
+			</div>
 			
 
 			
@@ -754,7 +810,7 @@ Return Parameters:</p>
 				<footer>
 					<div class="footer-copyright">
 						
-						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-08-21</p>
+						<p class="copyright">Copyright &copy; 2017 iHealth. All rights reserved. Updated: 2017-10-18</p>
 						
 						
 						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
