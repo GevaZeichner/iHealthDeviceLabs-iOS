@@ -165,3 +165,15 @@ new macros：    kNotificationNameAudioDeviceInsert      kNotificationNameBG1Did
 
 Release Date: 2017-10-20
 ```
+### 10. V2.1.4
+```
+Description:
+
+1. To optimize the HS5 code
+2. Add the SDKInfo class to get the current version of SDK and UUID 
+3. add Log statistics of connection failure
+4. To optimize the BG1 connection
+
+Release Date: 2017-11-28
+```
+
