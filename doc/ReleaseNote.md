@@ -165,6 +165,7 @@ new macros：    kNotificationNameAudioDeviceInsert      kNotificationNameBG1Did
 
 Release Date: 2017-10-20
 ```
+
 ### 10. V2.1.4
 ```
 Description:
@@ -177,3 +178,11 @@ Description:
 Release Date: 2017-11-28
 ```
 
+### 10. V2.1.5
+```
+Description:
+
+1. Fix KN550BT and BP7S bug
+
+Release Date: 2017-12-04
+```
