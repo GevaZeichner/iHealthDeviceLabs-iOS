@@ -9,11 +9,15 @@
 
 ### Authentication
 
-    If you want to use the iHealth Device, you must first call authentication method, can call after certification by iHealth relevant methods of the device.
+  If you want to use the iHealth Device, you must first call authentication method, can call after certification by iHealth relevant methods of the device.
 
   Authentication method：
 
-   -(void)commandSDKUserValidation:(HealthUser *)tempUser UserDeviceAccess:(DisposeSDKUserDeviceAccess)userDeviceAccess UserValidationSuccess:(DisposeSDKUserValidationSuccess)userValidationSuccess UserValidationReturn:(DisposeSDKUserValidationReturn)userValidationReturn DisposeErrorBlock:(DisposeSDKUserValidationErrorBlock)disposeValidationErrorBlock
+    -(void)commandSDKUserValidation:(HealthUser *)tempUser
+    UserDeviceAccess:(DisposeSDKUserDeviceAccess)userDeviceAccess
+    UserValidationSuccess:(DisposeSDKUserValidationSuccess)userValidationSuccess
+    UserValidationReturn:(DisposeSDKUserValidationReturn)userValidationReturn
+    DisposeErrorBlock:(DisposeSDKUserValidationErrorBlock)disposeValidationErrorBlock;
 
 ### Support iHealth Device for iOS
 
